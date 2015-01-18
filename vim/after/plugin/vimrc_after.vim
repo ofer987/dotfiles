@@ -8,3 +8,7 @@ endif
 if filereadable(expand("~/.vimrc.after"))
   source ~/.vimrc.after
 endif
+
+" Toggle between two previous buffers
+nnoremap ,/ :b#<cr>
+nnoremap ,<tab> :b#<cr>

@@ -3,5 +3,5 @@ path=(
   $path
   $HOME/.yadr/bin
   $HOME/.yadr/bin/yadr
+  $HOME/scripts
 )
-
