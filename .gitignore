@@ -14,3 +14,6 @@ vim/sessions
 .netrwhist
 bin/subl
 tags
+
+# Sensitive information should not be shared to the public repository
+zsh/zsensitive.zsh
