@@ -21,8 +21,8 @@ alias yip='yadr init-plugins'
 
 # PS
 alias psa="ps aux"
-alias psg="ps aux | grep "
-alias psr='ps aux | grep ruby'
+alias psg="ps aux | ag "
+alias psr='ps aux | ag ruby'
 
 # Moving around
 alias cdb='cd -'
@@ -141,11 +141,12 @@ alias cl='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias c='rails c' # Rails 3
-alias co='script/console' # Rails 2
-alias cod='script/console --debugger'
+alias be='bundle exec'
+alias c='bundle exec rails c' # Rails 3
+alias rss='bundle exec rails s' # Rails 3
+alias co='script/console --irb=pry' # Rails 2
 
-#If you want your thin to listen on a port for local VM development
+# If you want your thin to listen on a port for local VM development
 #export VM_IP=10.0.0.1 <-- your vm ip
 alias ts='thin start -a ${VM_IP:-127.0.0.1}'
 alias ms='mongrel_rails start'
