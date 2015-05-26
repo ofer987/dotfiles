@@ -1,0 +1,20 @@
+# Copy buffer
+unbind p
+bind p paste-buffer
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-selection
+
+setw -g automatic-rename off
+set -g automatic-rename off
+
+set -g status-right ""
+
+set -g default-terminal xterm-256color
+
+bind -r h previous-window
+bind -r l next-window
+
+bind -r ^h previous-window
+bind -r ^l next-window
+
+bind ^u copy-mode
