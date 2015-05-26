@@ -18,3 +18,4 @@ bind -r ^h previous-window
 bind -r ^l next-window
 
 bind ^u copy-mode
+bind u copy-mode
