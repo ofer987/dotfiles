@@ -21,3 +21,6 @@ set relativenumber
 " Shortcuts
 noremap <Leader>q :quit<CR>
 xnoremap p pgvy
+
+command W w
+command Q q
