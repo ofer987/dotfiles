@@ -18,6 +18,10 @@ endfor
 set wrap
 set relativenumber
 
+set listchars=tab:\ ·
+set listchars+=trail:·
+set listchars+=extends:»,precedes:«
+
 " Shortcuts
 noremap <Leader>q :quit<CR>
 xnoremap p pgvy
