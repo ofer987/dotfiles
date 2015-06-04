@@ -20,3 +20,10 @@ bind -r ^l next-window
 
 bind ^u copy-mode
 bind u copy-mode
+
+bind ^c new-window -c "#{pane_current_path}"
+
+# force a reload of the config file
+bind ^r source-file ~/.tmux.conf \; display "Reloaded!"
+
+bind ^Space command-prompt
