@@ -20,6 +20,8 @@ task :install => [:submodule_init, :submodules] do
   install_files(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
   install_files(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   install_files(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
+  directory_operation('scripts') if want_to_install?('scripts')
+
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
@@ -332,6 +334,29 @@ def install_files(files, method = :symlink)
     puts "=========================================================="
     puts
   end
+end
+
+def directory_operation(directory, method = :symlink)
+  source = "#{ENV["PWD"]}/#{directory}"
+  target = "#{ENV["HOME"]}/#{directory}"
+
+  puts "======================#{directory}=============================="
+  puts "Source: #{source}"
+  puts "Target: #{target}"
+
+  if File.exists?(target) && (!File.symlink?(target) || (File.symlink?(target) && File.readlink(target) != source))
+    puts "[Overwriting] #{target}...leaving original at #{target}.backup..."
+    run %{ mv "$HOME/#{directory}" "$HOME/#{directory}.backup" }
+  end
+
+  if method == :symlink
+    run %{ ln -nfs "#{source}" "#{target}" }
+  else
+    run %{ cp -rf "#{source}" "#{target}" }
+  end
+
+  puts "=========================================================="
+  puts
 end
 
 def needs_migration_to_vundle?
