@@ -1,0 +1,6 @@
+Bundle 'klen/python-mode'
+let g:pymode_doc_bind = 'L'
+let g:pymode_breakpoint_bind = '<leader><leader>'
+au BufReadPost *.py set wrap
+
+Bundle 'davidhalter/jedi-vim'
