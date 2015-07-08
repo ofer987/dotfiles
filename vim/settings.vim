@@ -27,3 +27,8 @@ noremap <Leader>q :quit<CR>
 
 command W w
 command Q q
+
+nnoremap <silent> <leader>h :NERDTreeToggle<CR>
+
+" vim-go already provides syntax checking
+let g:syntastic_ignore_files = ['\.go$']
