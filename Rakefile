@@ -25,6 +25,8 @@ task :install => [:submodule_init, :submodules] do
   if want_to_install?('vim configuration (highly recommended)')
     install_files(Dir.glob('{vim,vimrc}'))
     Rake::Task["install_vundle"].execute
+    Rake::Task["fix_iterm_for_neovim"].execute
+    Rake::Task["compile_ycm"].execute
   end
 
   Rake::Task["install_prezto"].execute
@@ -72,6 +74,40 @@ task :submodules do
     }
     puts
   end
+end
+
+desc "Compiles YouCompleteMe"
+task :compile_ycm do
+  puts "======================================================"
+  puts "Downloading and Compiling YouCompleteMe (for Vi)"
+  puts "======================================================"
+
+  message = "Download and compile YouCompleteMe support for Vi?"
+  answer = ask message, ["Yes", "No"]
+
+  if answer == "Yes"
+    run %{
+      cd $HOME/.vim/bundle/YouCompleteMe
+      sudo pip2 install --user neovim
+      ./install.py --clang-completer --gocode-completer
+    }
+  end
+  puts
+end
+
+desc "Fix iTerm2 support for neovim"
+task :fix_iterm_for_neovim do
+  puts "======================================================"
+  puts "Fix iTerm to send correct keycode for <C-h>"
+  puts "======================================================"
+
+  run <<-CMD
+      cd $HOME/.yadr
+      infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\\\177/' > $TERM.ti
+      tic $TERM.ti
+      rm $TERM.ti
+  CMD
+  puts
 end
 
 desc "Performs migration from pathogen to vundle"
