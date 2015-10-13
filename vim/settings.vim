@@ -28,7 +28,16 @@ noremap <Leader>q :quit<CR>
 command W w
 command Q q
 
-nnoremap <silent> <leader>h :NERDTreeToggle<CR>
+" Toggle NERDTree
+nnoremap <silent> <leader>` :NERDTreeToggle<CR>
+
+" Switch to previous file
+nnoremap <leader><tab> :b#<cr>
+
+if has('nvim')
+  " While in a terminal use esc to drop into normal mode
+  tnoremap <esc> <c-\><c-n>
+end
 
 " vim-go already provides syntax checking
 let g:syntastic_ignore_files = ['\.go$']
