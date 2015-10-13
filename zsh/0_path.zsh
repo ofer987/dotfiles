@@ -4,5 +4,6 @@ path=(
   $HOME/.yadr/bin
   $HOME/.yadr/bin/yadr
   $HOME/scripts
+  $HOME/go/bin
   /usr/local/opt/go/libexec/bin
 )
