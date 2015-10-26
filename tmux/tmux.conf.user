@@ -12,14 +12,15 @@ set -g status-right ""
 
 set -g default-terminal xterm-256color
 
-bind -r h previous-window
+unbind h
+unbind ^h
+unbind l
+unbind ^l
+
 bind -r j previous-window
-bind -r l next-window
 bind -r k next-window
 
-bind -r ^h previous-window
 bind -r ^j previous-window
-bind -r ^l next-window
 bind -r ^k next-window
 
 bind ^u copy-mode
