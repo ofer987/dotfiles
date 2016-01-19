@@ -292,6 +292,7 @@ def install_prezto
 
   # The prezto runcoms are only going to be installed if zprezto has never been installed
   install_files(Dir.glob('zsh/prezto/runcoms/z*'), :symlink)
+  install_files(['zshrc'])
 
   puts
   puts "Overriding prezto ~/.zpreztorc with YADR's zpreztorc to enable additional modules..."
@@ -347,15 +348,6 @@ def install_files(files, method = :symlink)
       run %{ ln -nfs "#{source}" "#{target}" }
     else
       run %{ cp -f "#{source}" "#{target}" }
-    end
-
-    # Temporary solution until we find a way to allow customization
-    # This modifies zshrc to load all of yadr's zsh extensions.
-    # Eventually yadr's zsh extensions should be ported to prezto modules.
-    if file == 'zshrc'
-      File.open(target, 'a') do |zshrc|
-        zshrc.puts('for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file')
-      end
     end
 
     puts "=========================================================="
