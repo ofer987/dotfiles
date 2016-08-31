@@ -85,6 +85,9 @@
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
 
+  # diff
+  cached = diff --cached -w
+
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit

@@ -4,7 +4,7 @@ set nocompatible
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
+if filereadable(expand('~/.vimrc.before'))
   source ~/.vimrc.before
 endif
 
@@ -31,13 +31,22 @@ syntax on
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-let mapleader=","
+let mapleader=','
 
-" =============== Vundle Initialization ===============
+" =============== Bundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
+if filereadable(expand('~/.vim/vundles.vim'))
   source ~/.vim/vundles.vim
+endif
+
+" Same thing for bundles installed manually with Pathogen
+" Find them in ~/.vim/pundles/
+if filereadable(expand('~/.vim/autoload/pathogen.vim'))
+  source ~/.vim/autoload/pathogen.vim
+endif
+if filereadable(expand('~/.vim/pundles.vim'))
+  source ~/.vim/pundles.vim
 endif
 
 " ================ Turn Off Swap Files ==============
@@ -115,3 +124,4 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+so ~/.yadr/vim/omnisharp.vim

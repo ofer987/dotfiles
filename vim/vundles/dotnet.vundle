@@ -1,0 +1,3 @@
+" Plugin 'OmniSharp/Omnisharp-vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/syntastic'

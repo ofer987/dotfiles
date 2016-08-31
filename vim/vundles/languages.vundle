@@ -1,6 +1,10 @@
-Bundle 'jtratner/vim-flavored-markdown.git'
-Bundle 'nelstrom/vim-markdown-preview'
-Bundle 'skwp/vim-html-escape'
-Bundle 'fatih/vim-go'
-Bundle 'lambdatoast/elm.vim.git'
-Bundle 'leafgarland/typescript-vim'
+Plugin 'jtratner/vim-flavored-markdown.git'
+Plugin 'nelstrom/vim-markdown-preview'
+Plugin 'skwp/vim-html-escape'
+Plugin 'fatih/vim-go'
+Plugin 'garyburd/go-explorer'
+Plugin 'lambdatoast/elm.vim.git'
+Plugin 'leafgarland/typescript-vim'
+
+Plugin 'Shougo/deoplete.nvim'
+let g:deoplete#enable_at_startup = 1
