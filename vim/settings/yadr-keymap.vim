@@ -58,9 +58,6 @@ vmap <leader>{ c{<C-R>"}<ESC>
 
 map <leader>` ysiw`
 
-" gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
-
 "Go to last edit location with <leader>.
 nnoremap <leader>. '.
 

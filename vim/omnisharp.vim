@@ -18,10 +18,10 @@ let g:OmniSharp_timeout = 1
 set noshowmatch
 
 "Super tab settings - uncomment the next 4 lines
-"let g:SuperTabDefaultCompletionType = 'context'
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-"let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 "don't autoselect first item in omnicomplete, show if only one item (for preview)
 "remove preview if you don't want to see any documentation whatsoever.
@@ -49,7 +49,7 @@ augroup omnisharp_commands
     " Synchronous build (blocks Vim)
     "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
     " Builds can also run asynchronously with vim-dispatch installed
-    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
+    " autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
     " automatic syntax check on events (TextChanged requires Vim 7.4)
     autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
 
@@ -71,12 +71,12 @@ augroup omnisharp_commands
     " cursor can be anywhere on the line containing an issue
     autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
     autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-    autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+    autocmd FileType cs nnoremap <leader>ht :OmniSharpTypeLookup<cr>
     autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
     "navigate up by method/property/field
-    autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
+    autocmd FileType cs nnoremap <C-[> :OmniSharpNavigateUp<cr>
     "navigate down by method/property/field
-    autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
+    autocmd FileType cs nnoremap <C-]> :OmniSharpNavigateDown<cr>
 
 augroup END
 
@@ -84,7 +84,7 @@ augroup END
 " this setting controls how long to wait (in ms) before fetching type / symbol information.
 set updatetime=500
 " Remove 'Press Enter to continue' message when type information is longer than one line.
-set cmdheight=2
+autocmd FileType cs set cmdheight=2
 
 " Contextual code actions (requires CtrlP or unite.vim)
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
@@ -101,16 +101,20 @@ command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 nnoremap <leader>rl :OmniSharpReloadSolution<cr>
 nnoremap <leader>cf :OmniSharpCodeFormat<cr>
 " Load the current .cs file to the nearest project
-nnoremap <leader>tp :OmniSharpAddToProject<cr>
+" nnoremap <leader>tp :OmniSharpAddToProject<cr>
 
 " (Experimental - uses vim-dispatch or vimproc plugin) - Start the omnisharp server for the current solution
 nnoremap <leader>ss :OmniSharpStartServer<cr>
 nnoremap <leader>sp :OmniSharpStopServer<cr>
 
 " Add syntax highlighting for types and interfaces
-nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+nnoremap <leader>hh :OmniSharpHighlightTypes<cr>
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
 
 " Enable snippet completion, requires completeopt-=preview
 let g:OmniSharp_want_snippet=1
+
+autocmd FileType cs set tabstop=4
+autocmd FileType cs set shiftwidth=4
+autocmd FileType cs set softtabstop=4

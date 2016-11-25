@@ -5,6 +5,3 @@ Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 Plugin 'lambdatoast/elm.vim.git'
 Plugin 'leafgarland/typescript-vim'
-
-Plugin 'Shougo/deoplete.nvim'
-let g:deoplete#enable_at_startup = 1

@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set shell=/bin/bash
+
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
 if filereadable(expand('~/.vimrc.before'))
@@ -123,5 +125,6 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
+set clipboard=unnamed
 so ~/.yadr/vim/settings.vim
 so ~/.yadr/vim/omnisharp.vim

@@ -15,21 +15,21 @@ set rtp+=~/.vim/vundles/ "Submodules
 call vundle#begin()
 
 " let Vundle manage Vundle (required)
-Bundle "VundleVim/Vundle.vim"
+Plugin 'VundleVim/Vundle.vim'
 
 " YADR's vundles are split up by category into smaller files
 " This reduces churn and makes it easier to fork. See
 " ~/.vim/vundles/ to edit them:
-"runtime ruby.vundle
-"runtime python.vundle
-"runtime languages.vundle
-source ~/.vim/vundles/git.vundle
-" runtime appearance.vundle
-" runtime textobjects.vundle
-" runtime search.vundle
-" runtime project.vundle
-" runtime vim-improvements.vundle
-" runtime dotnet.vundle
+runtime ruby.vundle
+runtime python.vundle
+runtime languages.vundle
+runtime git.vundle
+runtime appearance.vundle
+runtime textobjects.vundle
+runtime search.vundle
+runtime project.vundle
+runtime vim-improvements.vundle
+runtime dotnet.vundle
 
 " The plugins listed in ~/.vim/.vundles.local will be added here to
 " allow the user to add vim plugins to yadr without the need for a fork.
