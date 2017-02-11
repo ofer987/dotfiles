@@ -30,3 +30,8 @@ bind u copy-mode
 bind ^r source-file ~/.tmux.conf \; display "Reloaded!"
 
 bind ^Space command-prompt
+
+bind ^w choose-window
+
+unbind-key C-,
+bind-key -T prefix , command-prompt -I "rename-window "

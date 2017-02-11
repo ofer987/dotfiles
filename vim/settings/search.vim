@@ -10,12 +10,6 @@ function! GetVisual()
   return selection
 endfunction
 
-"grep visual selection
-vnoremap K :<C-U>execute "Ag " . GetVisual()<CR>
-
-"grep current word up to the next exclamation point using ,K
-nnoremap <leader>K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
-
 "grep for 'def foo'
 nnoremap <silent> <leader>gd :Ag 'def <cword>'<CR>
 

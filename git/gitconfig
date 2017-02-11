@@ -42,7 +42,8 @@
 
   # diff
   d = diff                          # diff unstaged changes
-  dc = diff --cached                # diff staged changes
+  dd = diff -w                      # diff without whitespace
+  dc = diff --cached -w             # diff staged changes
   last = diff HEAD^                 # diff last committed change
 
   # log
@@ -57,6 +58,7 @@
 
   # push
   ps = push                         # push
+  force-push = push --force         # force push
 
   # rebase
   rc = rebase --continue            # continue rebase

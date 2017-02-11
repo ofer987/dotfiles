@@ -1,1 +1,1 @@
-execute pathogen#infect('~/.vim/pundles/{}')
+" execute pathogen#infect('~/.vim/pundles/{}')

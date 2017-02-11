@@ -6,3 +6,9 @@ Plugin 'garyburd/go-explorer'
 Plugin 'lambdatoast/elm.vim.git'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" Linter
+Plugin 'w0rp/ale'

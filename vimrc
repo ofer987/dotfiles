@@ -127,4 +127,3 @@ set smartcase       " ...unless we type a capital
 " ================ Custom Settings ========================
 set clipboard=unnamed
 so ~/.yadr/vim/settings.vim
-so ~/.yadr/vim/omnisharp.vim

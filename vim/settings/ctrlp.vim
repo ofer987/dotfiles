@@ -4,7 +4,7 @@ endif
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$" --ignore "app/assets" --ignore "client/assets" --ignore "tmp/" --ignore "node_modules/"'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -33,14 +33,25 @@ nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
 " more likely to find the correct thing first. mnemonic 'jump to [something]'
-map <leader>ja :CtrlP app/assets<CR>
-map <leader>jm :CtrlP app/models<CR>
-map <leader>jc :CtrlP app/controllers<CR>
-map <leader>jv :CtrlP app/views<CR>
-map <leader>jh :CtrlP app/helpers<CR>
+autocmd FileType ruby map <leader>ja :CtrlP app/assets<CR>
+autocmd FileType ruby map <leader>jm :CtrlP app/models<CR>
+autocmd FileType ruby map <leader>jc :CtrlP app/controllers<CR>
+autocmd FileType ruby map <leader>jv :CtrlP app/views<CR>
+autocmd FileType ruby map <leader>jh :CtrlP app/helpers<CR>
+autocmd FileType ruby map <leader>jsm :CtrlP spec/models<CR>
+autocmd FileType ruby map <leader>jsc :CtrlP spec/controllers<CR>
+autocmd FileType ruby map <leader>jsv :CtrlP spec/views<CR>
+autocmd FileType ruby map <leader>jsh :CtrlP spec/helpers<CR>
+autocmd FileType ruby map <leader>jss :CtrlP spec/support<CR>
+
+autocmd FileType elixir map <leader>jm :CtrlP web/models<CR>
+autocmd FileType elixir map <leader>jc :CtrlP web/controllers<CR>
+autocmd FileType elixir map <leader>jv :CtrlP web/views<CR>
+autocmd FileType elixir map <leader>jt :CtrlP web/templates<CR>
+
 map <leader>jl :CtrlP lib<CR>
 map <leader>jp :CtrlP public<CR>
-map <leader>js :CtrlP spec<CR>
+map <leader>jst :CtrlP spec<CR>
 map <leader>jf :CtrlP fast_spec<CR>
 map <leader>jd :CtrlP db<CR>
 map <leader>jC :CtrlP config<CR>
