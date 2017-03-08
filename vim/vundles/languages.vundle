@@ -1,14 +1,24 @@
+" Markdown
 Plugin 'jtratner/vim-flavored-markdown.git'
 Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'skwp/vim-html-escape'
+
+" Go
 Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
+
+" JavaScript, etc.
 Plugin 'lambdatoast/elm.vim.git'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'elixir-lang/vim-elixir'
-
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'ianks/vim-tsx'
 
 " Linter
 Plugin 'w0rp/ale'
+
+" Snippets
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate.git'
