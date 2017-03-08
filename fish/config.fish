@@ -48,28 +48,33 @@ nvm use default
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
-function console
+function run_binstub
+  set -x command $argv[1]
+  set -x arguments $argv[2..-1]
   set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
   if set -q $PROJECT
+    set -x FILE "./bin/$command"
   else
-    eval $PROJECT/bin/rails c
+    set -x FILE $PROJECT/bin/$command
   end
+
+  if test -e $FILE
+    eval $FILE $arguments
+  else
+    echo "ERORR: '$FILE' does not exist"
+    false
+  end
+end
+
+function console
+  run_binstub rails console
 end
 
 function crake
-  set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
-  if set -q $PROJECT
-    eval rake
-  else
-    echo $argv
-    eval $PROJECT/bin/rake $argv
-  end
+  run_binstub rake $argv
 end
 
 function stop_spring
-  set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
-  if set -q $PROJECT
-  else
-    eval $PROJECT/bin/spring stop
-  end
+  run_binstub spring stop
 end
+
