@@ -48,7 +48,11 @@ default_command_set = Pry::CommandSet.new do
     IO.popen('pbcopy', 'w') { |f| f << str.to_s }
   end
 
-  command "clear" do
+  command ':q' do
+    run 'exit'
+  end
+
+  command 'clear' do
     system 'clear'
     ENV['RAILS_ENV'] && (output.puts "Rails Environment: #{ENV['RAILS_ENV']}")
   end
