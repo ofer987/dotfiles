@@ -39,7 +39,10 @@ export NVM_DIR="$HOME/.nvm"
 # end
 # nvm use default
 
-alias vi=nvim
+function vi
+  nvim $argv
+end
+
 alias view=nvim
 alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
@@ -68,6 +71,10 @@ end
 
 function console
   run_binstub rails console
+end
+
+function crails
+  run_binstub rails $argv
 end
 
 function crake
