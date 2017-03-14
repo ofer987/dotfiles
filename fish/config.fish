@@ -11,14 +11,6 @@ source "$HOME/.config/fish/functions/ssh_agent_start.fish"
 
 fish_vi_mode
 
-# function fish_user_key_bindings
-#   for mode in insert default visual
-#     bind -M $mode \cf forward-char
-#   end
-# end
-#
-# fish_user_key_bindings
-
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH
 
 alias "ctop=top -o cpu"
@@ -53,7 +45,12 @@ alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
 function run_binstub
   set -x command $argv[1]
-  set -x arguments $argv[2..-1]
+  set -x arguments ""
+  set -x arg_count (count $argv)
+  if math "$arg_count > 1" > /dev/null
+    set -x arguments $argv[2..-1]
+  end
+
   set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
   if set -q $PROJECT
     set -x FILE "./bin/$command"
@@ -81,7 +78,25 @@ function crake
   run_binstub rake $argv
 end
 
+function crspec
+  run_binstub rspec $argv
+end
+
+function cguard
+  run_binstub guard
+end
+
 function stop_spring
   run_binstub spring stop
 end
 
+function latest
+  set -x head "./"
+  set -x arg_count (count $argv)
+  if math "$arg_count > 0" > /dev/null
+    set -x head $argv[1]
+  end
+  for tail in (ls -tr $head)
+    echo "$head/$tail"
+  end
+end
