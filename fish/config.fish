@@ -100,3 +100,36 @@ function latest
     echo "$head/$tail"
   end
 end
+
+function project
+  git rev-parse --show-toplevel 2> /dev/null
+end
+
+function af
+  set -x root (project)
+
+  if [ -z $root ]
+    set -x root "."
+  end
+
+  echo $argv[1] | awk -v project=$root '
+    {
+      count = split($0, array, /\//)
+
+      file = array[count]
+      app = project "/app"
+      spec = project "/spec"
+      for (i = 1; i < count; ++i)
+      {
+        app = app "/" array[i]
+        spec = spec "/" array[i]
+      }
+
+      system("mkdir -p " app)
+      system("mkdir -p " spec)
+
+      system("touch " app "/" file ".rb")
+      system("touch " spec "/" file "_spec.rb")
+    }
+  '
+end
