@@ -12,6 +12,7 @@ source "$HOME/.config/fish/functions/ssh_agent_start.fish"
 fish_vi_mode
 
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH
+set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 
 alias "ctop=top -o cpu"
 
