@@ -54,16 +54,18 @@ function run_binstub
 
   set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
   if set -q $PROJECT
-    set -x FILE "./bin/$command"
-  else
-    set -x FILE $PROJECT/bin/$command
+    set -x PROJECT "."
+  end
+  set -x FILE $PROJECT/bin/$command
+
+  if not test -e $FILE
+    set -x FILE (rbenv which $command)
   end
 
-  if test -e $FILE
-    eval $FILE $arguments
-  else
-    echo "ERORR: '$FILE' does not exist"
+  if not test -e $FILE
     false
+  else
+    eval $FILE $arguments
   end
 end
 
@@ -71,19 +73,19 @@ function console
   run_binstub rails console
 end
 
-function crails
+function rails
   run_binstub rails $argv
 end
 
-function crake
+function rake
   run_binstub rake $argv
 end
 
-function crspec
+function rspec
   run_binstub rspec $argv
 end
 
-function cguard
+function guard
   run_binstub guard
 end
 
