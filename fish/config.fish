@@ -146,3 +146,7 @@ function af
     }
   '
 end
+
+function restart_db
+  pg_ctl restart
+end
