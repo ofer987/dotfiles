@@ -11,7 +11,7 @@ Plugin 'fatih/vim-go'
 Plugin 'garyburd/go-explorer'
 
 " JavaScript, etc.
-Plugin 'lambdatoast/elm.vim.git'
+Plugin 'elmcast/elm-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kchmck/vim-coffee-script'
