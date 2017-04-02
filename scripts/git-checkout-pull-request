@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+def branch(pull_request_number)
+  `prawler --branch`
+    .split("\n")
+    .map(&:strip)
+    .select { |line| line =~ /^#{pull_request_number.strip}/ }
+    .first
+    .split(' ')
+    .last
+end
+
+`git checkout #{branch(ARGV[0])}`
