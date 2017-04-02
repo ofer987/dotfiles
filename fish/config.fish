@@ -9,6 +9,16 @@ source $OMF_PATH/init.fish
 # Functions to initialize the SSH Agent
 source "$HOME/.config/fish/functions/ssh_agent_start.fish"
 
+# Viscosity VPN
+source "$HOME/.config/fish/yadr_functions/viscosity.fish"
+alias "vpn=connect_vpn"
+
+# Open local webservers
+source "$HOME/.config/fish/yadr_functions/local_servers.fish"
+
+# GitHub functions
+source "$HOME/.config/fish/yadr_functions/github.fish"
+
 fish_vi_mode
 
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH
