@@ -35,12 +35,6 @@ alias ":Q=exit"
 set -x GOPATH ~/go
 
 export NVM_DIR="$HOME/.nvm"
-# bass source /usr/local/opt/nvm/nvm.sh
-
-# function nvm
-#   bass source /usr/local/opt/nvm/nvm.sh --no-use ';' nvm $argv
-# end
-# nvm use default
 
 function vi
   nvim $argv
