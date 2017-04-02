@@ -80,7 +80,7 @@ function run_binstub
 end
 
 function console
-  run_binstub rails console
+  run_binstub rails console $argv
 end
 
 function rails
