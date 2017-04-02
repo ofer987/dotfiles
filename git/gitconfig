@@ -45,6 +45,7 @@
   dd = diff -w                      # diff without whitespace
   dc = diff --cached -w             # diff staged changes
   last = diff HEAD^                 # diff last committed change
+  names = diff --name-only          # list of uncommited changed files
 
   # log
   l = log --graph --date=short
