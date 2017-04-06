@@ -38,6 +38,9 @@ set -x GOPATH ~/go
 
 export NVM_DIR="$HOME/.nvm"
 
+# Alias GitHub's hub to git
+eval (hub alias -s)
+
 function vi
   nvim $argv
 end
