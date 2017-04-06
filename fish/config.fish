@@ -57,24 +57,30 @@ function run_binstub
   set -x command $argv[1]
   set -x arguments ""
   set -x arg_count (count $argv)
+  set -x current_dir (pwd)
   if math "$arg_count > 1" > /dev/null
     set -x arguments $argv[2..-1]
   end
 
   set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
   if set -q $PROJECT
-    set -x PROJECT "."
+    set -x PROJECT '.'
   end
-  set -x FILE $PROJECT/bin/$command
+  cd $PROJECT
 
+  set -x FILE bin/$command
   if not test -e $FILE
     set -x FILE (rbenv which $command)
   end
 
   if not test -e $FILE
+    cd $current_dir
     false
   else
     eval $FILE $arguments
+
+    cd $current_dir
+    true
   end
 end
 
