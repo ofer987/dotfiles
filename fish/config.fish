@@ -19,6 +19,8 @@ source "$HOME/.config/fish/yadr_functions/local_servers.fish"
 # GitHub functions
 source "$HOME/.config/fish/yadr_functions/github.fish"
 
+set -x EDITOR nvim
+
 fish_vi_mode
 
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH
