@@ -88,6 +88,10 @@ function console
   run_binstub rails console $argv
 end
 
+function rubocop
+  run_binstub rubocop $argv
+end
+
 function rails
   run_binstub rails $argv
 end
@@ -98,6 +102,10 @@ end
 
 function rspec
   run_binstub rspec $argv
+end
+
+function cap
+  run_binstub cap $argv
 end
 
 function guard
