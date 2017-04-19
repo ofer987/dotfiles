@@ -29,7 +29,7 @@ bind u copy-mode
 # force a reload of the config file
 bind ^r source-file ~/.tmux.conf \; display "Reloaded!"
 
-bind ^Space command-prompt
+bind / command-prompt
 
 bind ^w choose-window
 
