@@ -19,11 +19,15 @@ source "$HOME/.yadr/fish/functions/local_servers.fish"
 # GitHub functions
 source "$HOME/.yadr/fish/functions/github.fish"
 
-set -x EDITOR nvim
+# Bin Stubs
+source "$HOME/.yadr/fish/functions/bin_stubs.fish"
 
-fish_vi_mode
+set -x EDITOR vim
 
-set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH
+fish_vi_key_bindings
+
+set -x YARN_BIN (yarn global bin)
+set -x PATH ~/.rbenv/shims ~/.yadr/scripts $YARN_BIN $PATH
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 
 alias "ctop=top -o cpu"
@@ -36,85 +40,20 @@ alias ":Q=exit"
 
 set -x GOPATH ~/go
 
-export NVM_DIR="$HOME/.nvm"
-
 # Alias GitHub's hub to git
 eval (hub alias -s)
 
+set -x RBENV_VERSION "2.3.1"
+
 function vi
-  nvim $argv
+  vim $argv
 end
 
-alias view=nvim
-alias vimdiff=nvim
+alias view=vim
+alias vimdiff=vim
 alias vii='vi +"set ft=ruby"'
 
-nvm use default
-
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
-
-function run_binstub
-  set -x command $argv[1]
-  set -x arguments ""
-  set -x arg_count (count $argv)
-  set -x current_dir (pwd)
-  if math "$arg_count > 1" > /dev/null
-    set -x arguments $argv[2..-1]
-  end
-
-  set -x PROJECT (git rev-parse --show-toplevel 2> /dev/null)
-  if set -q $PROJECT
-    set -x PROJECT '.'
-  end
-  cd $PROJECT
-
-  set -x FILE bin/$command
-  if not test -e $FILE
-    set -x FILE (rbenv which $command)
-  end
-
-  if not test -e $FILE
-    cd $current_dir
-    false
-  else
-    eval $FILE $arguments
-
-    cd $current_dir
-    true
-  end
-end
-
-function console
-  run_binstub rails console $argv
-end
-
-function rubocop
-  run_binstub rubocop $argv
-end
-
-function rails
-  run_binstub rails $argv
-end
-
-function rake
-  run_binstub rake $argv
-end
-
-function rspec
-  run_binstub rspec $argv
-end
-
-function cap
-  run_binstub cap $argv
-end
-
-function guard
-  run_binstub guard
-end
-
-function stop_spring
-  run_binstub spring stop
-end
 
 function latest
   set -x head "./"
@@ -160,6 +99,10 @@ function af
   '
 end
 
-function restart_db
+function rdb
   pg_ctl restart
+end
+
+function reload
+  source ~/.config/fish/config.fish
 end
