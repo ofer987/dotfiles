@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-~/.rbenv/shims/ruby ~/bitbar/internal/melbourne_time
+
+/usr/local/bin/fish -c '~/bitbar/internal/melbourne_time' 2> /dev/null

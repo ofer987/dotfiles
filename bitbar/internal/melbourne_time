@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'active_support/all'
 
 time = ActiveSupport::TimeZone['Canberra'].now
