@@ -4,7 +4,7 @@ def branch(pull_request_number)
   `prawler --branch`
     .split("\n")
     .map(&:strip)
-    .select { |line| line =~ /^#{pull_request_number.strip}/ }
+    .select { |line| line =~ /^#{pull_request_number.chomp.strip}/ }
     .first
     .split(' ')
     .last
