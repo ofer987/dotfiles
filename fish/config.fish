@@ -14,7 +14,7 @@ source "$HOME/.yadr/fish/functions/github.fish"
 # Bin Stubs
 source "$HOME/.yadr/fish/functions/bin_stubs.fish"
 
-set -x EDITOR vim
+set -x EDITOR nvim
 
 fish_vi_key_bindings
 
@@ -38,11 +38,11 @@ eval (hub alias -s)
 set -x RBENV_VERSION "2.3.1"
 
 function vi
-  vim $argv
+  nvim $argv
 end
 
-alias view=vim
-alias vimdiff=vim
+alias view=nvim
+alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
