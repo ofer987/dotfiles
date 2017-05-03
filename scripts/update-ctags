@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+class Ctags
+  attr_reader :language
+  def initialize(language = 'ruby')
+    @language = language.to_s.strip
+  end
+
+  def update(paths)
+    paths = Array(paths).map(&:strip).join(' ')
+
+    `ctags -R --languages=#{language} --exclude=.git --exclude=log #{paths}`
+  end
+end
+
+local_path = '.'
+gem_paths = `bundle list --paths`.split("\n")
+
+Ctags
+  .new
+  .update([local_path] + gem_paths)
