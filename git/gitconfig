@@ -98,6 +98,10 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+
+  # better blaming
+  condemn = blame
+  recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]

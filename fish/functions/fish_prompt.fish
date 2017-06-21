@@ -1,0 +1,1 @@
+/Users/ofer987/.config/fisherman/ocean/fish_prompt.fish

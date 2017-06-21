@@ -26,6 +26,8 @@ alias "ctop=top -o cpu"
 
 alias "ntmux=tmux new-session -n shell"
 
+alias "prs=git pulls | xargs open"
+
 # Vi like
 alias ":q=exit"
 alias ":Q=exit"
@@ -44,8 +46,11 @@ end
 alias view=nvim
 alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
+alias rvii='vi -R +"set ft=ruby"'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
+
+status --is-interactive; and source (rbenv init -|psub)
 
 function latest
   set -x head "./"
@@ -53,7 +58,7 @@ function latest
   if math "$arg_count > 0" > /dev/null
     set -x head $argv[1]
   end
-  for tail in (ls -tr $head)
+  for tail in (ls $head)
     echo "$head/$tail"
   end
 end

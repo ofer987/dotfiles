@@ -1,5 +1,6 @@
 # === EDITOR ===
 Pry.editor = 'nvim'
+Pry.config.editor = 'nvim'
 
 # == Pry-Nav - Using pry as a debugger ==
 Pry.commands.alias_command 'c', 'continue' rescue nil
@@ -29,6 +30,7 @@ Pry.config.ls.private_method_color = :bright_black
 # look at ~/.aprc for more settings for awesome_print
 begin
   require 'awesome_print'
+  AwesomePrint.pry!
   # The following line enables awesome_print for all pry output,
   # and it also enables paging
   Pry.config.print = proc do |output, value|

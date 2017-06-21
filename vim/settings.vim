@@ -51,3 +51,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 noremap <Leader>k :let @* = @%<CR>
+
+colorscheme solarized8_light

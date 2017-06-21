@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'active_support/all'
 
-days = (Date.new(2017, 8, 2) - Date.today).to_i
+days = (Date.new(2017, 7, 20) - Date.today).to_i
 if days > 1
   puts "#{days} days left"
 elsif days == 1
