@@ -25,3 +25,6 @@ Plugin 'w0rp/ale'
 " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate.git'
+
+" PowerShell
+Plugin 'PProvost/vim-ps1'
