@@ -127,3 +127,7 @@ set smartcase       " ...unless we type a capital
 " ================ Custom Settings ========================
 set clipboard=unnamed
 so ~/.yadr/vim/settings.vim
+
+let g:ale_linters = {
+  \'ruby': [],
+\}
