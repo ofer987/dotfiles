@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-require 'active_support/all'
-
-time = ActiveSupport::TimeZone['Canberra'].now
-time_zone = time.zone
-
-puts "#{time_zone} #{time.strftime('%H:%M')}"
