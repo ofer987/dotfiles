@@ -18,8 +18,9 @@ set -x EDITOR nvim
 
 fish_vi_key_bindings
 
+set -x GOPATH ~/go
 set -x YARN_BIN (yarn global bin)
-set -x PATH ~/.rbenv/shims ~/.yadr/scripts $YARN_BIN $PATH
+set -x PATH ~/.rbenv/shims ~/.yadr/scripts $YARN_BIN $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 
 alias "ctop=top -o cpu"
@@ -31,8 +32,6 @@ alias "prs=git pulls | xargs open"
 # Vi like
 alias ":q=exit"
 alias ":Q=exit"
-
-set -x GOPATH ~/go
 
 # Alias GitHub's hub to git
 eval (hub alias -s)
@@ -47,6 +46,9 @@ alias view=nvim
 alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
+
+alias cat='ccat'
+alias less='lless'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
@@ -102,4 +104,8 @@ end
 
 function reload
   source ~/.config/fish/config.fish
+end
+
+function root
+  cd (project)
 end
