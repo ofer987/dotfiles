@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# Update the projects' ctags file
 class Ctags
   attr_reader :language
   def initialize(language = 'ruby')
@@ -14,9 +15,9 @@ class Ctags
   end
 end
 
-local_path = '.'
-gem_paths = `bundle list --paths`.split("\n")
+local_paths = ['.']
+gem_paths = Array(`bundle list --paths`.split("\n"))
 
 Ctags
   .new
-  .update([local_path] + gem_paths)
+  .update(gem_paths + local_paths)
