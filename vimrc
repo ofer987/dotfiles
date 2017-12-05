@@ -131,3 +131,7 @@ so ~/.yadr/vim/settings.vim
 let g:ale_linters = {
   \'ruby': [],
 \}
+
+if filereadable(expand('~/.config/nvim/local.vim'))
+  so ~/.config/nvim/local.vim
+endif

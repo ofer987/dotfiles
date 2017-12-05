@@ -1,1 +1,1 @@
-/Users/ofer987/.config/fisherman/ocean/fish_prompt.fish
+/Users/ofer987/.config/fisherman/coffeeandcode/fish_prompt.fish

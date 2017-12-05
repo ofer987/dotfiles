@@ -52,7 +52,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 noremap <Leader>k :let @* = @%<CR>
 
-colorscheme solarized8_light
+colorscheme solarized8_dark
 
 autocmd FileType cs set shiftwidth=4
 

@@ -47,8 +47,8 @@ alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
 
-alias cat='ccat'
-alias less='lless'
+# alias cat='ccat'
+# alias less='lless'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
