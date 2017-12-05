@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+def go_here(file)
+  puts "File is #{file}"
+  # dir = `dirname #{file}`
+  dir = '~'
+  puts "Dir is #{dir}"
+
+  `cd #{dir}`
+end
+
+go_here($stdin.gets.chomp.gsub(/['"]/, ''))
