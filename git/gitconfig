@@ -45,6 +45,7 @@
   d = diff                                # diff unstaged changes
   dd = diff -w                            # diff without whitespace
   dc = diff --cached -w                   # diff staged changes
+  cached = diff --cached -w               # diff staged changes
   last = diff HEAD^                       # diff last committed change
   dnames = diff --name-only               # list of uncommited changed files
   names = diff HEAD^..HEAD --name-only    # list of uncommited changed files
@@ -87,12 +88,10 @@
   s = status                        # status
   st = status                       # status
   stat = status                     # status
+  root = rev-parse --show-toplevel
 
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
-
-  # diff
-  cached = diff --cached -w
 
   # svn helpers
   svnr = svn rebase
@@ -121,7 +120,7 @@
   default = upstream
 [core]
   autocrlf = false
-  editor = vim
+  editor = nvim
   excludesfile = ~/.yadr/git/gitignore
 [advice]
   statusHints = false

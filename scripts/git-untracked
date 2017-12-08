@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def untracked
+  `git status --short --untracked-files=all`
+    .split("\n")
+    .select { |line| line =~ /^\s*\?{2}/ }
+    .map { |line| line.gsub(/^\?{2}/, '').strip }
+end
+
+puts untracked

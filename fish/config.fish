@@ -19,7 +19,7 @@ set -x EDITOR nvim
 fish_vi_key_bindings
 
 set -x GOPATH ~/go
-set -x YARN_BIN (yarn global bin)
+# set -x YARN_BIN (yarn global bin)
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $YARN_BIN $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 
@@ -34,9 +34,9 @@ alias ":q=exit"
 alias ":Q=exit"
 
 # Alias GitHub's hub to git
-eval (hub alias -s)
+# eval (hub alias -s)
 
-set -x RBENV_VERSION "2.3.1"
+set -x RBENV_VERSION "2.4.2"
 
 function vi
   nvim $argv
@@ -51,6 +51,8 @@ alias rvii='vi -R +"set ft=ruby"'
 # alias less='lless'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
+
+alias python=python2
 
 status --is-interactive; and source (rbenv init -|psub)
 
