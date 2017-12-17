@@ -1,6 +1,8 @@
 " Markdown
 Plugin 'jtratner/vim-flavored-markdown.git'
 Plugin 'nelstrom/vim-markdown-preview'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'skwp/vim-html-escape'
 
 " Fish
@@ -21,6 +23,7 @@ Plugin 'ianks/vim-tsx'
 
 " Linter
 Plugin 'w0rp/ale'
+Plugin 'vim-syntastic/syntastic'
 
 " Snippets
 Plugin 'honza/vim-snippets'
@@ -28,3 +31,7 @@ Plugin 'garbas/vim-snipmate.git'
 
 " PowerShell
 Plugin 'PProvost/vim-ps1'
+
+" .NET Framework / Core
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'SirVer/ultisnips'

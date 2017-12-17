@@ -42,6 +42,11 @@ if filereadable(expand('~/.vim/vundles.vim'))
   source ~/.vim/vundles.vim
 endif
 
+" This loads all the plugs specified in ~/.vim/plugs.vim
+if filereadable(expand('~/.vim/plugs.vim'))
+  source ~/.vim/plugs.vim
+endif
+
 " Same thing for bundles installed manually with Pathogen
 " Find them in ~/.vim/pundles/
 if filereadable(expand('~/.vim/autoload/pathogen.vim'))

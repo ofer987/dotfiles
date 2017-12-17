@@ -1,7 +1,6 @@
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'briandoll/change-inside-surroundings.vim.git'
-Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'vim-scripts/camelcasemotion.git'
 Plugin 'vim-scripts/matchit.zip.git'
