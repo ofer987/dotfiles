@@ -22,9 +22,7 @@ set listchars=tab:\ ·
 set listchars+=trail:·
 set listchars+=extends:»,precedes:«
 
-" Shortcuts
-noremap <Leader>q :quit<CR>
-
+" case-insensitive
 command W w
 command Q q
 
