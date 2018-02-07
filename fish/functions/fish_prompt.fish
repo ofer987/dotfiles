@@ -1,1 +1,0 @@
-/Users/ofer987/.config/fisherman/coffeeandcode/fish_prompt.fish

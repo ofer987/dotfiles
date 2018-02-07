@@ -1,1 +1,0 @@
-/Users/ofer987/.config/fisherman/z/functions/zadd.awk

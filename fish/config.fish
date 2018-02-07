@@ -1,5 +1,8 @@
-# Functions to initialize the SSH Agent
-source "$HOME/.yadr/fish/functions/ssh_agent_start.fish"
+# Fisher plugin manager
+# Install from https://github.com/fisherman/fisherman
+# curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+# fisher install ssh-agent
+source "$HOME/.yadr/fish/functions/fisher.fish"
 
 # Viscosity VPN
 source "$HOME/.yadr/fish/functions/viscosity.fish"
