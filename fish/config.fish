@@ -36,9 +36,6 @@ alias "prs=git pulls | xargs open"
 alias ":q=exit"
 alias ":Q=exit"
 
-
-set -x RBENV_VERSION "2.4.2"
-
 function vi
   nvim $argv
 end
