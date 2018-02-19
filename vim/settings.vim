@@ -137,7 +137,7 @@ augroup END
 " this setting controls how long to wait (in ms) before fetching type / symbol information.
 set updatetime=500
 " Remove 'Press Enter to continue' message when type information is longer than one line.
-set cmdheight=2
+set cmdheight=1
 
 " Contextual code actions (requires CtrlP or unite.vim)
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
