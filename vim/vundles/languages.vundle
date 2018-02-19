@@ -23,7 +23,7 @@ Plugin 'ianks/vim-tsx'
 
 " Linter
 Plugin 'w0rp/ale'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 
 " Snippets
 Plugin 'honza/vim-snippets'
