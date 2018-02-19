@@ -36,5 +36,6 @@ bind ^w choose-window
 
 unbind-key C-,
 bind-key -T prefix , command-prompt -I "rename-window "
+bind-key -T prefix '$' command-prompt -I "rename-session "
 
 bind C-o run "tmux display-message '#{pane_current_command}'; exit 0;"
