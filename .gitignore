@@ -17,4 +17,6 @@ bin/subl
 tags
 
 fish/fishd.*
+fish/conf.d/**/*
+fish/functions/__*
 vim/*.log
