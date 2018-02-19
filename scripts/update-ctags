@@ -4,6 +4,7 @@
 # Update the projects' ctags file
 class Ctags
   attr_reader :language
+
   def initialize(language = 'ruby')
     @language = language.to_s.strip
   end
@@ -15,8 +16,13 @@ class Ctags
   end
 end
 
-local_paths = ['.']
-gem_paths = Array(`bundle list --paths`.split("\n"))
+def gem_paths
+  ((File.exist?('Gemfile') && `bundle list --paths`) || '').split("\n")
+end
+
+def local_paths
+  ['.']
+end
 
 Ctags
   .new
