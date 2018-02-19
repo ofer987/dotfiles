@@ -6,5 +6,5 @@ until (line = $stdin.gets.to_s).empty?
   lines << line
 end
 
-selected = ARGV[0].to_i
+selected = ARGV[0].to_i - 1
 puts lines[selected]
