@@ -36,8 +36,6 @@ alias "prs=git pulls | xargs open"
 alias ":q=exit"
 alias ":Q=exit"
 
-# Alias GitHub's hub to git
-# eval (hub alias -s)
 
 set -x RBENV_VERSION "2.4.2"
 
