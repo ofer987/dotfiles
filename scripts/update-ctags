@@ -3,17 +3,33 @@
 
 # Update the projects' ctags file
 class Ctags
-  attr_reader :language
+  attr_reader :selected_languages
 
-  def initialize(language = 'ruby')
-    @language = language.to_s.strip
+  DEFAULT_LANGUAGES = ['ruby']
+
+  def initialize(selected_languages)
+    self.selected_languages = (Array(selected_languages))
+      .map(&:to_s)
+      .map(&:strip)
+      .uniq
   end
 
   def update(paths)
-    paths = Array(paths).map(&:strip).join(' ')
+    paths = Array(paths)
+      .map(&:to_s)
+      .map(&:strip)
+      .join(' ')
 
-    `ctags -R --languages=#{language} --exclude=.git --exclude=log #{paths}`
+    `ctags -R --languages=#{languages} --exclude=.git --exclude=log #{paths}`
   end
+
+  private
+
+  def languages
+    (!selected_languages.empty? && selected_languages) || DEFAULT_LANGUAGES
+  end
+
+  attr_writer :selected_languages
 end
 
 def gem_paths
@@ -25,5 +41,5 @@ def local_paths
 end
 
 Ctags
-  .new
+  .new(ARGV)
   .update(gem_paths + local_paths)
