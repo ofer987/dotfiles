@@ -60,6 +60,8 @@ let g:OmniSharp_selector_ui = 'ctrlp'
 " OmniSharp won't work without this setting
 filetype plugin on
 
+let g:OmniSharp_server_path = 'mono /Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
+
 "This is the default value, setting it isn't actually necessary
 let g:OmniSharp_host = "http://localhost:2000"
 
@@ -90,9 +92,8 @@ set noshowmatch
 set splitbelow
 
 " Get Code Issues and syntax errors
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-" If you are using the omnisharp-roslyn backend, use the following
-" let g:syntastic_cs_checkers = ['code_checker']
+let g:syntastic_cs_checkers = ['code_checker']
+
 augroup omnisharp_commands
   autocmd!
 
@@ -133,11 +134,8 @@ augroup omnisharp_commands
 
 augroup END
 
-
-" this setting controls how long to wait (in ms) before fetching type / symbol information.
-set updatetime=500
 " Remove 'Press Enter to continue' message when type information is longer than one line.
-set cmdheight=1
+autocmd FileType cs set cmdheight=2
 
 " Contextual code actions (requires CtrlP or unite.vim)
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
@@ -166,4 +164,7 @@ nnoremap <leader>sh :OmniSharpHighlightTypes<cr>
 set hidden
 
 " Enable snippet completion, requires completeopt-=preview
+autocmd FileType cs set completeopt-=preview
 let g:OmniSharp_want_snippet=1
+
+let g:OmniSharp_start_without_solution=1
