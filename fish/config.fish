@@ -17,9 +17,14 @@ source "$HOME/.yadr/fish/functions/github.fish"
 # Bin Stubs
 source "$HOME/.yadr/fish/functions/bin_stubs.fish"
 
+# Edit command buffer
+source "$HOME/.yadr/fish/functions/command_buffer.fish"
+
 set -x EDITOR nvim
 
 fish_vi_key_bindings
+
+bind --mode default \ce edit_command_buffer
 
 set -x GOPATH ~/go
 # set -x YARN_BIN (yarn global bin)
