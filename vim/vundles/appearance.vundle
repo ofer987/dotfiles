@@ -1,10 +1,1 @@
-" Plugin 'chrisbra/color_highlight.git'
-" Plugin 'NewProggie/NewProggie-Color-Scheme'
-" Plugin 'jdkanani/vim-material-theme'
 Plugin 'itchyny/lightline.vim'
-Plugin 'lifepillar/vim-solarized8'
-" Plugin 'jby/tmux.vim.git'
-" Plugin 'arakashic/nvim-colors-solarized'
-
-" Required for Gblame in terminal vim
-" Plugin 'godlygeek/csapprox.git'

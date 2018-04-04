@@ -50,8 +50,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 noremap <Leader>k :let @* = @%<CR>
 
-colorscheme solarized8_dark
-
 autocmd FileType cs set shiftwidth=4
 
 let g:OmniSharp_server_type = 'roslyn'
