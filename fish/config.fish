@@ -24,11 +24,13 @@ set -x EDITOR nvim
 
 fish_vi_key_bindings
 
-bind --mode default \ce edit_command_buffer
+function fish_user_key_bindings
+  bind --mode default \ce edit_command_buffer
+  bind --mode insert \ce edit_command_buffer
+end
 
 set -x GOPATH ~/go
-# set -x YARN_BIN (yarn global bin)
-set -x PATH ~/.rbenv/shims ~/.yadr/scripts $YARN_BIN $PATH $GOPATH/bin
+set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 
 alias "ctop=top -o cpu"
@@ -105,10 +107,6 @@ end
 
 function rdb
   pg_ctl restart
-end
-
-function reload
-  source ~/.config/fish/config.fish
 end
 
 function root
