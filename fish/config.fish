@@ -27,6 +27,7 @@ fish_vi_key_bindings
 function fish_user_key_bindings
   bind --mode default \ce edit_command_buffer
   bind --mode insert \ce edit_command_buffer
+  bind --mode visual \ce edit_command_buffer
 end
 
 set -x GOPATH ~/go
