@@ -58,7 +58,7 @@ let g:OmniSharp_selector_ui = 'ctrlp'
 " OmniSharp won't work without this setting
 filetype plugin on
 
-let g:OmniSharp_server_path = 'mono /Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_path = '/Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
 
 "This is the default value, setting it isn't actually necessary
 let g:OmniSharp_host = "http://localhost:2000"
@@ -166,3 +166,5 @@ autocmd FileType cs set completeopt-=preview
 let g:OmniSharp_want_snippet=1
 
 let g:OmniSharp_start_without_solution=1
+let g:omnisharp_proc_debug=0
+let g:OmniSharp_server_use_mono=1
