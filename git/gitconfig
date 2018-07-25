@@ -27,31 +27,31 @@
   recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   # branch
-  b = branch -v                      # branch (verbose)
-  bname = rev-parse --abbrev-ref HEAD # branch name
+  b = branch -v                           # branch (verbose)
+  bname = rev-parse --abbrev-ref HEAD     # branch name
 
   # commit
-  c = commit -m                     # commit with message
-  ca = commit -am                   # commit all with message
-  ci = commit                       # commit
-  amend = commit --amend            # ammend your last commit
-  ammend = commit --amend           # ammend your last commit
+  c = commit -m                           # commit with message
+  ca = commit -am                         # commit all with message
+  ci = commit                             # commit
+  amend = commit --amend                  # ammend your last commit
+  ammend = commit --amend                 # ammend your last commit
 
   # checkout
-  co = checkout                     # checkout
-  nb = checkout -b                  # create and switch to a new branch (mnemonic: "git new branch branchname...")
+  co = checkout                           # checkout
+  nb = checkout -b                        # create and switch to a new branch (mnemonic: "git new branch branchname...")
 
   # cherry-pick
-  cp = cherry-pick -x               # grab a change from a branch
+  cp = cherry-pick -x                     # grab a change from a branch
 
   # diff
-  d = diff                                # diff unstaged changes
-  dd = diff -w                            # diff without whitespace
-  dc = diff --cached -w                   # diff staged changes
-  cached = diff --cached -w               # diff staged changes
-  last = diff HEAD^                       # diff last committed change
-  dnames = diff --name-only               # list of uncommited changed files
-  names = diff HEAD^..HEAD --name-only    # list of uncommited changed files
+  d = diff                                            # diff unstaged changes
+  dd = diff -w                                        # diff without whitespace
+  dc = diff --cached -w                               # diff staged changes
+  cached = diff --cached -w                           # diff staged changes
+  last = diff HEAD^                                   # diff last committed change
+  dnames = !git diff --name-only | uniq               # list of uncommited changed files
+  names = !git diff HEAD^..HEAD --name-only | uniq    # list of uncommited changed files
 
   # log
   l = log --graph --date=short
