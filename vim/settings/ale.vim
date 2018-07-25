@@ -1,3 +1,4 @@
+let g:ale_enabled = 0
 let g:ale_emit_conflict_warnings = 0
 
 
