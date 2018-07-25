@@ -138,4 +138,4 @@ if filereadable(expand('~/.config/nvim/local.vim'))
 endif
 
 set termguicolors
-colorscheme default
+colorscheme dracula

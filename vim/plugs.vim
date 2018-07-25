@@ -12,6 +12,7 @@ if has('nvim')
   Plug 'zchee/deoplete-go', { 'do': 'make'}
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'pbogut/deoplete-elm'
+  Plug 'dracula/vim', { 'as': 'dracula' }
 endif
 
 
