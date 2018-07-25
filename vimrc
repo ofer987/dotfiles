@@ -136,3 +136,6 @@ so ~/.yadr/vim/settings.vim
 if filereadable(expand('~/.config/nvim/local.vim'))
   so ~/.config/nvim/local.vim
 endif
+
+set termguicolors
+colorscheme default
