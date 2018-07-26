@@ -36,6 +36,7 @@ end
 set -x GOPATH ~/go
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
+set -x DOTNET_CLI_TELEMETRY_OPTOUT true
 
 alias "ctop=top -o cpu"
 
