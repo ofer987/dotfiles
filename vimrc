@@ -138,4 +138,5 @@ if filereadable(expand('~/.config/nvim/local.vim'))
 endif
 
 set termguicolors
+let g:dracula_colorterm = 0
 colorscheme dracula
