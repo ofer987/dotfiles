@@ -50,13 +50,15 @@ autocmd FileType elixir map <leader>jv :CtrlP web/views<CR>
 autocmd FileType elixir map <leader>jt :CtrlP web/templates<CR>
 
 map <leader>jl :CtrlP lib<CR>
+map <leader>jL :CtrlP app/lib<CR>
 map <leader>jp :CtrlP public<CR>
 map <leader>jst :CtrlP spec<CR>
+map <leader>jsL :CtrlP spec/lib<CR>
 map <leader>jf :CtrlP fast_spec<CR>
 map <leader>jd :CtrlP db<CR>
 map <leader>jC :CtrlP config<CR>
 map <leader>jV :CtrlP vendor<CR>
-map <leader>jF :CtrlP factories<CR>
+map <leader>jF :CtrlP spec/factories<CR>
 map <leader>jT :CtrlP test<CR>
 
 "Cmd-Shift-(M)ethod - jump to a method (tag in current file)
