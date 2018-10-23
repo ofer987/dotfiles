@@ -9,7 +9,7 @@ call plug#begin('~/.yadr/vim/plugged')
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-go', { 'do': 'make'}
+  Plug 'zchee/deoplete-go', { 'do': 'make' }
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'pbogut/deoplete-elm'
   Plug 'dracula/vim', { 'as': 'dracula' }
