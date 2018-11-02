@@ -14,6 +14,7 @@ if has('nvim')
   Plug 'pbogut/deoplete-elm'
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'wannesm/wmgraphviz.vim'
+  Plug 'ap/vim-css-color'
 endif
 
 
