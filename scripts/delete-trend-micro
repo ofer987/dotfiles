@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pkill -f Trend;
+
+rm -rf /System/Library/TrendMicro
+rm -rf /Library/StartupItems/iCoreService;
+rm -rf /Applications/MainUI.app;
+rm -rf /Library/Application\ Support/TrendMicro;
+rm -rf /Library/Frameworks/TMAppCommon.framework;
+rm -rf /Library/Frameworks/TMAppCore.framework;
+rm -rf /Library/Frameworks/TMGUIUtil.framework;
+rm -rf /Library/Frameworks/iCoreClient.framework;
+rm -rf /Library/Preferences/TMCNTMgmt.plist;
