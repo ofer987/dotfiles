@@ -168,3 +168,7 @@ let g:OmniSharp_want_snippet=1
 let g:OmniSharp_start_without_solution=1
 let g:omnisharp_proc_debug=0
 let g:OmniSharp_server_use_mono=1
+
+" Java
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
