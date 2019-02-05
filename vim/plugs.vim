@@ -15,6 +15,7 @@ if has('nvim')
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'wannesm/wmgraphviz.vim'
   Plug 'ap/vim-css-color'
+  Plug 'airblade/vim-rooter'
 endif
 
 
