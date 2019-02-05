@@ -104,6 +104,8 @@
   # better blaming
   condemn = blame
   recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+  open-url = !git url | xargs open
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]
