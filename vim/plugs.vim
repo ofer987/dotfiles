@@ -17,6 +17,7 @@ if has('nvim')
   Plug 'ap/vim-css-color'
   Plug 'artur-shaik/vim-javacomplete2'
   Plug 'airblade/vim-rooter'
+  Plug 'chr4/nginx.vim'
 endif
 
 
