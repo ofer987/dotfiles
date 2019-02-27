@@ -38,7 +38,7 @@ if has('nvim')
 end
 
 " vim-go already provides syntax checking
-let g:syntastic_ignore_files = ['\.go$']
+" let g:syntastic_ignore_files = ['\.go$']
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -52,16 +52,16 @@ noremap <Leader>k :let @* = @%<CR>
 
 autocmd FileType cs set shiftwidth=4
 
-let g:OmniSharp_server_type = 'roslyn'
+" let g:OmniSharp_server_type = 'roslyn'
 let g:OmniSharp_selector_ui = 'ctrlp'
 
 " OmniSharp won't work without this setting
 filetype plugin on
 
-let g:OmniSharp_server_path = '/Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
+" let g:OmniSharp_server_path = '/Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
 
 "This is the default value, setting it isn't actually necessary
-let g:OmniSharp_host = "http://localhost:2000"
+" let g:OmniSharp_port = 2000
 
 "Set the type lookup function to use the preview window instead of the status line
 "let g:OmniSharp_typeLookupInPreview = 1
@@ -89,24 +89,22 @@ set noshowmatch
 "You might also want to look at the echodoc plugin
 set splitbelow
 
+set previewheight=5
+
 " Get Code Issues and syntax errors
-let g:syntastic_cs_checkers = ['code_checker']
+" let g:syntastic_cs_checkers = ['code_checker']
+let g:ale_linters = {
+  \ 'cs': ['OmniSharp']
+\}
+
+" Fetch semantic type/interface/identifier names on BufEnter and highlight them
+let g:OmniSharp_highlight_types = 1
 
 augroup omnisharp_commands
   autocmd!
 
   "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
   autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-
-  " Synchronous build (blocks Vim)
-  "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
-  " Builds can also run asynchronously with vim-dispatch installed
-  autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-  " automatic syntax check on events (TextChanged requires Vim 7.4)
-  autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-  " Automatically add new cs files to the nearest project on save
-  autocmd BufWritePost *.cs call OmniSharp#AddToProject()
 
   "show type information automatically when the cursor stops moving
   autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
@@ -126,9 +124,9 @@ augroup omnisharp_commands
   autocmd FileType cs nnoremap <leader>ot :OmniSharpTypeLookup<cr>
   autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
   "navigate up by method/property/field
-  autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
+  autocmd FileType cs nnoremap <C-k> :OmniSharpNavigateUp<cr>
   "navigate down by method/property/field
-  autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
+  autocmd FileType cs nnoremap <C-j> :OmniSharpNavigateDown<cr>
 
 augroup END
 
