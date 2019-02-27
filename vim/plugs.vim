@@ -13,6 +13,7 @@ if has('nvim')
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'pbogut/deoplete-elm'
   Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'chr4/nginx.vim'
 endif
 
 
