@@ -20,7 +20,7 @@ class Ctags
       .map(&:strip)
       .join(' ')
 
-    `ctags -R --languages=#{languages} --exclude=.git --exclude=log #{paths}`
+    `ctags -R --languages="#{languages.join(' ')}" --exclude=.git --exclude=log #{paths}`
   end
 
   private
