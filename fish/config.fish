@@ -56,6 +56,7 @@ alias view=nvim
 alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
+alias rc='doctl compute droplet list'
 
 # alias cat='ccat'
 # alias less='lless'
