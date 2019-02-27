@@ -33,6 +33,8 @@ function fish_user_key_bindings
   bind --erase --mode visual \cl
 end
 
+set -x NVM_DIR ~/.nvm
+
 set -x GOPATH ~/go
 set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
