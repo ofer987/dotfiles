@@ -22,13 +22,24 @@ def read_documentation(dependencies, version = DEFAULT_VERSION)
     .flat_map { |content| JSON.parse content }
 end
 
+def read_all_documentation(version = DEFAULT_VERSION)
+  elm_version = version.to_s.strip
+
+  path = File.join(ENV['HOME'], '.elm', elm_version, 'package', '**',  'documentation.json')
+
+  Dir[path]
+    .map { |path| File.read path }
+    .flat_map { |content| JSON.parse content }
+end
+
 function = ARGV[-1].to_s.strip
 modul = ARGV[-2].to_s.strip
 
-# version = ARGV[0] || DEFAULT_VERSION
-
-dependencies = read_packages
-json = read_documentation(dependencies)
+json =  if File.exist?('./elm.json')
+          read_documentation(read_packages)
+        else
+          read_all_documentation
+        end
 
 if !modul.empty?
   json = json
