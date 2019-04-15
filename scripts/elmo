@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'json'
+require 'pry-byebug'
+
+DEFAULT_VERSION = '0.19.0'
+
+def read_packages
+  json = JSON.parse File.read('./elm.json')
+
+ (json['dependencies']['direct'] || {}).merge( json['dependencies']['indirect'] || {} )
+end
+
+def read_documentation(dependencies, version = DEFAULT_VERSION)
+  elm_version = version.to_s.strip
+
+  Array(dependencies)
+    .map { |dep, version| File.join(ENV['HOME'], '.elm', elm_version, 'package', dep, version,  'documentation.json') }
+    .select { |path| File.exist? path }
+    .map { |path| File.read path }
+    .flat_map { |content| JSON.parse content }
+end
+
+function = ARGV[-1].to_s.strip
+modul = ARGV[-2].to_s.strip
+
+# version = ARGV[0] || DEFAULT_VERSION
+
+dependencies = read_packages
+json = read_documentation(dependencies)
+
+if !modul.empty?
+  json = json
+    .select { |item| item['name'] == modul }
+end
+
+functions = json
+  .flat_map { |item| item['values'] }
+  .select { |value| value['name'] == function }
+
+puts functions
