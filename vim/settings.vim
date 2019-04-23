@@ -106,9 +106,6 @@ augroup omnisharp_commands
   "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
   autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
-  "show type information automatically when the cursor stops moving
-  autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
   "The following commands are contextual, based on the current cursor position.
 
   autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
@@ -165,8 +162,10 @@ let g:OmniSharp_want_snippet=1
 
 let g:OmniSharp_start_without_solution=1
 let g:omnisharp_proc_debug=0
-let g:OmniSharp_server_use_mono=1
+let g:OmniSharp_server_use_mono=0
 
 " Java
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
+
+autocmd FileType razor set shiftwidth=2
