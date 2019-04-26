@@ -1,9 +1,6 @@
 " Markdown
-Plugin 'jtratner/vim-flavored-markdown.git'
-Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'skwp/vim-html-escape'
 
 " Fish
 Plugin 'dag/vim-fish'
