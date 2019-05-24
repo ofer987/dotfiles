@@ -106,7 +106,9 @@
   recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 
   url = !git config remote.origin.url | sed -E 's/git@(.*):(.*)\\.git$/https:\\/\\/\\1\\/\\2/'
+  repo = url
   open-url = !git url | xargs open
+  open-repo = !git url | xargs open
 
   open-jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/' | xargs open
 [mergetool]
