@@ -115,6 +115,8 @@
   open-jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/' | xargs open
 
   merge-requests = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_NAME=$(git repo-name) BRANCH=$(git bname) merge-requests
+  open-merge-requests = !open $(git merge-requests)
+  open-mr = !git open-merge-requests
 
   author-branch = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_NAME=$(git repo-name) branch-by-mr-author
 [mergetool]
