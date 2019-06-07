@@ -38,13 +38,22 @@ def merge_request_urls(fqdn, headers, project_id, branch)
     .map { |i| i['web_url'] }
 end
 
+def get_new_merge_request_url(fqdn, _headers, project_group, project_name, project_id, branch)
+  link = "#{fqdn}/#{project_group}/#{project_name}/merge_requests/new?merge_request[source_branch]=#{branch}&merge_request[source_project_id]=#{project_id}&merge_request[target_branch]=sprint-dev&merge_request[target_project_id]=#{project_id}"
+
+  URI(link).to_s
+end
+
 fqdn = ENV['FQDN'].to_s.strip
-repo_name = ENV['REPO_NAME'].to_s.strip
+project_group = ENV['REPO_GROUP'].to_s.strip
+project_name = ENV['REPO_NAME'].to_s.strip
 branch = ENV['BRANCH'].to_s.strip
 access_token = ENV['ACCESS_TOKEN'].to_s.strip
 
 headers = {
   'PRIVATE-TOKEN' => access_token
 }
-id = project_id(fqdn, headers, 'emcm-web')
-puts merge_request_urls(fqdn, headers, id, branch)
+id = project_id(fqdn, headers, project_name)
+
+urls = merge_request_urls(fqdn, headers, id, branch)
+puts !urls.empty? ? urls : [get_new_merge_request_url(fqdn, headers, project_group, project_name, id, branch)]
