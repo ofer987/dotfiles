@@ -113,13 +113,17 @@
   open-url = !git url | xargs open
   open-repo = !git url | xargs open
 
-  open-jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/' | xargs open
+  jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/'
+  open-jira = !git jira | xargs open
 
-  merge-requests = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_GROUP=$(git repo-group) REPO_NAME=$(git repo-name) BRANCH=$(git bname) merge-requests
-  open-merge-requests = !open $(git merge-requests)
-  open-mr = !git open-merge-requests
+  list-merge-requests = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_GROUP=$(git repo-group) REPO_NAME=$(git repo-name) BRANCH=$(git bname) merge-requests
+  show-merge-request = !git list-merge-requests | head -n 1
+  open-merge-request = !git show-merge-request | xargs open
+  open-mr = !git open-merge-request
 
-  author-branch = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_NAME=$(git repo-name) branch-by-mr-author
+  list-author-branches = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_NAME=$(git repo-name) branch-by-mr-author
+  show-author-branch = !sh -c 'git list-author-branches $1 | head -n 1' -
+  checkout-author-branch = !sh -c 'git list-author-branches $1 | head -n 1 | xargs git checkout' -
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]

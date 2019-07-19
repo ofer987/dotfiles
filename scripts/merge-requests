@@ -55,5 +55,11 @@ headers = {
 }
 id = project_id(fqdn, headers, project_name)
 
-urls = merge_request_urls(fqdn, headers, id, branch)
-puts !urls.empty? ? urls : [get_new_merge_request_url(fqdn, headers, project_group, project_name, id, branch)]
+mr_urls = Array(merge_request_urls(fqdn, headers, id, branch))
+urls = if !mr_urls.empty?
+  mr_urls
+else
+  get_new_merge_request_url(fqdn, headers, project_group, project_name, id, branch)
+end
+
+puts urls

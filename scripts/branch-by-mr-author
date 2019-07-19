@@ -4,7 +4,6 @@
 require 'rest-client'
 require 'uri'
 require 'json'
-require 'pry-byebug'
 
 def response(uri, headers)
   response = RestClient.get uri, headers
