@@ -165,3 +165,6 @@
 [user]
   name = Dan Jakob Ofer
   email = dan@ofer.to
+[samigit]
+  fqdn = https://git.sami.int.thomsonreuters.com
+  token = xxxxxxxxxxxxxxxxxxxx
