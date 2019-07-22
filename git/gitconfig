@@ -50,6 +50,7 @@
   dc = diff --cached -w                               # diff staged changes
   cached = diff --cached -w                           # diff staged changes
   last = diff HEAD^                                   # diff last committed change
+  files = !sh -c 'git diff --name-only $1 | uniq' -
   dnames = !git diff --name-only | uniq               # list of uncommited changed files
   names = !git diff HEAD^..HEAD --name-only | uniq    # list of uncommited changed files
 
