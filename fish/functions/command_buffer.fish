@@ -12,7 +12,7 @@ function edit_command_buffer --description 'Edit the command buffer in an extern
     set -l p (commandline -C)
     commandline -b > $f
     if set -q EDITOR
-        eval $EDITOR $f
+        eval $EDITOR $f +\"set ft=fish\"
     else
         vim $f
     end
