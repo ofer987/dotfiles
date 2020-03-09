@@ -55,8 +55,8 @@
   names = !git diff HEAD^..HEAD --name-only | uniq    # list of uncommited changed files
 
   # log
-  l = log --graph --date=local
-  ls = log --graph --stat --date=local
+  l = log --graph
+  ls = log --graph --stat
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
@@ -164,6 +164,8 @@
   path = .gitconfig.user
 [credential]
   helper = osxkeychain
+[log]
+  date = local
 [user]
   name = Dan Jakob Ofer
   email = dan@ofer.to
