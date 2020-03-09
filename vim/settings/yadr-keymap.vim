@@ -152,3 +152,5 @@ map <silent> <leader>hp :!open -a Safari %<CR><CR>
 " :cp)
 nnoremap <silent> <C-x> :cn<CR>
 nnoremap <silent> <C-z> :cp<CR>
+
+nnoremap <silent> <leader>ew :w \| e<CR>

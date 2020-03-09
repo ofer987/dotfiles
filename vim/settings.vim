@@ -23,7 +23,7 @@ set listchars+=trail:·
 set listchars+=extends:»,precedes:«
 
 " case-insensitive
-command W w
+command W :w|e
 command Q q
 
 " Toggle NERDTree
