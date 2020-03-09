@@ -18,6 +18,7 @@ if has('nvim')
   Plug 'airblade/vim-rooter'
   Plug 'chr4/nginx.vim'
   Plug 'adamclerk/vim-razor'
+  Plug 'groenewege/vim-less'
 endif
 
 
