@@ -1,0 +1,1 @@
+- Run `:OmniSharpInstall` in **vim** according to https://github.com/OmniSharp/Omnisharp-vim#server
