@@ -1,4 +1,4 @@
-# How to Install OmniSharp server and Vim Plugin
+# How to Install OmniSharp Server and Vim Plugin
 
 ## Required
 
@@ -8,6 +8,7 @@
 
 - Move `~/.omnisharp` to `/.yadr/vim/omnisharp/<major.minor.patch>`
 - Symlink `~/.yadr/vim/omnisharp/<major.minor.patch>` back to `~/.omnisharp`, e.g., 
+
   ```bash
   ln -s ~/.yadr/omnisharp/1.35.3 ~/.omnisharp
   ```
