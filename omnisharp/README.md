@@ -1,4 +1,4 @@
-# How to instal OmniSharp server and vim Plugin
+# How to Install OmniSharp server and Vim Plugin
 
 ## Required
 
