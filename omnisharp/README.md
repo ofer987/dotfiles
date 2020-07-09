@@ -8,7 +8,6 @@
 
 - Move `~/.omnisharp` to `/.yadr/vim/omnisharp/<major.minor.patch>`
 - Symlink `~/.yadr/vim/omnisharp/<major.minor.patch>` back to `~/.omnisharp`, e.g., 
-
   ```bash
   ln -s ~/.yadr/omnisharp/1.35.3 ~/.omnisharp
   ```
