@@ -19,6 +19,7 @@ if has('nvim')
   Plug 'chr4/nginx.vim'
   Plug 'adamclerk/vim-razor'
   Plug 'groenewege/vim-less'
+  Plug 'christoomey/vim-tmux-navigator'
 endif
 
 
