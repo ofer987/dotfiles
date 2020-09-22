@@ -12,6 +12,7 @@ let g:OmniSharp_server_stdio = 1
 " and 'popuphidden' if you don't want to see any documentation whatsoever.
 " Note that neovim does not support `popuphidden` or `popup` yet:
 " https://github.com/neovim/neovim/issues/10996
+let g:OmniSharp_popup = 1
 if has('patch-8.1.1880')
   set completeopt=longest,menuone,popuphidden
   " Highlight the completion documentation popup background/foreground the same as
