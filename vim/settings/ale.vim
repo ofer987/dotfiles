@@ -11,4 +11,4 @@ nnoremap <leader>ad :ALEDetail<CR>
 nnoremap <C-n> :ALENextWrap<CR>
 nnoremap <C-p> :ALEPreviousWrap<CR>
 
-let b:ale_linters = {'markdown': ['writegood']}
+let g:ale_linters = {'markdown': ['writegood'], 'cs': ['OmniSharp']}

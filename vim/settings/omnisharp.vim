@@ -1,11 +1,31 @@
-let g:OmniSharp_want_snippet=1
+" let g:OmniSharp_want_snippet=1
+"
+" let g:OmniSharp_start_without_solution=1
+" let g:omnisharp_proc_debug=0
+" let g:OmniSharp_server_use_mono=0
 
-let g:OmniSharp_start_without_solution=1
-let g:omnisharp_proc_debug=0
-let g:OmniSharp_server_use_mono=0
+" Use the stdio version of OmniSharp-roslyn - this is the default
+let g:OmniSharp_server_stdio = 1
+
+" Don't autoselect first omnicomplete option, show options even if there is only
+" one (so the preview documentation is accessible). Remove 'preview', 'popup'
+" and 'popuphidden' if you don't want to see any documentation whatsoever.
+" Note that neovim does not support `popuphidden` or `popup` yet:
+" https://github.com/neovim/neovim/issues/10996
+if has('patch-8.1.1880')
+  set completeopt=longest,menuone,popuphidden
+  " Highlight the completion documentation popup background/foreground the same as
+  " the completion menu itself, for better readability with highlighted
+  " documentation.
+  set completepopup=highlight:Pmenu,border:off
+else
+  set completeopt=longest,menuone,preview
+  " Set desired preview window height for viewing documentation.
+  set previewheight=5
+endif
 
 " let g:OmniSharp_server_type = 'roslyn'
-let g:OmniSharp_selector_ui = 'ctrlp'
+" let g:OmniSharp_selector_ui = 'ctrlp'
 
 " let g:OmniSharp_server_path = '/Users/ofer987/.yadr/vim/omnisharp-roslyn/omnisharp/OmniSharp.exe'
 
@@ -68,9 +88,9 @@ augroup omnisharp_commands
   autocmd FileType cs nnoremap <leader>ot :OmniSharpTypeLookup<cr>
   autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
   "navigate up by method/property/field
-  autocmd FileType cs nnoremap <C-k> :OmniSharpNavigateUp<cr>
+  autocmd FileType cs nnoremap <C-w>k :OmniSharpNavigateUp<cr>
   "navigate down by method/property/field
-  autocmd FileType cs nnoremap <C-j> :OmniSharpNavigateDown<cr>
+  autocmd FileType cs nnoremap <C-w>j :OmniSharpNavigateDown<cr>
 
 augroup END
 
@@ -104,6 +124,6 @@ autocmd FileType cs nnoremap <leader>sp :OmniSharpStopServer<cr>
 autocmd FileType cs nnoremap <leader>sh :OmniSharpHighlightTypes<cr>
 
 " Enable snippet completion, requires completeopt-=preview
-autocmd FileType cs autocmd FileType cs set completeopt-=preview
+" autocmd FileType cs autocmd FileType cs set completeopt-=preview
 
 call deoplete#custom#source('omnisharp', 'max_info_width', 0)
