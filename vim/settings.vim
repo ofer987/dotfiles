@@ -38,6 +38,7 @@ if has('nvim')
 end
 
 noremap <Leader>k :let @* = @%<CR>
+noremap <leader>l :echo @%<CR>
 
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
