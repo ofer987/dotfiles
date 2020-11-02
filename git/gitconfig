@@ -121,7 +121,9 @@
   jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/'
   open-jira = !git jira | xargs open
 
-  list-merge-requests = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_GROUP=$(git repo-group) REPO_NAME=$(git repo-name) BRANCH=$(git bname) merge-requests
+  # project-id = git
+
+  list-merge-requests = !FQDN=$(git config --get samigit.fqdn) ACCESS_TOKEN=$(git config --get samigit.token) REPO_GROUP=$(git repo-group) REPO_NAME=$(git repo-name) BRANCH=$(git bname) PROJECT_ID=$(git config --get samigit.project-id) TARGET_BRANCH=$(git config --get samigit.target-branch) merge-requests
   show-merge-request = !git list-merge-requests | head -n 1
   open-merge-request = !git show-merge-request | xargs open
   open-mr = !git open-merge-request
