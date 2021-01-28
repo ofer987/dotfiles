@@ -68,7 +68,7 @@ alias rc='doctl compute droplet list'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
-alias python=python2
+alias python=python3
 
 status --is-interactive; and source (rbenv init -|psub)
 
