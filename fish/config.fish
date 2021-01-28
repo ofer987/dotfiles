@@ -22,6 +22,9 @@ source "$HOME/.yadr/fish/functions/command_buffer.fish"
 
 set -x EDITOR nvim
 
+# Remove the "Welcome to fish" greeting message
+set fish_greeting
+
 fish_vi_key_bindings
 
 function fish_user_key_bindings
