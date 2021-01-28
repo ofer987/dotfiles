@@ -49,3 +49,6 @@ set hidden
 noremap <leader>qn :cn<CR>
 noremap <leader>qp :cp<CR>
 
+" Select the whole line (without newline)
+nnoremap <leader>vg ^vg_
+
