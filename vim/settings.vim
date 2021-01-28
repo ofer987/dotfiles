@@ -46,9 +46,14 @@ noremap <leader>l2 :echo getcwd() . '/' . @%<CR>
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
 
+" Scroll between errors
 noremap <leader>qn :cn<CR>
 noremap <leader>qp :cp<CR>
 
 " Select the whole line (without newline)
 nnoremap <leader>vg ^vg_
+
+" Paste content while remembering what was just pasted
+vmap p pgvy
+vmap P Pgvy
 
