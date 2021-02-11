@@ -20,6 +20,10 @@ source "$HOME/.yadr/fish/functions/bin_stubs.fish"
 # Edit command buffer
 source "$HOME/.yadr/fish/functions/command_buffer.fish"
 
+if [ -e "$HOME/.yadr/fish/config.personal.fish" ]
+  source "$HOME/.yadr/fish/config.personal.fish"
+end
+
 set -x EDITOR nvim
 
 # Remove the "Welcome to fish" greeting message

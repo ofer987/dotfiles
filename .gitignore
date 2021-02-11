@@ -19,4 +19,6 @@ tags
 fish/fishd.*
 fish/conf.d/**/*
 fish/functions/__*
+fish/config.personal.fish
+
 vim/*.log
