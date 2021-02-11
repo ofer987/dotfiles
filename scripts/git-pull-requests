@@ -5,7 +5,7 @@ def pull_requests_url
   `git config remote.origin.url`
     .strip
     .gsub(/^git@/, 'https://')
-    .gsub(%r{\.com:(.*)\/(.*)\.git$}, '.com/\1/\2/pulls')
+    .gsub(%r{\.com(?:\/|:)(.*)\/(.*)\.git$}, '.com/\1/\2/pulls')
 end
 
 puts pull_requests_url
