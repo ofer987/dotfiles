@@ -118,8 +118,8 @@
   open-pipelines = !git pipelines | xargs open
   open-repo = !git url | xargs open
 
-  jira = !git rev-parse --abbrev-ref HEAD | sed -E 's/.*(TREWP-[0-9]+).*/http:\\/\\/ent.jira.int.thomsonreuters.com\\/browse\\/\\1/'
-  open-jira = !git jira | xargs open
+  open-jira-issue = !git jira-issue | xargs open
+  open-jira = !git jira-issue | xargs open
 
   # project-id = git
 
