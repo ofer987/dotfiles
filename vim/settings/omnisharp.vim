@@ -88,17 +88,16 @@ augroup omnisharp_commands
   autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
   autocmd FileType cs nnoremap <leader>ot :OmniSharpTypeLookup<cr>
   autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
-  "navigate up by method/property/field
-  autocmd FileType cs nnoremap <C-w>k :OmniSharpNavigateUp<cr>
-  "navigate down by method/property/field
-  autocmd FileType cs nnoremap <C-w>j :OmniSharpNavigateDown<cr>
+
+  " navigate up by method/property/field
+  autocmd FileType cs nnoremap [[ :OmniSharpNavigateUp<cr>
+
+  " navigate down by method/property/field
+  autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
 
 augroup END
 
 autocmd FileType cs set shiftwidth=4
-
-" Remove 'Press Enter to continue' message when type information is longer than one line.
-autocmd FileType cs set cmdheight=2
 
 " Contextual code actions (requires CtrlP or unite.vim)
 autocmd FileType cs nnoremap <leader><space> :OmniSharpGetCodeActions<cr>

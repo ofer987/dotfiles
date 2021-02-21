@@ -3,24 +3,24 @@
 " ========================================
 "
 " Filetype off is required by plug
+" NOTE: Installation instructions can be found at
+" https://github.com/junegunn/vim-plug
+" NOTE: Only works on Neovim as of November 2020
 filetype off
 
 call plug#begin('~/.yadr/vim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-go', { 'do': 'make' }
-  Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-  Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'wannesm/wmgraphviz.vim'
-  Plug 'ap/vim-css-color'
-  Plug 'artur-shaik/vim-javacomplete2'
-  Plug 'airblade/vim-rooter'
-  Plug 'chr4/nginx.vim'
-  Plug 'adamclerk/vim-razor'
-  Plug 'groenewege/vim-less'
-  Plug 'christoomey/vim-tmux-navigator'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'wannesm/wmgraphviz.vim'
+Plug 'ap/vim-css-color'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'airblade/vim-rooter'
+Plug 'chr4/nginx.vim'
+Plug 'adamclerk/vim-razor'
+Plug 'groenewege/vim-less'
 
 
 call plug#end()

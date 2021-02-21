@@ -43,8 +43,13 @@ if filereadable(expand('~/.vim/vundles.vim'))
 endif
 
 " This loads all the plugs specified in ~/.vim/plugs.vim
-if filereadable(expand('~/.vim/plugs.vim'))
+if has('nvim') && filereadable(expand('~/.vim/plugs.vim'))
   source ~/.vim/plugs.vim
+endif
+
+" This loads all the plugs specified in ~/.vim/dein.vim
+if filereadable(expand('~/.vim/dein/bundles.vim'))
+  source ~/.vim/dein/bundles.vim
 endif
 
 " Same thing for bundles installed manually with Pathogen

@@ -72,7 +72,16 @@ alias rc='doctl compute droplet list'
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
+# Python
 alias python=python3
+
+# dotnet core
+alias dr='dotnet run'
+alias db='dotnet build'
+alias dt='dotnet test'
+
+# less
+alias il='less -i'
 
 status --is-interactive; and source (rbenv init -|psub)
 
