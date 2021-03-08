@@ -45,3 +45,9 @@ Session.vim
 .sass-cache
 
 .java-version
+
+# Output directory for Java projects
+out
+
+# Machine-dependent files for IntelliJ IDEA
+.idea
