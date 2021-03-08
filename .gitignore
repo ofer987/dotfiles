@@ -22,3 +22,5 @@ fish/functions/__*
 fish/config.personal.fish
 
 vim/*.log
+
+IntelliJIdea2018.3
