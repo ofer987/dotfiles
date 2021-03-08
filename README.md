@@ -7,3 +7,7 @@
 
     # Yet Another Dotfile Repo
     # Inspired by https://github.com/skwp/dotfiles
+
+# Dein
+
+`sh ~/vim/dein/installer.sh ~/vim/dein`

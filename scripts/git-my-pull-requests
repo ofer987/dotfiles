@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def username
+  `git config user.username`.strip
+end
+
+def my_pull_requests_url
+  `git config remote.origin.url`
+    .strip
+    .gsub(/^git@/, 'https://')
+    .gsub(%r{\.com(?:\/|:)(.*)\/(.*)\.git$}, ".com/\\1/\\2/pulls/#{username}")
+end
+
+puts my_pull_requests_url
