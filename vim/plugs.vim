@@ -10,8 +10,6 @@ filetype off
 
 call plug#begin('~/.yadr/vim/plugged')
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
@@ -20,14 +18,12 @@ Plug 'airblade/vim-rooter'
 Plug 'chr4/nginx.vim'
 Plug 'adamclerk/vim-razor'
 Plug 'groenewege/vim-less'
-
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'yami-beta/asyncomplete-omni.vim'
 
 call plug#end()
 
-"Filetype plugin indent on is required by plug
-filetype plugin indent on
-
 let vimsettings = '~/.vim/plug_settings'
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
-  " exe 'source' fpath
+  exe 'source' fpath
 endfor

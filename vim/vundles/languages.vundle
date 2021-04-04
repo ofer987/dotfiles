@@ -19,11 +19,10 @@ Plugin 'mxw/vim-jsx'
 Plugin 'ianks/vim-tsx'
 
 " Linter
-Plugin 'w0rp/ale'
-
 " Snippets
 Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate.git'
+Plugin 'dense-analysis/ale'
 
 " PowerShell
 Plugin 'PProvost/vim-ps1'
