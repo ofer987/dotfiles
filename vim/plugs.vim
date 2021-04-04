@@ -14,7 +14,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'wannesm/wmgraphviz.vim'
 Plug 'ap/vim-css-color'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'airblade/vim-rooter'
