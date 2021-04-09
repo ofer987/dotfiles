@@ -111,7 +111,6 @@
   repo-group = !git config remote.origin.url | sed -E 's/git@.*:(.*)\\/.*\\.git$/\\1/'
   repo-name = !git config remote.origin.url | sed -E 's/git@.*:.*\\/(.*)\\.git$/\\1/'
 
-  url = !git config remote.origin.url | sed -E 's/git@(.*):(.*)\\.git$/https:\\/\\/\\1\\/\\2/'
   pipelines = !git config remote.origin.url | sed -E 's/git@(.*):(.*)\\.git$/https:\\/\\/\\1\\/\\2\\/pipelines/'
   repo = url
   copy-url = !git url | pbcopy | tr -d '\n'

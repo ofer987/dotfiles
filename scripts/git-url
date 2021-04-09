@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def url
+  `git config remote.origin.url`
+    .strip
+    .gsub(/^git@/, 'https://')
+    .gsub(%r{\.com(?:\/|:)(.*)\/(.*)\.git$}, '.com/\1/\2')
+end
+
+puts url
