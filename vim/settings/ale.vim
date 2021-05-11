@@ -7,6 +7,7 @@ nnoremap <leader>ep :ALEPreviousWrap<CR>
 nnoremap <leader>an :ALENextWrap<CR>
 nnoremap <leader>ap :ALEPreviousWrap<CR>
 nnoremap <leader>ad :ALEDetail<CR>
+nnoremap <leader>ao :pclose<CR>
 
 nnoremap <C-n> :ALENextWrap<CR>
 nnoremap <C-p> :ALEPreviousWrap<CR>
