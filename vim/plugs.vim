@@ -20,6 +20,7 @@ Plug 'adamclerk/vim-razor'
 Plug 'groenewege/vim-less'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
