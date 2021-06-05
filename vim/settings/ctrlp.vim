@@ -16,8 +16,6 @@ endif
 
 let g:ctrlp_show_hidden = 1
 
-let g:ctrlp_map = '<C-p>'
-
 " Default to filename searches - so that appctrl will find application
 " controller
 let g:ctrlp_by_filename = 1
@@ -27,6 +25,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_switch_buffer = 0
 
 nnoremap <silent> <leader>t :CtrlP ./<CR>
+let g:ctrlp_map = ''
 
 " Additional mapping for buffer search
 nnoremap <silent> <leader>b :CtrlPBuffer<cr>
