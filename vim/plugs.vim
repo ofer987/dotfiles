@@ -21,6 +21,7 @@ Plug 'groenewege/vim-less'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
 Plug 'mattn/emmet-vim'
+Plug 'arthurxavierx/vim-caser'
 
 call plug#end()
 
