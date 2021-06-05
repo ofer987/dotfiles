@@ -24,6 +24,11 @@ Plugin 'dense-analysis/ale'
 " PowerShell
 Plugin 'PProvost/vim-ps1'
 
+" Snippets
+Plugin 'SirVer/ultisnips'
+
+" Vim snippets (includes Ruby snippets)
+Plugin 'honza/vim-snippets'
+
 " .NET Framework / Core
 Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'SirVer/ultisnips'
