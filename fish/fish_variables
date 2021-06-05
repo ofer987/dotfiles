@@ -3,6 +3,9 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_initialized:3100
+SETUVAR _hydro_git_33432:master\u2022\x20
+SETUVAR _hydro_git_48838:master\u2022\x20
+SETUVAR _hydro_git_63342:master\u2022\x20
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:5f87ff
@@ -33,4 +36,4 @@ SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
 SETUVAR fish_pager_color_progress:cyan
 SETUVAR fisher_active_prompt:coffeeandcode
-SETUVAR fisher_dependency_count:coffeeandcode\x1essh\x2dagent
+SETUVAR fisher_dependency_count:ssh\x2dagent\x1ecoffeeandcode\x1ecoffeeandcode
