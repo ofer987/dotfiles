@@ -32,7 +32,6 @@ endif
 " let g:omnicomplete_fetch_full_documentation=1
 
 " Get Code Issues and syntax errors
-" let g:syntastic_cs_checkers = ['code_checker']
 let g:ale_linters = {
       \ 'cs': ['OmniSharp']
       \}
