@@ -31,11 +31,6 @@ endif
 " you need it with the :OmniSharpDocumentation command.
 " let g:omnicomplete_fetch_full_documentation=1
 
-" Get Code Issues and syntax errors
-let g:ale_linters = {
-      \ 'cs': ['OmniSharp']
-      \}
-
 " Fetch semantic type/interface/identifier names on BufEnter and highlight them
 let g:OmniSharp_highlight_types = 1
 autocmd FileType cs set shiftwidth=4
