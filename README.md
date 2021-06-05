@@ -13,5 +13,6 @@
 1. `ln -s ~/.yadr/rubocop ~/.config/rubocop;`
 1. `ln -s ~/.yadr/karabiner ~/.config/karabiner;`
 1. `fisher install;`
+1. `gem install rubocop;`
 
 TODO: Consider moving the entire ~/.config directory into ~/.yadr and then adding a .gitignore file within it to preclude machine-dependent files
