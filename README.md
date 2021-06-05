@@ -9,7 +9,6 @@
 1. `nvim +PluginClean +PluginInstall +PluginUpdate;`
 1. `nvim +OmniSharpInstall;`
 1. `mkdir -p ~/.config;`
-1. `ln -s ~/.yadr/fisherman ~/.config/fisherman;`
 1. `ln -s ~/.yadr/fish ~/.config/fish;`
 1. `ln -s ~/.yadr/rubocop ~/.config/rubocop;`
 1. `ln -s ~/.yadr/karabiner ~/.config/karabiner;`
