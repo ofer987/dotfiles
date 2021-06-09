@@ -13,7 +13,6 @@ call plug#begin('~/.yadr/vim/plugged')
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'airblade/vim-rooter'
 Plug 'chr4/nginx.vim'
 Plug 'adamclerk/vim-razor'
