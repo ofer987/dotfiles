@@ -18,8 +18,16 @@ Plug 'airblade/vim-rooter'
 Plug 'chr4/nginx.vim'
 Plug 'adamclerk/vim-razor'
 Plug 'groenewege/vim-less'
+" Run these commands as well
+" npm install -g vim-language-server
+" gem install solargraph
+" pip install python-language-server
+" npm install -g typescript typescript-language-server
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'yami-beta/asyncomplete-omni.vim'
+Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'mattn/emmet-vim'
 Plug 'arthurxavierx/vim-caser'
 

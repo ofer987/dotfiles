@@ -14,5 +14,8 @@
 1. `ln -s ~/.yadr/karabiner ~/.config/karabiner;`
 1. `fisher install;`
 1. `gem install rubocop;`
+1. `npm install -g vim-language-server`
+1. `gem install solargraph`
+1. `pip install python-language-server`
 
 TODO: Consider moving the entire ~/.config directory into ~/.yadr and then adding a .gitignore file within it to preclude machine-dependent files
