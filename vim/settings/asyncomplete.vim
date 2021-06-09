@@ -1,3 +1,6 @@
+" Settings
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
 " Python
 if executable('pyls')
   au User lsp_setup call lsp#register_server({
