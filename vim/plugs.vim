@@ -31,8 +31,3 @@ Plug 'mattn/emmet-vim'
 Plug 'arthurxavierx/vim-caser'
 
 call plug#end()
-
-let vimsettings = '~/.vim/plug_settings'
-for fpath in split(globpath(vimsettings, '*.vim'), '\n')
-  exe 'source' fpath
-endfor
