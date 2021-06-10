@@ -7,7 +7,6 @@ Plugin 'dag/vim-fish'
 
 " Go
 Plugin 'fatih/vim-go'
-Plugin 'garyburd/go-explorer'
 
 " JavaScript, etc.
 Plugin 'elmcast/elm-vim'
