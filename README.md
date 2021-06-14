@@ -9,7 +9,7 @@ Fish | `brew install fish;` | https://fishshell.com/
 Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
 Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
 Pry | `gem install pry` | https://github.com/pry/pry
-NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash` | https://github.com/nvm-sh/nvm
+NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash` | https://github.com/nvm-sh/nvm
 
 
 ## Configuration Instructions
