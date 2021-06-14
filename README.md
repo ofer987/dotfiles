@@ -2,14 +2,14 @@
 
 Technology | Install Command | Latest Instructions
 ---------- | --------------- | -------------------
-Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` | https://github.com/Homebrew/brew
+Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew
 Neovim | `brew install neovim;` | https://github.com/neovim/neovim
 Tmux | `brew install tmux;` | 
 Fish | `brew install fish;` | https://fishshell.com/
 Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
 Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
-Pry | `gem install pry` | https://github.com/pry/pry
-NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash` | https://github.com/nvm-sh/nvm
+Pry | `gem install pry;` | https://github.com/pry/pry
+NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash;` | https://github.com/nvm-sh/nvm
 
 
 ## Configuration Instructions
