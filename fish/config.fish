@@ -129,6 +129,10 @@ function af
   '
 end
 
+function nvm
+  bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
+end
+
 function rdb
   pg_ctl restart
 end
