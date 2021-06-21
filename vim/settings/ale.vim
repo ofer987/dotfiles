@@ -1,8 +1,9 @@
 let g:ale_enabled = 1
 let g:ale_emit_conflict_warnings = 0
 
-nnoremap <leader>en :ALENextWrap<CR>
-nnoremap <leader>ep :ALEPreviousWrap<CR>
+nnoremap <leader>afu :ALEFindReferences<CR>
+nnoremap <leader>afd :ALEGoToDefinition<CR>
+nnoremap <leader>aft :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>an :ALENextWrap<CR>
 nnoremap <leader>ad :ALEDetail<CR>
