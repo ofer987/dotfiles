@@ -65,6 +65,13 @@ if executable('vim-language-server')
   augroup END
 endif
 
+" Emmet
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
+      \ 'name': 'emmet',
+      \ 'whitelist': ['html'],
+      \ 'completor': function('asyncomplete#sources#emmet#completor'),
+      \ }))
+
 au User asyncomplete_setup call asyncomplete#ale#register_source({
       \ 'name': 'reason',
       \ 'linter': 'flow',
