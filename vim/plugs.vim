@@ -29,5 +29,6 @@ Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
 Plug 'arthurxavierx/vim-caser'
+Plug 'airblade/vim-rooter'
 
 call plug#end()
