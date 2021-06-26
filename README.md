@@ -2,6 +2,7 @@
 
 Technology | Install Command | Latest Instructions
 ---------- | --------------- | -------------------
+iTerm2 | N/A | https://iterm2.com
 Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew
 Neovim | `brew install neovim;` | https://github.com/neovim/neovim
 Tmux | `brew install tmux;` | 
