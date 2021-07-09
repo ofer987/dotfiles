@@ -132,6 +132,7 @@ end
 function nvm
   bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
 end
+nvm use --silent
 
 function rdb
   pg_ctl restart
