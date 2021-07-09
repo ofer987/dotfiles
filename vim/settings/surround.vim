@@ -6,7 +6,6 @@
 let g:surround_113 = "#{\r}"   " v
 let g:surround_35  = "#{\r}"   " #
 
-" Select text in an ERb file with visual mode and then press s- or s=
-" Or yss- to do entire line.
-let g:surround_45 = "<% \r %>"    " -
-let g:surround_61 = "<%= \r %>"   " =
+" Use b or B to make text bold in markdown
+let g:surround_98 = "**\r**"
+let g:surround_66 = "**\r**"
