@@ -38,6 +38,7 @@ autocmd FileType cs set shiftwidth=4
 augroup omnisharp_commands
   autocmd!
 
+  autocmd FileType cs set omnifunc=
   autocmd FileType cs set cmdheight=2
 
   "The following commands are contextual, based on the current cursor position.
