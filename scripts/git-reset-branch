@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+remote = ARGV[0].to_s.strip
+remote = 'origin' if remote.empty?
+branch_name = ARGV[1].to_s.strip
+branch_name = `git branch-name` if branch_name.empty?
+
+`git reset --hard #{remote}/#{branch_name}`
