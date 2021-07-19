@@ -14,7 +14,6 @@ rm -rf /Library/Preferences/TMCNTMgmt.plist;
 rm -f /Library/LaunchDaemons/com.trendmicro.*;
 rm -f /Library/LaunchAgents/com.trendmicro.TmLoginMgr.plist;
 
-
 # JAMF
 rm -rf /Library/Application\ Support/JAMF/Jamf.app/Contents/MacOS/JamfDaemon.app;
 rm -rf /usr/local/jamf/;
