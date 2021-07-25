@@ -30,5 +30,6 @@ Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
 Plug 'arthurxavierx/vim-caser'
 Plug 'airblade/vim-rooter'
+Plug 'gisphm/vim-gitignore'
 
 call plug#end()
