@@ -116,7 +116,7 @@
 
   pipelines = !git config remote.origin.url | sed -E 's/git@(.*):(.*)\\.git$/https:\\/\\/\\1\\/\\2\\/pipelines/'
   repo = url
-  copy-url = !git url | pbcopy | tr -d '\n'
+  copy-url = !git url | tr -d '\n' | pbcopy
   open-url = !git url | xargs open
   open-pipelines = !git pipelines | xargs open
   open-repo = !git url | xargs open
