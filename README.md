@@ -38,6 +38,8 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `gem install solargraph`
 1. `pip install python-language-server`
 
+Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
+
 ### Tmux
 
 1. `ln -s ~/.yadr/tmux/tmux.conf ~/.tmux.conf;`
