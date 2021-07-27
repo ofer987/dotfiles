@@ -15,6 +15,7 @@
   # add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
+  patch = add --patch               # stage commits chunk by chunk
 
   # files
   untracked = ls-files -o --exclude-standard
