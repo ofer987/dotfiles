@@ -2,22 +2,23 @@
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
+  " set omnifunc=lsp#complete
 
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 
-    " refer to doc to add more commands
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> <leader>gd <plug>(lsp-definition)
+  nmap <buffer> <leader>fi <plug>(lsp-implementation)
+  nmap <buffer> <leader>ft <plug>(lsp-type-definition)
+  nmap <buffer> <leader>fu <plug>(lsp-references)
+  nmap <buffer> <leader>nm <plug>(lsp-rename)
+  nmap <buffer> <leader>[g <plug>(lsp-previous-diagnostic)
+  nmap <buffer> <leader>]g <plug>(lsp-next-diagnostic)
+  nmap <buffer> K <plug>(lsp-hover)
+  nmap <buffer> <leader>K <plug>(lsp-hover)
+
+  let g:lsp_format_sync_timeout = 1000
+  autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 endfunction
 
 " Python
@@ -95,3 +96,9 @@ au User asyncomplete_setup call asyncomplete#ale#register_source({
       \ 'name': 'reason',
       \ 'linter': 'flow',
       \ })
+
+augroup lsp_install
+  au!
+  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
