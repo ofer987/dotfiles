@@ -21,6 +21,8 @@ Plug 'groenewege/vim-less'
 " gem install solargraph
 " pip install python-language-server
 " npm install -g typescript typescript-language-server
+" npm install -g bash-language-server
+" npm install -g vscode-css-languageserver-bin
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'

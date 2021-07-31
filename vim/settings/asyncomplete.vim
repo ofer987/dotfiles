@@ -97,6 +97,25 @@ au User asyncomplete_setup call asyncomplete#ale#register_source({
       \ 'linter': 'flow',
       \ })
 
+if executable('bash-language-server')
+  augroup LspBash
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'bash-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+          \ 'allowlist': ['sh'],
+          \ })
+  augroup END
+endif
+
+if executable('css-languageserver')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'css-languageserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
+        \ 'whitelist': ['css', 'less', 'sass'],
+        \ })
+endif
+
 augroup lsp_install
   au!
   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
