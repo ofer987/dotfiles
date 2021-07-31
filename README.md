@@ -40,6 +40,7 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `npm install -g typescript typescript-language-server`
 1. `npm install -g bash-language-server`
 1. `npm install -g vscode-css-languageserver-bin`
+1. `npm install -g vscode-html-languageserver-bin`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
 

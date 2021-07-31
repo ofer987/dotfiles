@@ -23,6 +23,7 @@ Plug 'groenewege/vim-less'
 " npm install -g typescript typescript-language-server
 " npm install -g bash-language-server
 " npm install -g vscode-css-languageserver-bin
+" npm install -g vscode-html-languageserver-bin
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
