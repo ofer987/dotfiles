@@ -21,7 +21,7 @@ let g:ctrlp_map = ''
 nnoremap <silent> <leader>b :CtrlPBuffer<cr>
 
 " Clear the cache
-nnoremap <leader>cp :ClearCtrlPCache<cr>
+nnoremap <leader>ct :ClearCtrlPCache<cr>
 
 " Idea from : http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " Open CtrlP starting from a particular path, making it much
