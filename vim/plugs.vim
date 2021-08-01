@@ -30,7 +30,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
-Plug 'arthurxavierx/vim-caser'
+Plug 'ofer987/vim-caser'
 Plug 'airblade/vim-rooter'
 Plug 'gisphm/vim-gitignore'
 
