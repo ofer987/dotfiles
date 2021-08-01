@@ -61,3 +61,7 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 ## Future Plans
 
 TODO: Consider moving the entire ~/.config directory into ~/.yadr and then adding a .gitignore file within it to preclude machine-dependent files
+
+## Key Mappings
+
+[Key Mappings](./keymappings.md)
