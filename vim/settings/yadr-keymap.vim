@@ -116,6 +116,9 @@ nnoremap <silent> ss <C-w>s
 nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>
 
+nnoremap <silent> <leader>lf :echo expand("%:~")<CR>
+nnoremap <silent> <leader>ln :echo expand("%:t")<CR>
+
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 

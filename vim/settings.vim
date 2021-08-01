@@ -37,12 +37,6 @@ if has('nvim')
   tnoremap <esc> <c-\><c-n>
 end
 
-" Display and store directories
-noremap <Leader>k1 :let @* = @%<CR>
-noremap <Leader>k2 :let @* = getcwd() . '/' . @%<CR>
-noremap <leader>l1 :echo @%<CR>
-noremap <leader>l2 :echo getcwd() . '/' . @%<CR>
-
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
 
