@@ -33,6 +33,10 @@ nmap <silent> <leader>qo :copen<CR>
 nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
 
+" Create window splits easier. The default
+" map ss to split horizontally
+nnoremap <silent> ss <C-w>s
+
 " ============================
 " Shortcuts for everyday tasks
 " ============================
