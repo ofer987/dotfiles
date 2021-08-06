@@ -46,9 +46,9 @@ Go to definition | `gd` OR `<leader>gd`
 Go to implementation | `<leader>fi`
 Go to type definition | `<leader>ft`
 Rename | `<leader>nm`
-Previous diagnostic | `[g`
-Next diagnostic | `]g`
 Hover (see definition) | `K` OR `<leader>K`
+Previous item in **ALEDetail** | `<C-P>`
+Next item in **ALEDetail** | `<C-N>`
 
 ### Files that support the OmniSharp Server
 

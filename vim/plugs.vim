@@ -26,6 +26,8 @@ Plug 'groenewege/vim-less'
 " npm install -g vscode-html-languageserver-bin
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
+" Show Lsp errors/diagnostics/errors only in ALE
+Plug 'rhysd/vim-lsp-ale'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
