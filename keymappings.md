@@ -55,7 +55,7 @@ Next item in **ALEDetail** | `<C-N>`
 Find usages | `<leader>fu`
 Go to definition | `gd`
 Go to implementations | `<leader>fi`
-Go to type definition | `<leader>ot`
+Go to type definition | `<leader>ft`
 Rename | `<leader>nm`
 Previous diagnostic | `[g`
 Next diagnostic | `]g`

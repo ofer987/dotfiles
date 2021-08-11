@@ -45,7 +45,7 @@ augroup omnisharp_commands
 
   autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
   autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-  autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
+  autocmd FileType cs nnoremap <leader>ot :OmniSharpFindType<cr>
   autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
   autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
   "finds members in the current buffer
@@ -53,7 +53,7 @@ augroup omnisharp_commands
   " cursor can be anywhere on the line containing an issue
   autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
   autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-  autocmd FileType cs nnoremap <leader>ot :OmniSharpTypeLookup<cr>
+  autocmd FileType cs nnoremap <leader>ft :OmniSharpTypeLookup<cr>
   autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
 
   " navigate up by method/property/field
