@@ -37,5 +37,6 @@ Plug 'mattn/emmet-vim'
 Plug 'ofer987/vim-caser'
 Plug 'airblade/vim-rooter'
 Plug 'gisphm/vim-gitignore'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()

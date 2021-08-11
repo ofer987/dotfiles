@@ -1,7 +1,3 @@
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-
 " Fish
 Plugin 'dag/vim-fish'
 
