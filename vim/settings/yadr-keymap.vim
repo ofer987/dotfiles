@@ -34,7 +34,7 @@ nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
 
 " Create window splits easier. The default
-" map ss to split horizontally
+" way is Ctrl-w,s. I remap this to ss
 nnoremap <silent> ss <C-w>s
 
 " ============================
