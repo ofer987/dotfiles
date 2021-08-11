@@ -26,10 +26,12 @@ Plug 'groenewege/vim-less'
 " npm install -g vscode-html-languageserver-bin
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
-" Show Lsp errors/diagnostics/errors only in ALE
+" Use ALE to show Lsp errors/diagnostics/errors
+" In other words, Lsp errors/diagnostics/errors do not show using Lsp
 Plug 'rhysd/vim-lsp-ale'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'andreypopp/asyncomplete-ale.vim'
+Plug 'rhysd/vim-lsp-ale'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ofer987/vim-caser'
