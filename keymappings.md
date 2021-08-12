@@ -11,6 +11,7 @@ Rename window | `<C-A>,` OR `<C-A><C-,>`
 Previous and next session | `<C-A>(` AND `<C-A>)`
 Previous window | `<C-A><C-A>`
 Zoom into pane | `<C-A><C-Z>`
+Kill pane | `<C-A><C-X>`
 
 ## Neovim
 
