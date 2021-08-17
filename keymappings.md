@@ -40,6 +40,10 @@ Turn off British English spell checker | `<leader>sk`
 Previous spelling mistake | `[s`
 Next spelling mistake | `]s`
 Spelling suggestions | `z=`
+Copy filename | `<leader>cn`
+Copy filepath | `<leader>cf`
+Echo filename | `<leader>ln`
+Echo filepath | `<leader>lf`
 
 ### Files that support Language Server Processor
 
