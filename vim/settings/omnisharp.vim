@@ -74,7 +74,7 @@ augroup omnisharp_commands
   autocmd FileType cs command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 
   " Force OmniSharp to reload the solution. Useful when switching branches etc.
-  autocmd FileType cs nnoremap <leader>cf :OmniSharpCodeFormat<cr>
+  autocmd FileType cs nnoremap <leader>c= :OmniSharpCodeFormat<cr>
   " Load the current .cs file to the nearest project
   autocmd FileType cs nnoremap <leader>op :OmniSharpAddToProject<cr>
 

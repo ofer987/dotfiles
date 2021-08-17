@@ -64,3 +64,4 @@ Next diagnostic | `]g`
 Hover (see definition) | `<leader>dc`
 Previous function | `[[`
 Next function | `]]`
+Format the code | `<leader>c=`
