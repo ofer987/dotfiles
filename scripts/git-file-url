@@ -17,7 +17,7 @@ def file_url
   `git config remote.origin.url`
     .strip
     .gsub(/^git@/, 'https://')
-    .gsub(%r{\.com(?:\/|:)(.*)\/(.*)(?:\.git)?$}, ".com/\\1/\\2/blob/#{branch_name}/#{path}")
+    .gsub(%r{\.com(?:/|:)(.*)/(.*)(?:\.git)?$}, ".com/\\1/\\2/blob/#{branch_name}/#{path}")
 end
 
 puts file_url
