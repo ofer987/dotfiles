@@ -138,5 +138,14 @@ if filereadable(expand('~/.config/nvim/local.vim'))
   so ~/.config/nvim/local.vim
 endif
 
+" Local vim settings
+" For individual project settings
+let local_vimsettings = '/.vim_settings'
+for fpath in split(globpath(getcwd() . local_vimsettings, '*.vim'), '\n')
+  if (filereadable(fpath))
+    exe 'source' fpath
+  endif
+endfor
+
 set termguicolors
 colorscheme dracula
