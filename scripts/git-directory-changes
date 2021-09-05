@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Set the target branch (default: master)
+# Either in an ENV variable
+# Or as the first parameter
+target_branch = (ENV['TARGET_BRANCH'] || ARGV[0] || 'master').strip
+
+files_changed = `git diff --name-only #{target_branch}`.split("\n")
+
+directories_changed = files_changed
+  .map { |file| file.split(File::SEPARATOR) }
+  .map(&:first)
+  .uniq
+  .select { |directory| File.directory? directory }
+
+puts directories_changed.join("\n")
