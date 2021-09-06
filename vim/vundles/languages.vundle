@@ -4,18 +4,6 @@ Plugin 'dag/vim-fish'
 " Go
 Plugin 'fatih/vim-go'
 
-" JavaScript, etc.
-Plugin 'elmcast/elm-vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'ianks/vim-tsx'
-
-" Linter
-Plugin 'dense-analysis/ale'
-
 " PowerShell
 Plugin 'PProvost/vim-ps1'
 

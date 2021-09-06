@@ -28,7 +28,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 " Use ALE to show Lsp errors/diagnostics/errors
 " In other words, Lsp errors/diagnostics/errors do not show using Lsp
-Plug 'rhysd/vim-lsp-ale'
+Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'rhysd/vim-lsp-ale'
