@@ -51,3 +51,6 @@ out
 
 # Machine-dependent files for IntelliJ IDEA
 .idea
+
+# Project-dependent vim settings for just my machine
+.vim_settings
