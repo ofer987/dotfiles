@@ -39,4 +39,11 @@ Plug 'airblade/vim-rooter'
 Plug 'gisphm/vim-gitignore'
 Plug 'plasticboy/vim-markdown'
 
+" JavaScript and TypeScript
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+
 call plug#end()
