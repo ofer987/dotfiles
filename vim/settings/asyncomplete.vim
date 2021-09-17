@@ -1,6 +1,6 @@
 " Settings
 inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-let g:asyncomplete_auto_popup = 0
+let g:asyncomplete_auto_popup = 1
 
 function! s:on_lsp_buffer_enabled() abort
   " set omnifunc=lsp#complete
