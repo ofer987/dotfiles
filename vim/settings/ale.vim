@@ -13,3 +13,4 @@ nnoremap <C-n> :ALENextWrap<CR>
 nnoremap <C-p> :ALEPreviousWrap<CR>
 
 let g:ale_linters = {'markdown': ['writegood'], 'cs': ['OmniSharp']}
+let g:ale_linters_ignore = {'javascript': ['jshint']}
