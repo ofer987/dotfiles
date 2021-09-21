@@ -295,7 +295,7 @@ Layout/ArgumentAlignment:
   #
   #     method_call(a,
   #       b)
-  EnforcedStyle: with_first_argument
+  EnforcedStyle: with_fixed_indentation
   SupportedStyles:
     - with_first_argument
     - with_fixed_indentation
@@ -324,7 +324,7 @@ Layout/ArrayAlignment:
   #
   #     array = [1, 2, 3,
   #       4, 5, 6]
-  EnforcedStyle: with_first_element
+  EnforcedStyle: with_fixed_indentation
   SupportedStyles:
     - with_first_element
     - with_fixed_indentation
