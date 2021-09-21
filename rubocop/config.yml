@@ -982,7 +982,7 @@ Layout/MultilineAssignmentLayout:
     - if
     - kwbegin
     - module
-  EnforcedStyle: new_line
+  EnforcedStyle: block
   SupportedStyles:
     # Ensures that the assignment operator and the rhs are on the same line for
     # the set of supported types.
@@ -1108,7 +1108,7 @@ Layout/ParameterAlignment:
   #
   #     def method_foo(a,
   #       b)
-  EnforcedStyle: with_first_parameter
+  EnforcedStyle: with_fixed_parameter
   SupportedStyles:
     - with_first_parameter
     - with_fixed_indentation
