@@ -60,7 +60,7 @@
 
   # log
   l = log --graph
-  ls = log --graph --stat
+  ls = log --graph --stat --name-only
   lp = log --graph --patch --stat
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
