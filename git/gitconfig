@@ -112,8 +112,8 @@
   condemn = blame
   recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 
-  copy-url = "!f() { git url ${1} | tr -d '\n' | pbcopy; }; f"
-  open-url = "!f() { git url ${1} | xargs open; }; f"
+  copy-url = "!fuck() { git url ${1} | tr -d '\n' | pbcopy; }; fuck"
+  open-url = "!fuck() { git url ${1} | xargs open; }; fuck"
 
   open-jira-issue = !git jira-issue | xargs open
   open-jira = !git jira-issue | xargs open
