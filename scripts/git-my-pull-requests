@@ -5,11 +5,17 @@ def username
   `git config user.username`.strip
 end
 
-def url
+def get_url
   `git config remote.origin.url`.strip
 end
 
 def my_pull_requests_url
+  url = get_url
+
+  if %r{\.git$}.match? url
+    url = url.gsub(%r{\.git}, '')
+  end
+
   if %r{^https://}.match? url
     "#{url}/pulls/#{username}"
   elsif %r{^git\@}.match? url
