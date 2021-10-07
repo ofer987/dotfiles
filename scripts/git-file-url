@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require_relative './lib/git'
+
 def branch_name
   return ARGV[0].strip if ARGV.size == 2
 
-  `git rev-parse --abbrev-ref HEAD`.chomp
+  Git.branch_name
 end
 
 def path
@@ -13,11 +15,16 @@ def path
   ARGV[0].strip
 end
 
+def current_path
+  path.delete_prefix(Dir.pwd)[1..-1]
+end
+
+def absolute_path?
+  return path[0] == '/'
+end
+
 def file_url
-  `git config remote.origin.url`
-    .strip
-    .gsub(/^git@/, 'https://')
-    .gsub(%r{\.com(?:/|:)(.*)/(.*)(?:\.git)?$}, ".com/\\1/\\2/blob/#{branch_name}/#{path}")
+  "#{Git.repo_url}/blob/#{branch_name}/#{current_path}"
 end
 
 puts file_url

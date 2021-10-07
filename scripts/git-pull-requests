@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require_relative './lib/git'
+
 def pull_requests_url
-  `git config remote.origin.url`
-    .strip
-    .gsub(/^git@/, 'https://')
-    .gsub(%r{\.com(?:\/|:)(.*)\/(.*)\.git$}, '.com/\1/\2/pulls')
+  "#{Git.repo_url}/pulls"
 end
 
 puts pull_requests_url

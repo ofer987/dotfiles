@@ -1,30 +1,10 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-def username
-  `git config user.username`.strip
-end
-
-def get_url
-  `git config remote.origin.url`.strip
-end
+require_relative './lib/git'
 
 def my_pull_requests_url
-  url = get_url
-
-  if %r{\.git$}.match? url
-    url = url.gsub(%r{\.git}, '')
-  end
-
-  if %r{^https://}.match? url
-    "#{url}/pulls/#{username}"
-  elsif %r{^git\@}.match? url
-    url
-      .gsub(%r{^git\@}, 'https://')
-      .gsub(%r{(https://.*):(.*)\/(.*)\.git}, "\\1/\\2/\\3/pulls/#{username}")
-  else
-    raise "Sorry, but #{url} is not valid"
-  end
+  "#{Git.repo_url}/pulls/#{Git.username}"
 end
 
 puts my_pull_requests_url
