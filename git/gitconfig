@@ -118,6 +118,7 @@
   open-jira-issue = !git jira-issue | xargs open
   open-jira = !git jira-issue | xargs open
 
+  open-pull-requests = !git pull-requests | xargs open
   open-my-prs = !git my-pull-requests | xargs open
 [mergetool]
   prompt = false
