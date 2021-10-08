@@ -10,21 +10,34 @@ def branch_name
 end
 
 def path
-  return ARGV[1].strip if ARGV.size == 2
+  specified_path = if ARGV.size == 2
+    ARGV[1].strip
+  else
+    ARGV[0].strip
+  end
 
-  ARGV[0].strip
+  if specified_path[0] == '~'
+    specified_path.gsub('~', ENV['HOME'])
+  end
+
+  specified_path
 end
 
-def current_path
-  path.delete_prefix(Dir.pwd)[1..-1]
+def relative_path
+  p = path
+  if absolute_path? p
+    return p.delete_prefix(Dir.pwd)
+  end
+
+  p
 end
 
-def absolute_path?
+def absolute_path?(path)
   return path[0] == '/'
 end
 
 def file_url
-  "#{Git.repo_url}/blob/#{branch_name}/#{current_path}"
+  "#{Git.repo_url}/blob/#{branch_name}#{relative_path}"
 end
 
 puts file_url
