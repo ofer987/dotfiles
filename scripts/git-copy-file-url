@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e;
+
+if [[ $2 == "" ]]
+then
+  git file-url "$1" | pbcopy
+else
+  git file-url "$1" "$2" | pbcopy
+fi
