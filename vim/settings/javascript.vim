@@ -11,10 +11,6 @@ autocmd FileType typescript.tsx set shiftwidth=2
 " JSON
 autocmd FileType json set shiftwidth=2
 
-" Rescan file for better JavaScript / TypeScript syntax highlighting
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
 " Prettier
 
 " Require a config file to be present
