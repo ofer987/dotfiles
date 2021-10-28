@@ -10,30 +10,26 @@ def branch_name
 end
 
 def path
-  specified_path = if ARGV.size == 2
-    ARGV[1].strip
-  else
-    ARGV[0].strip
-  end
+  specified_path =
+    if ARGV.size == 2
+      ARGV[1].strip
+    else
+      ARGV[0].strip
+    end
 
-  if specified_path[0] == '~'
-    specified_path.gsub('~', ENV['HOME'])
-  end
+  specified_path.gsub('~', ENV['HOME']) if specified_path[0] == '~'
 
   specified_path
 end
 
 def relative_path
-  p = path
-  if absolute_path? p
-    return p.delete_prefix(Dir.pwd)
-  end
+  return p.delete_prefix(Dir.pwd) if absolute_path? path
 
-  p
+  path
 end
 
 def absolute_path?(path)
-  return path[0] == '/'
+  path[0] == '/'
 end
 
 def file_url
