@@ -57,10 +57,10 @@ augroup omnisharp_commands
   autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
 
   " navigate up by method/property/field
-  autocmd FileType cs nnoremap [[ :OmniSharpNavigateUp<cr>
+  autocmd FileType cs nnoremap gk :OmniSharpNavigateUp<cr>
 
   " navigate down by method/property/field
-  autocmd FileType cs nnoremap ]] :OmniSharpNavigateDown<cr>
+  autocmd FileType cs nnoremap gj :OmniSharpNavigateDown<cr>
 
   " Contextual code actions (requires CtrlP or unite.vim)
   autocmd FileType cs nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
