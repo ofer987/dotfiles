@@ -36,29 +36,10 @@ syntax on
 let mapleader=','
 
 " =============== Bundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand('~/.vim/vundles.vim'))
-  source ~/.vim/vundles.vim
-endif
 
 " This loads all the plugs specified in ~/.vim/plugs.vim
 if has('nvim') && filereadable(expand('~/.vim/plugs.vim'))
   source ~/.vim/plugs.vim
-endif
-
-" This loads all the plugs specified in ~/.vim/dein.vim
-if filereadable(expand('~/.vim/dein/bundles.vim'))
-  source ~/.vim/dein/bundles.vim
-endif
-
-" Same thing for bundles installed manually with Pathogen
-" Find them in ~/.vim/pundles/
-if filereadable(expand('~/.vim/autoload/pathogen.vim'))
-  source ~/.vim/autoload/pathogen.vim
-endif
-if filereadable(expand('~/.vim/pundles.vim'))
-  source ~/.vim/pundles.vim
 endif
 
 " ================ Turn Off Swap Files ==============
