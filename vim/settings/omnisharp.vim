@@ -33,13 +33,13 @@ endif
 
 " Fetch semantic type/interface/identifier names on BufEnter and highlight them
 let g:OmniSharp_highlight_types = 1
-autocmd FileType cs set shiftwidth=4
 
 augroup omnisharp_commands
   autocmd!
 
   autocmd FileType cs set omnifunc=
   autocmd FileType cs set cmdheight=2
+  autocmd FileType cs set shiftwidth=4
 
   "The following commands are contextual, based on the current cursor position.
 
