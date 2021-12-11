@@ -54,6 +54,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tomtom/tlib_vim'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'wellle/targets.vim'
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
