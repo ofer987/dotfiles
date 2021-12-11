@@ -10,6 +10,8 @@ filetype off
 
 call plug#begin('~/.yadr/vim/plugged')
 
+Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
@@ -38,6 +40,20 @@ Plug 'ofer987/vim-caser'
 Plug 'airblade/vim-rooter'
 Plug 'gisphm/vim-gitignore'
 Plug 'plasticboy/vim-markdown'
+Plug 'justinmk/vim-sneak'
+Plug 'rking/ag.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tlib_vim'
+Plug 'vim-scripts/camelcasemotion'
+Plug 'vim-scripts/AnsiEsc.vim'
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
@@ -47,5 +63,25 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" Ruby
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
+Plug 'vim-scripts/matchit.zip'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+" Fish
+Plug 'dag/vim-fish'
+
+" Go
+Plug 'fatih/vim-go'
+
+" PowerShell
+Plug 'PProvost/vim-ps1'
+
+" .NET Framework / Core
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
