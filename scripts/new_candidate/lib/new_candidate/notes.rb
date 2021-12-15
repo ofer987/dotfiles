@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Notes < ::Mustache
   self.template_file = File.join(TEMPLATE_PATH, "#{SOURCE_NAME}_#{NOTES_PATH}")
 
@@ -15,6 +17,18 @@ class Notes < ::Mustache
     # Optional attributes
     self.additional_interviewers = additional_interviewers
     self.team = team.to_s.strip
+  end
+
+  def mkdir
+    Dir.mkdir(full_name) unless Dir.exist? full_name
+  end
+
+  def notes_path
+    File.join(full_name, "#{full_name}_notes.md")
+  end
+
+  def write
+    IO.write(notes_path, render)
   end
 
   private
