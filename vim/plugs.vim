@@ -55,6 +55,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'wellle/targets.vim'
+Plug 'nelstrom/vim-visual-star-search'
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
