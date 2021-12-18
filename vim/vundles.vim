@@ -15,6 +15,7 @@ set rtp+=~/.vim/vundles/ "Submodules
 call vundle#begin()
 
 " let Vundle manage Vundle (required)
+" Install VundleVim/Vundle.vim by following instructions at https://github.com/VundleVim/Vundle.vim
 Plugin 'VundleVim/Vundle.vim'
 
 " YADR's vundles are split up by category into smaller files
