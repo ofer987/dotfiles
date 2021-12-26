@@ -5,3 +5,5 @@ tags
 view
 
 omnisharp-roslyn/**/*
+
+autoload
