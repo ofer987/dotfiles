@@ -88,6 +88,7 @@ au User asyncomplete_setup call asyncomplete#ale#register_source({
       \ 'linter': 'flow',
       \ })
 
+" Bash
 if executable('bash-language-server')
   augroup LspBash
     autocmd!
@@ -99,6 +100,7 @@ if executable('bash-language-server')
   augroup END
 endif
 
+" CSS
 if executable('css-languageserver')
   au User lsp_setup call lsp#register_server({
         \ 'name': 'css-languageserver',
@@ -107,6 +109,7 @@ if executable('css-languageserver')
         \ })
 endif
 
+" HTML
 if executable('html-languageserver')
   au User lsp_setup call lsp#register_server({
         \ 'name': 'html-languageserver',
