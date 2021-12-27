@@ -17,37 +17,40 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 
 ### Fish
 
-1. `mkdir -p ~/.config;`
+1. `mkdir -p -- ~/.config;`
 1. `ln -s ~/.yadr/fish ~/.config/fish;`
-1. `fisher install;`
+1. `curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher;`
+1. `fisher install edc/bass;`
+1. `fisher install oh-my-fish/theme-coffeeandcode;`
 
 ### Neovim
 
 1. `ln -s ~/.yadr/vim ~/.vim;`
 1. `ln -s ~/.yadr/vimrc ~/.vimrc;`
-1. `sh ~/vim/dein/installer.sh ~/vim/dein;`
+1. `mkdir -p -- ~/.config/nvim;`
+1. `ln -s ~/.yadr/vimrc ~/.config/nvim/init.vim;`
 1. `nvim +PlugClean +PlugInstall +PlugUpdate;`
-1. `nvim +PluginClean +PluginInstall +PluginUpdate;`
 1. `nvim +OmniSharpInstall;`
 
 #### Language Servers
 
 1. `gem install rubocop;`
-1. `ln -s ~/.yadr/rubocop ~/.config/rubocop;`
-1. `npm install -g vim-language-server`
-1. `gem install solargraph`
-1. `pip install python-language-server`
-1. `npm install -g typescript typescript-language-server`
-1. `npm install -g bash-language-server`
-1. `npm install -g vscode-css-languageserver-bin`
-1. `npm install -g vscode-html-languageserver-bin`
+1. `ln -s ~/.yadr/rubocop/config.yml ~/.rubocop.yml;`
+1. `npm install -g vim-language-server;`
+1. `gem install solargraph;`
+1. `pip install python-language-server;`
+1. `npm install -g typescript typescript-language-server;`
+1. `npm install -g bash-language-server;`
+1. `npm install -g vscode-css-languageserver-bin;`
+1. `npm install -g vscode-html-languageserver-bin;`
+1. `npm install -g dockerfile-language-server-nodejs;`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
 
 ### Tmux
 
 1. `ln -s ~/.yadr/tmux/tmux.conf ~/.tmux.conf;`
-1. `ln -s ~/.yadr/tmux/tmux.user.conf. ~/.tmux.user.conf;`
+1. `ln -s ~/.yadr/tmux/tmux.user.conf ~/.tmux.user.conf;`
 
 ### Pry
 
