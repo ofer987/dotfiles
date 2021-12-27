@@ -88,4 +88,9 @@ Plug 'PProvost/vim-ps1'
 " .NET Framework / Core
 Plug 'OmniSharp/omnisharp-vim'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+
 call plug#end()
