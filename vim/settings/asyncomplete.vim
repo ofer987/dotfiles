@@ -115,6 +115,15 @@ if executable('html-languageserver')
         \ })
 endif
 
+" Docker
+if executable('docker-langserver')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'docker-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+        \ 'whitelist': ['dockerfile'],
+        \ })
+endif
+
 augroup lsp_install
   au!
   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
