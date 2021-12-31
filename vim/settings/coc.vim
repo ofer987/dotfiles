@@ -1,5 +1,8 @@
 autocmd BufEnter * call execute('CocDisable')
-autocmd BufEnter *.tsx,*.ts call execute("CocEnable")
+autocmd BufEnter *.tsx,*.ts call execute('CocEnable')
+
+autocmd BufEnter * let g:asyncomplete_auto_popup = 1
+autocmd BufEnter *.tsx,*.ts let g:asyncomplete_auto_popup = 0
 
 " TypeScript
 " npm install -g typescript typescript-language-server
