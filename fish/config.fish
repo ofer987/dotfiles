@@ -1,8 +1,8 @@
 # Fisher plugin manager
 # Install from https://github.com/fisherman/fisherman
 # curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-# fisher install ssh-agent
-source "$HOME/.yadr/fish/functions/fisher.fish"
+# fisher install edc/bass
+# fisher install oh-my-fish/theme-coffeeandcode
 
 # Viscosity VPN
 source "$HOME/.yadr/fish/functions/viscosity.fish"
