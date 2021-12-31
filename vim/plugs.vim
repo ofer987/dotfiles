@@ -23,7 +23,6 @@ Plug 'wellle/tmux-complete.vim'
 " npm install -g vim-language-server
 " gem install solargraph
 " pip install python-language-server
-" npm install -g typescript typescript-language-server
 " npm install -g bash-language-server
 " npm install -g vscode-css-languageserver-bin
 " npm install -g vscode-html-languageserver-bin
@@ -57,6 +56,12 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'wellle/targets.vim'
 Plug 'nelstrom/vim-visual-star-search'
+
+" Conquer of Completion (CoC)
+" Install TypeScript
+" npm install -g typescript typescript-language-server
+" And then run :CocInstall coc-tsserver in Neovim
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
