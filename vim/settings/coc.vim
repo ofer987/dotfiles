@@ -17,5 +17,5 @@ autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <C-p> <P
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>fl :CocList outline<cr>
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>fk :CocListResume<cr>
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>sp :CocRestart<cr>
-autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>qp :CocPrev<cr>
-autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>qn :CocNext<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> gk :CocPrev<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> gj :CocNext<cr>
