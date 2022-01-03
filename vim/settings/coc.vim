@@ -15,3 +15,7 @@ autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> gj <Plug>(coc-diagnostic-next)
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> gk <Plug>(coc-diagnostic-prev)
 autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>fl :CocList outline<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>fk :CocListResume<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>sp :CocRestart<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>qp :CocPrev<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx map <silent> <leader>qn :CocNext<cr>
