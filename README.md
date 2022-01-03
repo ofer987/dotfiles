@@ -44,7 +44,9 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `npm install -g vscode-css-languageserver-bin;`
 1. `npm install -g vscode-html-languageserver-bin;`
 1. `npm install -g dockerfile-language-server-nodejs;`
-1. For TypeScript (via CoC) execute in Neovim: `:CocInstall coc-tsserver`
+1. For TypeScript (via CoC):
+  1. execute in Neovim: `:CocInstall coc-tsserver`
+  1. execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
 
