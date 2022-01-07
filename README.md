@@ -29,6 +29,7 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `ln -s ~/.yadr/vimrc ~/.vimrc;`
 1. `mkdir -p -- ~/.config/nvim;`
 1. `ln -s ~/.yadr/vimrc ~/.config/nvim/init.vim;`
+1. `ln -s ~/.yadr/vim/spell ~/.config/nvim/spell;`
 1. `nvim +PlugClean +PlugInstall +PlugUpdate;`
 1. `nvim +OmniSharpInstall;`
 
