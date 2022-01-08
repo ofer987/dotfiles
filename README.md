@@ -23,6 +23,11 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `fisher install edc/bass;`
 1. `fisher install oh-my-fish/theme-coffeeandcode;`
 
+### Starship Cross-shell Prompt
+
+1. Follow the instructions at https://starship.rs/
+1. Install the NerdFont FiraCode font for iTerm2
+
 ### Neovim
 
 1. `ln -s ~/.yadr/vim ~/.vim;`

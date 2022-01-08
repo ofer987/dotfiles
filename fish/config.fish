@@ -96,6 +96,10 @@ function latest
   end
 end
 
+
+# start Starship
+starship init fish | source
+
 function project
   git rev-parse --show-toplevel 2> /dev/null
 end
