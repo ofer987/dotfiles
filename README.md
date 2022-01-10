@@ -15,10 +15,11 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 
 ## Configuration Instructions
 
-### Fish
+### Fish and Starship
 
 1. `mkdir -p -- ~/.config;`
 1. `ln -s ~/.yadr/fish ~/.config/fish;`
+1. `ln -s ~/.yadr/starship.toml ~/.config/starship.toml;`
 1. `curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher;`
 1. `fisher install edc/bass;`
 1. `fisher install oh-my-fish/theme-coffeeandcode;`
