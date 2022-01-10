@@ -22,6 +22,7 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 1. `curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher;`
 1. `fisher install edc/bass;`
 1. `fisher install oh-my-fish/theme-coffeeandcode;`
+1. `fisher install dracula/fish;`
 
 ### Starship Cross-shell Prompt
 

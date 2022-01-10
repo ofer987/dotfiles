@@ -3,6 +3,7 @@
 # curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 # fisher install edc/bass
 # fisher install oh-my-fish/theme-coffeeandcode
+# fisher install dracula/fish
 
 # Viscosity VPN
 source "$HOME/.yadr/fish/functions/viscosity.fish"
