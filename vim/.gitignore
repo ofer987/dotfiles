@@ -7,3 +7,5 @@ view
 omnisharp-roslyn/**/*
 
 autoload
+
+spell/*.spl
