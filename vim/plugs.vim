@@ -17,7 +17,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
 Plug 'adamclerk/vim-razor'
-Plug 'groenewege/vim-less'
 Plug 'wellle/tmux-complete.vim'
 " Run these commands as well
 " npm install -g vim-language-server
