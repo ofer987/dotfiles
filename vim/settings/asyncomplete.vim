@@ -90,15 +90,6 @@ if executable('bash-language-server')
   augroup END
 endif
 
-" CSS
-if executable('css-languageserver')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'css-languageserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-        \ 'whitelist': ['css', 'less', 'sass'],
-        \ })
-endif
-
 " HTML
 if executable('html-languageserver')
   au User lsp_setup call lsp#register_server({

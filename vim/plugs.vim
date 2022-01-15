@@ -61,6 +61,7 @@ Plug 'nelstrom/vim-visual-star-search'
 " Install TypeScript
 " npm install -g typescript typescript-language-server
 " And then run :CocInstall coc-tsserver in Neovim
+" And then run :CocInstall coc-css in Neovim
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " JavaScript and TypeScript
