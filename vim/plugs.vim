@@ -96,4 +96,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
+" Run commands asynchronously
+Plug 'skywind3000/asyncrun.vim'
+
 call plug#end()

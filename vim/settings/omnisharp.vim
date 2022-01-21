@@ -84,4 +84,6 @@ augroup omnisharp_commands
 
   " Add syntax highlighting for types and interfaces
   autocmd FileType cs nnoremap <leader>sh :OmniSharpHighlightTypes<cr>
+
+  autocmd FileType cs nnoremap <leader>qf :AsyncRun -post=echo\ "Finished\ Executing\ dotnet-format" dotnet format<cr>
 augroup END
