@@ -44,6 +44,7 @@ NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh 
 
 1. `gem install rubocop;`
 1. `ln -s ~/.yadr/rubocop/config.yml ~/.rubocop.yml;`
+1. `ln -s ~/.yadr/ruby/ruby-version ~/.ruby-version;`
 1. `npm install -g vim-language-server;`
 1. `gem install solargraph;`
 1. `pip install python-language-server;`
