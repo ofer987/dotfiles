@@ -46,6 +46,8 @@ Copy filename | `<leader>cn`
 Copy filepath | `<leader>cf`
 Echo filename | `<leader>ln`
 Echo filepath | `<leader>lf`
+Open Help tab | `:thelp`
+Switch between Work tab and Help tab | `<C-W><C-t>`
 
 ### Files that support Language Server Processor
 
