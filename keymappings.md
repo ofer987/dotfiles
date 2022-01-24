@@ -35,11 +35,13 @@ Refresh CtrlP cache | `<leader>ct`
 Change buffer using CtrlP | `<leader>b`
 Stop highlighting | `//`
 Highlight previously selected words | `gv`
-Turn on British English spell checker | `<leader>sl`
-Turn off British English spell checker | `<leader>sk`
+Turn on British English spell checker | `<leader>son`
+Turn off British English spell checker | `<leader>soff`
+Synchronise spellings | `<leader>sync`
 Previous spelling mistake | `[s`
 Next spelling mistake | `]s`
 Spelling suggestions | `z=`
+Add new word | `zg`
 Copy filename | `<leader>cn`
 Copy filepath | `<leader>cf`
 Echo filename | `<leader>ln`
