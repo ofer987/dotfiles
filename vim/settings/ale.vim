@@ -12,7 +12,7 @@ nnoremap <leader>ac :pclose<CR>
 nnoremap <C-n> :ALENextWrap<CR>
 nnoremap <C-p> :ALEPreviousWrap<CR>
 
-nnoremap <leader>qf :ALEFix<CR>
+nnoremap <leader>aff :ALEFix<CR>
 
 let g:ale_linters = {
       \ 'markdown': ['writegood'],

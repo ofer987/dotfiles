@@ -48,6 +48,8 @@ Echo filename | `<leader>ln`
 Echo filepath | `<leader>lf`
 Open Help tab | `:thelp`
 Switch between Work tab and Help tab | `<C-W><C-t>`
+ALE Fix | `<leader>aff`
+dotnet- format | `<leader>qf`
 
 ### Files that support Language Server Processor
 
