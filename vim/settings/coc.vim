@@ -1,5 +1,7 @@
 autocmd BufEnter * call execute('CocDisable')
+autocmd BufEnter * let g:asyncomplete_auto_completeopt = 1
 autocmd BufEnter *.tsx,*.ts,*.css,*.scss,*.less call execute('CocEnable')
+autocmd BufEnter *.tsx,*.ts,*.css,*.scss,*.less let g:asyncomplete_auto_completeopt = 0
 
 autocmd BufEnter * let g:asyncomplete_auto_popup = 1
 autocmd BufEnter *.tsx,*.ts,*.css,*.scss,*less let g:asyncomplete_auto_popup = 0
