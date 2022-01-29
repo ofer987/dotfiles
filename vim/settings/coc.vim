@@ -20,6 +20,6 @@ autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <si
 autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> <C-p> <Plug>(coc-diagnostic-prev)
 autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> <leader>fl :CocList outline<cr>
 autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> <leader>fk :CocListResume<cr>
-autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> <leader>sp :CocRestart<cr>
+autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
 autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> gk :CocPrev<cr>
 autocmd FileType typescriptreact,typescript,typescript.tsx,css,scss,less map <silent> gj :CocNext<cr>
