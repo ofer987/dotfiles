@@ -91,6 +91,10 @@ Plug 'PProvost/vim-ps1'
 " .NET Framework / Core
 Plug 'OmniSharp/omnisharp-vim'
 
+" C/C++
+" brew install llvm
+Plug 'piec/vim-lsp-clangd'
+
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
