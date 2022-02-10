@@ -81,8 +81,9 @@ alias dr='dotnet run'
 alias db='dotnet build'
 alias dt='dotnet test'
 
-# less
+# less with ignore-case search
 alias il='less -i'
+alias lessi='less -i'
 
 status --is-interactive; and source (rbenv init -|psub)
 
@@ -97,10 +98,10 @@ function latest
   end
 end
 
-
-# start Starship
+# Start Starship
 starship init fish | source
 
+# Project root of git project
 function project
   git rev-parse --show-toplevel 2> /dev/null
 end
@@ -134,11 +135,13 @@ function af
   '
 end
 
+# Node Version Manager
 function nvm
   bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
 end
 nvm use --silent
 
+# Restart PostgreSQL
 function rdb
   pg_ctl restart
 end
