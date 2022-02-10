@@ -179,7 +179,7 @@ function ccd
     if test -d $dir
       cd $dir
       return 0
-    else if test -e $dir
+    else
       set parent (get_parent $dir)
       set dir $parent
     end
