@@ -190,3 +190,5 @@ function ccd
 
   return 1
 end
+
+alias "supercd=ccd"
