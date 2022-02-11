@@ -1,28 +1,31 @@
 # Fisher plugin manager
 # Install from https://github.com/fisherman/fisherman
-# curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+# curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 # fisher install edc/bass
 # fisher install oh-my-fish/theme-coffeeandcode
 # fisher install dracula/fish
 
 # Viscosity VPN
-source "$HOME/.yadr/fish/functions/viscosity.fish"
+source "$HOME/.config/fish/my_functions/viscosity.fish"
 alias "vpn=connect_vpn"
 
 # Open local webservers
-source "$HOME/.yadr/fish/functions/local_servers.fish"
+source "$HOME/.config/fish/my_functions/local_servers.fish"
 
-# GitHub functions
-source "$HOME/.yadr/fish/functions/github.fish"
+# git functions
+source "$HOME/.config/fish/my_functions/git.fish"
 
 # Bin Stubs
-source "$HOME/.yadr/fish/functions/bin_stubs.fish"
+source "$HOME/.config/fish/my_functions/bin_stubs.fish"
 
 # Edit command buffer
-source "$HOME/.yadr/fish/functions/command_buffer.fish"
+source "$HOME/.config/fish/my_functions/command_buffer.fish"
 
-if [ -e "$HOME/.yadr/fish/config.personal.fish" ]
-  source "$HOME/.yadr/fish/config.personal.fish"
+# supercd functions
+source "$HOME/.config/fish/my_functions/supercd.fish"
+
+if [ -e "$HOME/.config/fish/config.personal.fish" ]
+  source "$HOME/.config/fish/config.personal.fish"
 end
 
 set -x EDITOR nvim
@@ -101,11 +104,6 @@ end
 # Start Starship
 starship init fish | source
 
-# Project root of git project
-function project
-  git rev-parse --show-toplevel 2> /dev/null
-end
-
 function af
   set -x root (project)
 
@@ -145,50 +143,3 @@ nvm use --silent
 function rdb
   pg_ctl restart
 end
-
-function root
-  cd (project)
-end
-
-# Get the file/directory's parent
-function get_parent
-  set items (string split / $argv[1])
-  set count (count $items)
-
-  set count (math $count - 1)
-
-  set i 0
-  set result ""
-  for item in $items
-    if test -n $item && test $i -lt $count
-      set result "$result/$item"
-    end
-
-    set i (math $i + 1)
-  end
-
-  echo $result
-end
-
-# cd into the file's directory
-function ccd
-  set dir $argv[1];
-
-  if test -z $dir
-    return 1;
-  end
-
-  while test -n $dir
-    if test -d $dir
-      cd $dir
-      return 0
-    else
-      set parent (get_parent $dir)
-      set dir $parent
-    end
-  end
-
-  return 1
-end
-
-alias "supercd=ccd"
