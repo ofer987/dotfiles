@@ -18,9 +18,6 @@ source "$HOME/.config/fish/my_functions/git.fish"
 # Bin Stubs
 source "$HOME/.config/fish/my_functions/bin_stubs.fish"
 
-# Edit command buffer
-source "$HOME/.config/fish/my_functions/command_buffer.fish"
-
 # supercd functions
 source "$HOME/.config/fish/my_functions/supercd.fish"
 
