@@ -1,6 +1,18 @@
+# frozen_string_literal: true
+
 class Git
+  DEFAULT_REMOTE = 'origin'
+
   def self.username
     `git config user.username`.strip
+  end
+
+  def self.remote_name(name)
+    name = name.to_s.strip
+
+    return name unless name.empty?
+
+    `git config --get branch.#{branch_name}.remote`.chomp
   end
 
   def self.origin_url

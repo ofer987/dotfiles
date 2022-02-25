@@ -114,14 +114,15 @@
   condemn = blame
   recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 
-  copy-url = "!fuck() { git url ${1} | tr -d '\n' | pbcopy; }; fuck"
-  open-url = "!fuck() { git url ${1} | xargs open; }; fuck"
+  copy-url = "!fuck() { git repo ${1} | tr -d '\n' | pbcopy; }; fuck"
+  open-url = "!fuck() { git repo ${1} | xargs open; }; fuck"
 
   open-jira-issue = !git jira-issue | xargs open
   open-jira = !git jira-issue | xargs open
 
-  open-pull-requests = !git pull-requests | xargs open
-  open-my-prs = !git my-pull-requests | xargs open
+  open-pull-requests = !open $(git pull-requests)
+  open-my-pull-requests = !open $(git my-pull-requests)
+  open-my-prs = open-my-pull-requests
 [mergetool]
   prompt = false
 [mergetool "mvimdiff"]
