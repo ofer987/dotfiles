@@ -22,10 +22,12 @@ def path
   specified_path
 end
 
-def relative_path
-  return p.delete_prefix(Dir.pwd) if absolute_path? path
+def relative_path(path)
+  if absolute_path? path
+    return Git.local_file_path(path)
+  end
 
-  path
+  return path
 end
 
 def absolute_path?(path)
@@ -33,7 +35,7 @@ def absolute_path?(path)
 end
 
 def file_url
-  "#{Git.repo_url}/blob/#{branch_name}#{relative_path}"
+  "#{Git.repo_url}/blob/#{branch_name}#{relative_path(path)}"
 end
 
 puts file_url

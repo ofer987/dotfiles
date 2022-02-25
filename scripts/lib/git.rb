@@ -28,4 +28,12 @@ class Git
   def self.branch_name
     `git rev-parse --abbrev-ref HEAD`.chomp
   end
+
+  def self.repo_directory
+    `git rev-parse --show-toplevel 2> /dev/null`.chomp
+  end
+
+  def self.local_file_path(absolute_file_path)
+    absolute_file_path.delete_prefix(repo_directory)
+  end
 end
