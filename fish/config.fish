@@ -57,6 +57,7 @@ alias "prs=git pulls | xargs open"
 # Vi like
 alias ":q=exit"
 alias ":Q=exit"
+alias "ZQ=exit"
 
 function vi
   nvim $argv
