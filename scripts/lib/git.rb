@@ -37,6 +37,10 @@ class Git
     end
   end
 
+  def self.github_repo
+    repo_url.gsub('https://github.com/', '')
+  end
+
   def self.branch_name
     `git rev-parse --abbrev-ref HEAD`.chomp
   end
