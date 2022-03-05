@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/git_scripts'
+require 'pry-byebug'
+
+PAT = ''
+
+username = Git.username
+branch = ARGV[0] || Git.branch_name # || 'dpt-2605-maven'
+
+github = GitHub.new(username, PAT)
+my_pull_requests = github.my_pull_requests(branch)
+
+def get_choice(prs, branch, github)
+  choice = gets.to_s.strip
+
+  if choice.downcase == 'n' || choice.downcase == 'new'
+    github.create_branch_url(branch)
+  elsif (index = choice.to_i) != 0
+    if (index >= 1 && index <= prs.size)
+      # binding.pry
+      prs[choice.to_i - 1].title
+    end
+  end
+end
+
+if my_pull_requests
+  puts 'Pull Requests already exist'
+
+  i = 1
+  my_pull_requests.each do |item|
+    puts "#{i}. #{item.html_url}: #{item.title}"
+
+    i += 1
+  end
+
+  puts 'Edit existing PR or type new'
+  while (line = get_choice(my_pull_requests, branch, github)).empty?
+  end
+
+  puts line
+end

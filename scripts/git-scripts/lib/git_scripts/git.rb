@@ -52,4 +52,8 @@ class Git
   def self.local_file_path(absolute_file_path)
     absolute_file_path.delete_prefix(repo_directory)
   end
+
+  def self.merge_branch_name
+    `git config --get init.defaultBranch`.chomp || 'master'
+  end
 end

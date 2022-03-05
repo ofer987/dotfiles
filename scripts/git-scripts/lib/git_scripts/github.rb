@@ -37,4 +37,8 @@ class GitHub
       .sort_by(&:updated_at)
       .reverse
   end
+
+  def create_branch_url(branch_name)
+    "#{Git.repo_url}/compare/#{Git.merge_branch_name}...#{branch_name}"
+  end
 end
