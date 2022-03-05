@@ -16,4 +16,25 @@ class GitHub
       .map { |item| item[1] }
       .uniq
   end
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+
+    @client = Octokit::Client.new(
+      login: @username,
+      password: @password
+    )
+  end
+
+  def my_pull_requests(branch_name)
+    results = GitHub.github_repos.flat_map do |item|
+      @client.pull_requests(item, state: 'open')
+    end
+
+    results
+      .select { |item| item.user.login == @username && item.head.ref == branch_name }
+      .sort_by(&:updated_at)
+      .reverse
+  end
 end
