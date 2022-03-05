@@ -3,21 +3,23 @@
 
 require_relative '../lib/git_scripts'
 
-TR = 'tr'
-REPO = 'digital_emcm-web'
+PAT = ''
+# TR = 'tr'
+# REPO = 'digital_emcm-web'
+
 username = Git.username
-branch = 'dpt-2605-maven'
+branch = ARGV[0] || Git.branch_name
 client = Octokit::Client.new(
-  login: 'ofer987',
+  login: username,
   password: PAT
 )
 
-pull_requests = client.pull_requests("#{TR}/#{REPO}", state: 'open')
+pull_requests = GitHub.github_repos.flat_map do |item|
+  client.pull_requests(item, state: 'open')
+end
 
 my_pull_requests = pull_requests
   .select { |item| item.user.login == username && item.head.ref == branch }
-
-binding.pry
 
 my_pull_requests.each do |item|
   # binding.pry
