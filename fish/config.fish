@@ -44,7 +44,7 @@ end
 set -x NVM_DIR ~/.nvm
 
 set -x GOPATH ~/go
-set -x PATH ~/.rbenv/shims ~/.yadr/scripts $PATH $GOPATH/bin
+set -x PATH ~/.rbenv/shims ~/.yadr/scripts ~/.yadr/scripts/**/exe $PATH $GOPATH/bin
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 set -x DOTNET_CLI_TELEMETRY_OPTOUT true
 
