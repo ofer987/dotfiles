@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/git_scripts'
+
+TR = 'tr'
+REPO = 'digital_emcm-web'
+username = Git.username
+branch = 'dpt-2605-maven'
+client = Octokit::Client.new(
+  login: 'ofer987',
+  password: PAT
+)
+
+pull_requests = client.pull_requests("#{TR}/#{REPO}", state: 'open')
+
+my_pull_requests = pull_requests
+  .select { |item| item.user.login == username && item.head.ref == branch }
+
+binding.pry
+
+my_pull_requests.each do |item|
+  # binding.pry
+  puts item.html_url
+end
