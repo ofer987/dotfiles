@@ -2,37 +2,17 @@
 # frozen_string_literal: true
 
 require_relative '../lib/git_scripts'
+require_relative './pull_request'
+
 require 'pry-byebug'
 
 module GitScripts
-  class CreatePullRequest
-    def password
-      return @password if defined? @password
-
-      path = File.absolute_path(__dir__)
-      path = File.join(path, '..', 'config', 'github.yaml')
-      @password = YAML.load_file(path)['PAT']
+  class CreatePullRequest < PullRequest
+    def execute
+      GitHub.create_pull_request_url(branch)
     end
 
-    def username
-      return @username if defined? @username
-
-      @username = Git.username
-    end
-
-    def branch
-      return @branch if defined? @branch
-
-      @branch = ARGV[0] || Git.branch_name
-    end
-
-    def my_pull_requests
-      return @my_pull_requests if defined? @my_pull_requests
-
-      github = GitHub.new(username, password)
-      @my_pull_requests = github.my_pull_requests(branch)
-      # binding.pry
-    end
+    private
 
     def select_pull_request
       result = gets.to_s.strip
@@ -40,31 +20,17 @@ module GitScripts
       if result.downcase == 'n' || result.downcase == 'new'
         GitHub.create_pull_request_url(branch)
       elsif (index = result.to_i) != 0
-        if (index >= 1 && index <= my_pull_requests.size)
+        if index >= 1 && index <= my_pull_requests.size
           my_pull_requests[result.to_i - 1].html_url
         end
       end
     end
-
-    def execute
-      return Github.create_pull_request_url(branch) unless my_pull_requests
-
-      puts 'Pull Requests already exist'
-
-      i = 1
-      my_pull_requests.each do |item|
-        puts "#{i}. #{item.title}: #{item.html_url}"
-
-        i += 1
-      end
-
-      puts 'Edit existing PR or type new'
-      while (line = select_pull_request).to_s.empty?
-      end
-
-      puts line
-    end
   end
 end
 
-GitScripts::CreatePullRequest.new.execute
+begin
+  url = GitScripts::CreatePullRequest.new.execute
+  `open #{url}`
+rescue StandardError => e
+  puts e
+end
