@@ -11,7 +11,7 @@ Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucara
 Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
 Pry | `gem install pry;` | https://github.com/pry/pry
 NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash;` | https://github.com/nvm-sh/nvm
-
+Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x PAT <personal-pat>` in `~/.yadr/fish/config.personal.fish`
 
 ## Configuration Instructions
 
