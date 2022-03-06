@@ -4,40 +4,67 @@
 require_relative '../lib/git_scripts'
 require 'pry-byebug'
 
-PAT = ''
+module GitScripts
+  class CreatePullRequest
+    def password
+      return @password if defined? @password
 
-username = Git.username
-branch = ARGV[0] || Git.branch_name # || 'dpt-2605-maven'
+      path = File.absolute_path(__dir__)
+      path = File.join(path, '..', 'config', 'github.yaml')
+      @password = YAML.load_file(path)['PAT']
+    end
 
-github = GitHub.new(username, PAT)
-my_pull_requests = github.my_pull_requests(branch)
+    def username
+      return @username if defined? @username
 
-def get_choice(prs, branch, github)
-  choice = gets.to_s.strip
+      @username = Git.username
+    end
 
-  if choice.downcase == 'n' || choice.downcase == 'new'
-    github.create_branch_url(branch)
-  elsif (index = choice.to_i) != 0
-    if (index >= 1 && index <= prs.size)
+    def branch
+      return @branch if defined? @branch
+
+      @branch = ARGV[0] || Git.branch_name
+    end
+
+    def my_pull_requests
+      return @my_pull_requests if defined? @my_pull_requests
+
+      github = GitHub.new(username, password)
+      @my_pull_requests = github.my_pull_requests(branch)
       # binding.pry
-      prs[choice.to_i - 1].title
+    end
+
+    def select_pull_request
+      result = gets.to_s.strip
+
+      if result.downcase == 'n' || result.downcase == 'new'
+        GitHub.create_branch_url(branch)
+      elsif (index = result.to_i) != 0
+        if (index >= 1 && index <= my_pull_requests.size)
+          my_pull_requests[result.to_i - 1].html_url
+        end
+      end
+    end
+
+    def execute
+      return Github.create_branch_url(branch) unless my_pull_requests
+
+      puts 'Pull Requests already exist'
+
+      i = 1
+      my_pull_requests.each do |item|
+        puts "#{i}. #{item.title}: #{item.html_url}"
+
+        i += 1
+      end
+
+      puts 'Edit existing PR or type new'
+      while (line = select_pull_request).to_s.empty?
+      end
+
+      puts line
     end
   end
 end
 
-if my_pull_requests
-  puts 'Pull Requests already exist'
-
-  i = 1
-  my_pull_requests.each do |item|
-    puts "#{i}. #{item.html_url}: #{item.title}"
-
-    i += 1
-  end
-
-  puts 'Edit existing PR or type new'
-  while (line = get_choice(my_pull_requests, branch, github)).empty?
-  end
-
-  puts line
-end
+GitScripts::CreatePullRequest.new.execute

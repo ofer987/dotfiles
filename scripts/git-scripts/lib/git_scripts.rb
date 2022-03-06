@@ -4,6 +4,7 @@ require 'octokit'
 require 'rake'
 require 'rest-client'
 require 'uri'
+require 'yaml'
 
 require_relative 'git_scripts/version'
 

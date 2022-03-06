@@ -38,7 +38,8 @@ class GitHub
       .reverse
   end
 
-  def create_branch_url(branch_name)
+  def self.create_branch_url(branch_name)
+    # https://github.com/tr/digital_emcm-web/compare/develop...DPT-1398
     "#{Git.repo_url}/compare/#{Git.merge_branch_name}...#{branch_name}"
   end
 end
