@@ -15,6 +15,10 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 
 ## Configuration Instructions
 
+### Git-scripts submodule
+
+1. `git submodule update --recursive;`
+
 ### Fish and Starship
 
 1. `mkdir -p -- ~/.config;`
