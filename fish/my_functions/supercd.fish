@@ -1,18 +1,25 @@
 # Get the file/directory's parent
 function get_parent
-  set items (string split / $argv[1])
+  set path $argv[1]
+
+  set result ""
+
+  set items (string split / $path)
   set count (count $items)
 
   set count (math $count - 1)
 
   set i 0
-  set result ""
   for item in $items
     if test -n $item && test $i -lt $count
-      set result "$result/$item"
+      set result (string join "/" $result $item)
     end
 
     set i (math $i + 1)
+  end
+
+  if test (string sub --length 1 $path) != "/" && test (string sub --length 1 $result) = "/"
+    set result (string sub --start=2 $result)
   end
 
   echo $result
