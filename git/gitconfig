@@ -129,6 +129,8 @@
   open-my-pull-requests = !open $(git my-pull-requests)
   open-my-prs = open-my-pull-requests
 
+  checkout-pull-request = !git open-pull-request || git create-pull-request
+
   copy-file-url = "!fuck() { git file-url ${1} | tr -d '\n' | pbcopy; }; fuck"
   open-file-url = "!fuck() { git file-url ${1} | xargs open; }; fuck"
 [mergetool]
