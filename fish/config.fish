@@ -30,15 +30,26 @@ set -x EDITOR nvim
 # Remove the "Welcome to fish" greeting message
 set fish_greeting
 
-fish_vi_key_bindings
-
 function fish_user_key_bindings
+  # Use VI bindings
+  fish_vi_key_bindings
+
+  # Edit command line with <C-E>
   bind --mode default \ce edit_command_buffer
   bind --mode insert \ce edit_command_buffer
   bind --mode visual \ce edit_command_buffer
-  bind --erase --mode default \cl
-  bind --erase --mode insert \cl
-  bind --erase --mode visual \cl
+
+  # Remove the <C-L> repaint binding
+  bind --erase --mode default --preset \cl
+  bind --erase --mode insert --preset \cl
+  bind --erase --mode visual --preset \cl
+
+  # Paste with either P or <C-P>
+  bind --mode insert \cp fish_clipboard_paste
+  bind --mode default \cp fish_clipboard_paste
+  bind --mode default p fish_clipboard_paste
+  bind --mode visual p fish_clipboard_paste
+  bind --mode visual \cp fish_clipboard_paste
 end
 
 set -x NVM_DIR ~/.nvm
