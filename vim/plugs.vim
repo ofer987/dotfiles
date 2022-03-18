@@ -80,7 +80,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 
 " Fish
-Plug 'dag/vim-fish'
+Plug 'ofer987/vim-fish'
 
 " Go
 Plug 'fatih/vim-go'
