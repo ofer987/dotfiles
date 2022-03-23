@@ -61,6 +61,7 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. For TypeScript (via CoC):
   1. execute in Neovim: `:CocInstall coc-tsserver`
   1. execute in Neovim: `:CocInstall coc-css`
+  1. execute in Neovim: `:CocInstall coc-json`
   1. execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
