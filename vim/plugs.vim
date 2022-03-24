@@ -69,6 +69,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
+
+" HTML
+Plug 'AndrewRadev/tagalong.vim'
+
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
