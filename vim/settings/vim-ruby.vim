@@ -5,13 +5,13 @@ autocmd FileType ruby map gj ]m
 autocmd FileType ruby map gk [m
 
 function! InsertRubyDebugger(text) abort
-  # Current position
+  " Current position
   let currentpos = getcurpos()
 
-  # Insert debugging statement
+  " Insert debugging statement
   call append(getcurpos()[1] - 1, repeat(' ', indent('.')) . a:text)
 
-  # Revert to previous position
+  " Revert to previous position
   call setpos('.', currentpos)
 endfunction
 
