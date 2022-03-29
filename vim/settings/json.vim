@@ -3,6 +3,10 @@ augroup JsonToJsonc
 augroup END
 
 function! Jsonlint() abort
+  if (&filetype != "json" && &filetype != "jsonc")
+    return 1
+  endif
+
   " Start at top of file
   1
 
