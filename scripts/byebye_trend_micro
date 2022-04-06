@@ -42,4 +42,3 @@ sudo pkill -i zscaler
 # Delete the directory
 sudo rm -rf /Library/Application\ Support/TrendMicro/
 sudo rm -rf /Library/Application\ Support/TrendMicro/
-
