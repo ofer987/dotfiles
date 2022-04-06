@@ -26,6 +26,7 @@ Plug 'wellle/tmux-complete.vim'
 " npm install -g vscode-css-languageserver-bin
 " npm install -g vscode-html-languageserver-bin
 " npm install -g dockerfile-language-server-nodejs
+Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
 " Use ALE to show Lsp errors/diagnostics/errors
