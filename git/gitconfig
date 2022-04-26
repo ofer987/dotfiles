@@ -51,9 +51,9 @@
 
   # diff
   d = diff                                            # diff unstaged changes
-  dd = diff -w                                        # diff without whitespace
-  dc = diff --cached -w                               # diff staged changes
-  cached = diff --cached -w                           # diff staged changes
+  dd = diff -w -b --ignore-blank-lines                # diff without whitespace
+  dc = dd --cached                                    # diff staged changes
+  cached = dc                                         # diff staged changes
   last = diff HEAD^                                   # diff last committed change
   names = !git diff HEAD^..HEAD --name-only | uniq    # list of changed files in the latest commit
   dnames = !git diff --name-only | uniq               # list of unstaged changed files
