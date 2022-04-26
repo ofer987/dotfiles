@@ -1,5 +1,4 @@
 {
-  "coc.source.tmuxcomplete.enable": false,
   "coc.source.file.enable": false,
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false
