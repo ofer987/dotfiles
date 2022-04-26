@@ -12,7 +12,6 @@ call plug#begin('~/.yadr/vim/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
@@ -88,7 +87,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'ofer987/vim-fish'
 
 " Go
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " PowerShell
 Plug 'PProvost/vim-ps1'

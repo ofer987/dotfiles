@@ -1,5 +1,15 @@
 {
   "coc.source.file.enable": false,
   "coc.source.buffer.enable": false,
-  "coc.source.around.enable": false
+  "coc.source.around.enable": false,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
 }
