@@ -50,6 +50,11 @@ function fish_user_key_bindings
   bind --mode default p fish_clipboard_paste
   bind --mode visual p fish_clipboard_paste
   bind --mode visual \cp fish_clipboard_paste
+
+  # Remove the <C-D> to close the pane/shell
+  bind --erase --mode insert --preset \cd
+  bind --erase --mode default --preset \cd
+  bind --erase --mode visual --preset \cd
 end
 
 set -x NVM_DIR ~/.nvm
