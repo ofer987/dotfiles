@@ -50,3 +50,5 @@ nnoremap <leader>vg ^vg_
 " Paste content while remembering what was just pasted
 vmap p pgvy
 vmap P Pgvy
+
+map <leader>e :w \| bd<CR>
