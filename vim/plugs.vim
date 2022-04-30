@@ -61,6 +61,7 @@ Plug 'nelstrom/vim-visual-star-search'
 " And then run :CocInstall coc-css in Neovim
 " And then run :CocInstall coc-json in Neovim
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
