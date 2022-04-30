@@ -15,7 +15,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
-Plug 'adamclerk/vim-razor'
 " Run these commands as well
 " npm install -g vim-language-server
 " gem install solargraph
@@ -94,6 +93,7 @@ Plug 'PProvost/vim-ps1'
 
 " .NET Framework / Core
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'jlcrochet/vim-razor'
 
 " C/C++
 " brew install llvm
