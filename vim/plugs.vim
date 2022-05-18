@@ -94,7 +94,6 @@ Plug 'PProvost/vim-ps1'
 
 " .NET Framework / Core
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'jlcrochet/vim-razor'
 
 " C/C++
 " brew install llvm
