@@ -25,10 +25,11 @@ function get_parent
   echo $result
 end
 
-# Change  into the file's directory
+# Change into the file's directory
 function supercd
   set dir $argv[1];
 
+  # It is an empty string
   if test -z $dir
     return 1;
   end
@@ -43,6 +44,7 @@ function supercd
     end
   end
 
+  # Failed to retrieve the file's parent directory
   return 1
 end
 
