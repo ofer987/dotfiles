@@ -117,3 +117,6 @@ OOP
 Martinenco
 onesource
 Sowmya
+submodule
+skipTests
+JaCoCo
