@@ -57,7 +57,7 @@
   dc = dd --cached                                    # diff staged changes
   cached = dc                                         # diff staged changes
   last = diff HEAD^                                   # diff last committed change
-  names = !git diff HEAD^..HEAD --name-only | uniq    # list of changed files in the latest commit
+  names = !git diff HEAD^..HEAD --name-only           # list of changed files in the latest commit
   dnames = !git diff --name-only | uniq               # list of unstaged changed files
   dfiles = !sh -c 'git diff --name-only $1 | uniq' -  # list of unstaged changed files
   cnames = !git diff --name-only --cached | uniq      # list of staged changed files
