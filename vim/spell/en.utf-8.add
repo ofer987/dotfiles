@@ -120,3 +120,6 @@ Sowmya
 submodule
 skipTests
 JaCoCo
+toolchains
+JDK
+Plugins
