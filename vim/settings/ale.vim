@@ -6,6 +6,7 @@ nnoremap <leader>afd :ALEGoToDefinition<CR>
 nnoremap <leader>aft :ALEGoToTypeDefinition<CR>
 
 nnoremap <leader>an :ALENextWrap<CR>
+nnoremap <leader>ai :ALEInfo<CR>
 nnoremap <leader>ao :ALEDetail<CR>
 nnoremap <leader>ac :pclose<CR>
 
