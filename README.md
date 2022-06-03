@@ -51,6 +51,8 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `ln -s ~/.yadr/ruby/ruby-version ~/.ruby-version;`
 1. `npm install -g vim-language-server;`
 1. `gem install solargraph;`
+1. `mkdir -p ~/.config/solargraph;`
+1. `ln -s ~/.yadr/solargraph.yml ~/.config/solargraph/config.yml;`
 1. `pip install python-language-server;`
 1. `npm install -g typescript typescript-language-server;`
 1. `npm install -g bash-language-server;`

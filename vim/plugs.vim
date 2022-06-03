@@ -18,6 +18,8 @@ Plug 'chr4/nginx.vim'
 " Run these commands as well
 " npm install -g vim-language-server
 " gem install solargraph
+" mkdir -p ~/.config/solargraph;
+" ln -s ~/.yadr/solargraph.yml ~/.config/solargraph/config.yml;
 " pip install python-language-server
 " npm install -g bash-language-server
 " npm install -g vscode-css-languageserver-bin
