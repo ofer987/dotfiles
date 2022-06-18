@@ -2,6 +2,8 @@
   "coc.source.file.enable": false,
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
+  "css.lint.emptyRules": "ignore",
+  "scss.lint.emptyRules": "ignore",
   "languageserver": {
     "golang": {
       "command": "gopls",
