@@ -8,6 +8,9 @@ autocmd BufEnter *.tsx,*.ts,*.css,*.scss,*less,*.json let g:asyncomplete_auto_po
 
 autocmd FileType scss setl iskeyword+=@-@
 
+" Do not change cursor style if <C-c> is pressed
+let g:coc_disable_transparent_cursor = 1
+
 " TypeScript
 " npm install -g typescript typescript-language-server
 " And then run :CocInstall coc-tsserver in Neovim
