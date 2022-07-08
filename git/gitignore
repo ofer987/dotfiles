@@ -54,3 +54,9 @@ out
 
 # Project-dependent vim settings for just my machine
 .vim_settings
+
+# Custom Tools
+.custom_tools
+
+# Ruby version by rbenv
+.ruby-version
