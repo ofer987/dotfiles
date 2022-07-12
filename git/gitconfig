@@ -16,51 +16,51 @@
   old = red
   new = green
 [alias]
-  # add
+  # Add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
   patch = add --patch               # stage commits chunk by chunk
 
-  # files
+  # Files
   untracked = ls-files -o --exclude-standard
 
-  # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+  # Via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
   snapshots = !git stash list --grep snapshot
 
-  #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+  # Via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
   recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
-  # branch
+  # Branch
   b = branch -v                                             # branch (verbose)
   branch-name = rev-parse --abbrev-ref HEAD                 # branch name
   copy-branch-name = !git branch-name | tr -d '\n' | pbcopy # Copy the branch name
   bname = rev-parse --abbrev-ref HEAD                       # branch name
 
-  # commit
-  c = commit -m                           # commit with message
-  ca = commit -am                         # commit all with message
-  ci = commit                             # commit
-  amend = commit --amend                  # amend your last commit
-  ammend = commit --amend                 # amend your last commit
+  # Commit
+  c = commit -m                                             # commit with message
+  ca = commit -am                                           # commit all with message
+  ci = commit                                               # commit
+  amend = commit --amend                                    # amend your last commit
+  ammend = commit --amend                                   # amend your last commit
 
-  # checkout
-  co = checkout                           # checkout
-  nb = checkout -b                        # create and switch to a new branch (mnemonic: "git new branch branchname...")
+  # Checkout
+  co = checkout                                             # checkout
+  nb = checkout -b                                          # create and switch to a new branch (mnemonic: "git new branch branchname...")
 
-  # cherry-pick
-  cp = cherry-pick -x                     # grab a change from a branch
+  # Cherry-pick
+  cp = cherry-pick -x                                       # grab a change from a branch
 
-  # diff
-  d = diff                                            # diff unstaged changes
-  dd = diff -w -b --ignore-blank-lines                # diff without whitespace
-  dc = dd --cached                                    # diff staged changes
-  cached = dc                                         # diff staged changes
-  last = diff HEAD^                                   # diff last committed change
-  names = !git diff HEAD^..HEAD --name-only           # list of changed files in the latest commit
-  dnames = !git diff --name-only                      # list of unstaged changed files
-  dfiles = !sh -c 'git diff --name-only $1 | uniq' -  # list of unstaged changed files
-  cnames = !git diff --name-only --cached | uniq      # list of staged changed files
+  # Diff
+  d = diff                                                  # diff unstaged changes
+  dd = diff -w -b --ignore-blank-lines                      # diff without whitespace
+  dc = dd --cached                                          # diff staged changes
+  cached = dc                                               # diff staged changes
+  last = diff HEAD^                                         # diff last committed change
+  names = !git diff HEAD^..HEAD --name-only                 # list of changed files in the latest commit
+  dnames = !git diff --name-only                            # list of unstaged changed files
+  dfiles = !sh -c 'git diff --name-only $1 | uniq' -        # list of unstaged changed files
+  cnames = !git diff --name-only --cached | uniq            # list of staged changed files
 
   # log
   l = log --graph
@@ -71,48 +71,48 @@
   simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
-  # pull
-  pl = pull                         # pull
+  # Pull
+  pl = pull                     # pull
   pulls = pull-requests
 
-  # push
-  ps = push                         # push
-  force-push = push --force         # force push
+  # Push
+  ps = push                     # push
+  force-push = push --force     # force push
 
-  # rebase
-  rc = rebase --continue            # continue rebase
-  rs = rebase --skip                # skip rebase
+  # Rebase
+  rc = rebase --continue        # continue rebase
+  rs = rebase --skip            # skip rebase
 
-  # remote
-  r = remote -v                     # show remotes (verbose)
+  # Remote
+  r = remote -v                 # show remotes (verbose)
 
-  # reset
-  unstage = reset HEAD              # remove files from index (tracking)
-  uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
-  filelog = log -u                  # show changes to a file
-  mt = mergetool                    # fire up the merge tool
+  # Reset
+  unstage = reset HEAD          # remove files from index (tracking)
+  uncommit = reset --soft HEAD^ # go back before last commit, with files in uncommitted state
+  filelog = log -u              # show changes to a file
+  mt = mergetool                # fire up the merge tool
 
-  # stash
-  ss = stash                        # stash changes
-  sl = stash list                   # list stashes
-  sa = stash apply                  # apply stash (restore changes)
-  sd = stash drop                   # drop stashes (destory changes)
+  # Stash
+  ss = stash                    # stash changes
+  sl = stash list               # list stashes
+  sa = stash apply              # apply stash (restore changes)
+  sd = stash drop               # drop stashes (destory changes)
 
-  # status
-  s = status                        # status
-  st = status                       # status
-  stat = status                     # status
+  # Status
+  s = status                    # status
+  st = status                   # status
+  stat = status                 # status
   root = rev-parse --show-toplevel
 
-  # tag
-  t = tag -n                        # show tags with <n> lines of each tag message
+  # Tags
+  t = tag -n                    # show tags with <n> lines of each tag message
 
   # svn helpers
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
 
-  # better blaming
+  # Better Blaming
   condemn = blame
   recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
 
