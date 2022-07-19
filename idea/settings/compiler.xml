@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="migration-apps.structure" />
+        <module name="sling-servlets (1) (com.tr.emcm)" />
+        <module name="emcm.ui.apps.structure" />
+        <module name="uefalcon.ui.apps" />
+        <module name="ue.ui.apps" />
+        <module name="uefalcon.ui.content" />
+        <module name="models (1) (com.tr.emcm)" />
+        <module name="onesource.ui.etc" />
+        <module name="uefalcon.core" />
+        <module name="onvio.ui.apps" />
+        <module name="models (2) (com.tr.ue)" />
+        <module name="services-impl (1) (com.tr.emcm)" />
+        <module name="helpcenter.ui.config" />
+        <module name="junit5-tests (2) (com.tr.ue)" />
+        <module name="junit5-tests (1) (com.tr.emcm)" />
+        <module name="emcm.all" />
+        <module name="emcm.ui.apps" />
+        <module name="helpcenter.core" />
+        <module name="uefalcon.all" />
+        <module name="emcm.ui.etc" />
+        <module name="crypto" />
+        <module name="emcm.configs" />
+        <module name="services-api (2) (com.tr.ue)" />
+        <module name="mytr-due.ui.apps" />
+        <module name="onvio.ui.apps.structure" />
+        <module name="helpcenter.ui.apps" />
+        <module name="sling-models (1) (com.tr.emcm)" />
+        <module name="onvio.ui.content" />
+        <module name="uefalcon.ui.apps.structure" />
+        <module name="emcm.sling-requests.publish" />
+        <module name="mytr-due.core" />
+        <module name="mytr-due.ui.config" />
+        <module name="sling-models (2) (com.tr.onvio)" />
+        <module name="onesource.ui.apps" />
+        <module name="mytr-due.all" />
+        <module name="sling-servlets (2) (com.tr.ue)" />
+        <module name="sling-models (3) (com.tr.ue)" />
+        <module name="ue.ui.apps.structure" />
+        <module name="ue.ui.etc" />
+        <module name="helpcenter.ui.content" />
+        <module name="mytr-due.ui.content" />
+        <module name="onvio.configs" />
+        <module name="uefalcon.ui.config" />
+        <module name="ue.ui.content" />
+        <module name="helpcenter.ui.apps.structure" />
+        <module name="mytr-due.ui.apps.structure" />
+        <module name="onesource.ui.apps.structure" />
+        <module name="services-api (1) (com.tr.emcm)" />
+        <module name="services-impl (2) (com.tr.ue)" />
+        <module name="helpcenter.all" />
+        <module name="onvio.all" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="assets" target="1.5" />
+      <module name="assets.all" target="1.5" />
+      <module name="assets.apps" target="1.5" />
+      <module name="assets.apps.structure" target="1.5" />
+      <module name="dispatcher" target="1.5" />
+      <module name="emcm-auth" target="1.8" />
+      <module name="emcm-parent" target="1.5" />
+      <module name="helpcenter" target="1.8" />
+      <module name="migration" target="1.5" />
+      <module name="migration-all" target="1.6" />
+      <module name="migration-apps" target="1.5" />
+      <module name="migration-bundle" target="1.8" />
+      <module name="migration-config" target="1.5" />
+      <module name="migration-content" target="1.6" />
+      <module name="migration-hook" target="1.8" />
+      <module name="migration-package" target="1.5" />
+      <module name="monorepo (1)" target="1.5" />
+      <module name="monorepo (2)" target="1.5" />
+      <module name="mytr-due (1)" target="1.5" />
+      <module name="mytr-due (2)" target="1.8" />
+      <module name="onesource-parent" target="1.5" />
+      <module name="onesource.all" target="1.5" />
+      <module name="onvio-parent" target="1.5" />
+      <module name="schedulers" target="1.8" />
+      <module name="test-logback" target="1.5" />
+      <module name="tools" target="1.5" />
+      <module name="tools-all" target="1.5" />
+      <module name="tools-apps" target="1.5" />
+      <module name="tools-apps.structure" target="1.6" />
+      <module name="tools-bundle" target="1.8" />
+      <module name="tools-config" target="1.5" />
+      <module name="tools-content" target="1.5" />
+      <module name="tr.all" target="1.5" />
+      <module name="ue-auth" target="1.8" />
+      <module name="ue-parent" target="1.5" />
+      <module name="ue.all" target="1.6" />
+      <module name="ue.configs" target="1.6" />
+      <module name="uefalcon" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

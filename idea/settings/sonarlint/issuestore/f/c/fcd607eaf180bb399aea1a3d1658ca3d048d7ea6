@@ -1,0 +1,64 @@
+
+M
+java:S3740İ"/Provide the parametrized type for this generic.(ÿ­ğª8ÓÔüˆ0
+{
+java:S1488Â"]Immediately return this expression instead of assigning it to the temporary variable "var21".(¢‡µ‚8åÔüˆ0
+G
+java:S2629™"$Invoke method(s) only conditionally.(„úÓÎÿÿÿÿÿ8øÔüˆ0
+G
+java:S2629§"$Invoke method(s) only conditionally.(ÈÔÊ­úÿÿÿÿ8úÔüˆ0
+U
+java:S2629â"7Use the built-in formatting to construct this argument.(Ëáã8€ŸÔüˆ0
+Z
+java:S2629ò"7Use the built-in formatting to construct this argument.(àãÛşÿÿÿÿ8ŸÔüˆ0
+Z
+java:S2629“"7Use the built-in formatting to construct this argument.(¦ÏÌşÿÿÿÿ8„ŸÔüˆ0
+U
+java:S2629›"7Use the built-in formatting to construct this argument.(£Ìœ8ˆŸÔüˆ0
+c
+java:S1075H"ARefactor your code to get this URI from a customizable parameter.(ùâ¡ÿÿÿÿÿÿ8›°Ôüˆ0
+„
+java:S3457™"aNo need to call "toString()" method as formatting and string conversion is done by the Formatter.(„úÓÎÿÿÿÿÿ8Õ°Ôüˆ0
+9
+java:S3626¹"Remove this redundant jump.(ÉŠ©ƒ8Ö°Ôüˆ0
+J
+java:S1905Í"'Remove this unnecessary cast to "Long".(‚ªÊ÷ÿÿÿÿÿ8ï°Ôüˆ0
+_
+java:S3457â"AFormat specifiers should be used instead of string concatenation.(Ëáã8˜±Ôüˆ0
+_
+java:S3457ñ"AFormat specifiers should be used instead of string concatenation.(Ï¿ë÷8±Ôüˆ0
+J
+java:S1905€"'Remove this unnecessary cast to "long".(ˆŸëïşÿÿÿÿ8¡±Ôüˆ0
+K	java:S108€")Either remove or fill this block of code.(ˆŸëïşÿÿÿÿ8¥±Ôüˆ0
+d
+java:S3457’"AFormat specifiers should be used instead of string concatenation.(ç°öüÿÿÿÿ8©±Ôüˆ0
+_
+java:S3457š"AFormat specifiers should be used instead of string concatenation.(ÄËàå8ª±Ôüˆ0
+9
+java:S3626ò"Remove this redundant jump.(ûÁİ…8®±Ôüˆ0
+J
+java:S1905Å"'Remove this unnecessary cast to "long".(‚ïÜÁşÿÿÿÿ8»±Ôüˆ0
+F
+java:S1905Õ"(Remove this unnecessary cast to "Asset".(ŸëñŠ8Ø±Ôüˆ0
+q
+java:S4042ö"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(¼·áüÿÿÿÿ8ã±Ôüˆ0
+M
+java:S1905‡"*Remove this unnecessary cast to "Boolean".(¿â—ıÿÿÿÿ8¯²Ôüˆ0
+M
+java:S1905ˆ"*Remove this unnecessary cast to "Boolean".(¿¯êüÿÿÿÿ8±²Ôüˆ0
+D
+java:S1905‰"'Remove this unnecessary cast to "Long".(ŞÈ¼78µ²Ôüˆ0
+J
+java:S1905Š"'Remove this unnecessary cast to "Long".(ÅüÍîÿÿÿÿÿ8·²Ôüˆ0
+J
+java:S1905‹"'Remove this unnecessary cast to "Long".(şÈ×øÿÿÿÿ8º²Ôüˆ0
+D
+java:S1905Œ"'Remove this unnecessary cast to "Long".(¤—£u8»²Ôüˆ0
+L
+java:S1905")Remove this unnecessary cast to "String".(ß¶Ûóÿÿÿÿÿ8½²Ôüˆ0
+L
+java:S1905")Remove this unnecessary cast to "String".(Ùÿ³•şÿÿÿÿ8”³Ôüˆ0
+p
+java:S2786ö"RRemove this redundant "static" qualifier; nested enum types are implicitly static.(•ÿ×‹8½ùÉİˆ0
+L
+java:S1068Å"/Remove this unused "ROOT_FOLDER" private field.(×“–Y8¢³Ôüˆ0

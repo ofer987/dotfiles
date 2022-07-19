@@ -1,0 +1,5 @@
+
+“
+java:S1130X"vRemove the declaration of thrown exception 'javax.jcr.RepositoryException', as it cannot be thrown from method's body.(û«äÃ8Ü’î’¡0
+h
+java:S1612["FReplace this lambda with method reference 'this::getComponentContent'.(Ð¦Î­ýÿÿÿÿ8ñ’î’¡0
