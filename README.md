@@ -40,7 +40,7 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `ln -s ~/.yadr/vimrc ~/.vimrc;`
 1. `mkdir -p -- ~/.config/nvim;`
 1. `ln -s ~/.yadr/vimrc ~/.config/nvim/init.vim;`
-1. `ln -s ~/.yadr/vim/spell/en.utf-8.add en.utf-8.add;`
+1. `ln -s ~/.yadr/vim/spell ~/.config/nvim/spell;`
 1. `nvim +PlugClean +PlugInstall +PlugUpdate;`
 1. `nvim +OmniSharpInstall;`
 
@@ -60,6 +60,7 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `npm install -g vscode-html-languageserver-bin;`
 1. `npm install -g dockerfile-language-server-nodejs;`
 1. `brew install llvm;`
+1. `ln -s ~/.yadr/nvmrc ~/.nvmrc`
 1. For TypeScript (via CoC):
   1. execute in Neovim: `:CocInstall coc-tsserver`
   1. execute in Neovim: `:CocInstall coc-css`
@@ -70,8 +71,20 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 
 ### Tmux
 
+1. `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm;`
+1. `~/.tmux/plugins/tpm/tpm;`
 1. `ln -s ~/.yadr/tmux/tmux.conf ~/.tmux.conf;`
 1. `ln -s ~/.yadr/tmux/tmux.user.conf ~/.tmux.user.conf;`
+1. Run `~/.tmux/plugins/tpm/tpm`
+  - If the Plugins do not exist at `~/.tmux/plugins` then install them manually
+    1. `git clone https://github.com/tmux-plugins/tpm`
+    1. `git clone git@github.com:tmux-plugins/tmux-yank.git`
+    1. `git clone git@github.com:ofer987/tmux-airline-dracula.git`
+1. Silence bell:
+  1. Preferences -> Profiles -> Terminal -> Silence bell
+1. Fonts:
+  1. Font Book -> Add -> `~/.yadr/fonts/Fira Code Regular Nerd Font Complete.otf`
+  1. Preferences -> Profiles -> Text -> FiraCode Nerd Font
 
 ### Pry
 
