@@ -27,10 +27,6 @@ let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ }
 " let g:ale_fixers = { 'dotnet-format' }
-let g:ale_linters_ignore = {
-      \ 'javascript': ['jshint', 'eslint'],
-      \ 'json': ['eslint'], 'markdown': ['writegood']
-      \ }
 let g:ale_pattern_options = {
       \ '\.tsx?$': {'ale_enabled': 0},
       \ '\.s?css$': {'ale_enabled': 0}

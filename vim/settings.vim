@@ -52,3 +52,6 @@ vmap p pgvy
 vmap P Pgvy
 
 map <leader>e :w \| bd<CR>
+
+" Do not use Perl provider
+let g:loaded_perl_provider = 0

@@ -1,4 +1,4 @@
-artefactory/!
+artefactory
 offense
 codebase
 AEM
@@ -8,10 +8,6 @@ AEM
 UE
 EMCM
 AEM's
-#RE
-#RE/!
-#RE
-SRE/!
 SRE
 Yee
 Yee's
@@ -128,7 +124,6 @@ UEFalcon's
 TypeScript
 LSP
 Popup
-<<<<<<< HEAD
 Roja
 Kolikuluri
 TCS
@@ -139,3 +134,5 @@ Rashmi
 Aliaksandr
 Deployer
 JCR
+Ankit
+Dalmia
