@@ -1,11 +1,0 @@
-
-t
-java:S2293/"YReplace the type specification in this constructor call with the diamond operator ("<>").(¿œØ ùÿÿÿÿ
-n
-java:S22930"YReplace the type specification in this constructor call with the diamond operator ("<>").(ª³¶
-o
-java:S22931"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ì–°ð
-u
-java:S1450-"ZRemove the "noOfColumns" field and declare it as a local variable in the relevant methods.(­ŸÒ ûÿÿÿÿ
-h
-java:S3776<"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ÉÉõí

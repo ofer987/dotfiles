@@ -1,8 +1,0 @@
-
-p	java:S116+"VRename this field "ATTR_FORMAT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö˜åµøÿÿÿÿ
-i
-java:S18453"NRename field "title" to prevent any misunderstanding/clash with field "TITLE".(åõò¹ýÿÿÿÿ
-u
-java:S18454"ZRename field "description" to prevent any misunderstanding/clash with field "DESCRIPTION".(ÇÓæâýÿÿÿÿ
-y
-java:S1450,"^Remove the "currentResource" field and declare it as a local variable in the relevant methods.(ü”›Úøÿÿÿÿ

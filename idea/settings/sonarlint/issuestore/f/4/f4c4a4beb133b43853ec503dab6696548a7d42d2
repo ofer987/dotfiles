@@ -1,9 +1,0 @@
-
-v
-java:S22934"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ä—÷‡8¡³”¤‰0
-w
-java:S3008 "ZRename this field "set_cookie_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦êŸ8µ³”¤‰0
-y
-java:S3008!"\Rename this field "clear_cookie_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îæ¬÷8¸³”¤‰0
-i	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö…÷8Ó³”¤‰0
-j	java:S100A"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â«öƒ8Ú³”¤‰0

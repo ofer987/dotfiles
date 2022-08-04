@@ -1,7 +1,0 @@
-
-g
-java:S3008,"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡©ýê
-h
-java:S3776P"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ªàÌµ
-…
-java:S1130m"oRemove the declaration of thrown exception 'org.json.JSONException', as it cannot be thrown from method's body.(ÁØÿƒ
