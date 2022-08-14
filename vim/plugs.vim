@@ -63,7 +63,7 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall coc-tsserver in Neovim
 " And then run :CocInstall coc-css in Neovim
 " And then run :CocInstall coc-json in Neovim
-Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+" Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
@@ -96,6 +96,13 @@ Plug 'PProvost/vim-ps1'
 
 " .NET Framework / Core
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'nickspoons/vim-sharpenup'
+
+" Vim FZF integration, used as OmniSharp selector
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'maximbaz/lightline-ale'
 
 " C/C++
 " brew install llvm
