@@ -1,35 +1,30 @@
 " Use the stdio version of OmniSharp-roslyn - this is the default
 let g:OmniSharp_server_stdio = 1
 
-" Don't autoselect first omnicomplete option, show options even if there is only
-" one (so the preview documentation is accessible). Remove 'preview', 'popup'
-" and 'popuphidden' if you don't want to see any documentation whatsoever.
-" Note that neovim does not support `popuphidden` or `popup` yet:
-" https://github.com/neovim/neovim/issues/10996
-let g:OmniSharp_popup = 0
-if has('patch-8.1.1880')
-  set completeopt=longest,menuone,popuphidden
-  " Highlight the completion documentation popup background/foreground the same as
-  " the completion menu itself, for better readability with highlighted
-  " documentation.
-  set completepopup=highlight:Pmenu,border:off
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:OmniSharp_popup_position = 'peek'
+if has('nvim')
+  let g:OmniSharp_popup_options = {
+        \ 'winblend': 30,
+        \ 'winhl': 'Normal:Normal,FloatBorder:ModeMsg',
+        \ 'border': 'rounded'
+        \}
 else
-  set completeopt=longest,menuone,preview
-  " Set desired preview window height for viewing documentation.
-  set previewheight=5
+  let g:OmniSharp_popup_options = {
+        \ 'highlight': 'Normal',
+        \ 'padding': [0],
+        \ 'border': [1],
+        \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+        \ 'borderhighlight': ['ModeMsg']
+        \}
 endif
-
-"Super tab settings - uncomment the next 4 lines
-"let g:SuperTabDefaultCompletionType = 'context'
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
-"let g:SuperTabClosePreviewOnPopupClose = 1
-
-" Fetch full documentation during omnicomplete requests.
-" There is a performance penalty with this (especially on Mono)
-" By default, only Type/Method signatures are fetched. Full documentation can still be fetched when
-" you need it with the :OmniSharpDocumentation command.
-" let g:omnicomplete_fetch_full_documentation=1
+let g:OmniSharp_popup_mappings = {
+      \ 'sigNext': '<C-n>',
+      \ 'sigPrev': '<C-p>',
+      \ 'pageDown': ['<C-f>', '<PageDown>'],
+      \ 'pageUp': ['<C-b>', '<PageUp>']
+      \}
 
 " Fetch semantic type/interface/identifier names on BufEnter and highlight them
 let g:OmniSharp_highlight_types = 1
