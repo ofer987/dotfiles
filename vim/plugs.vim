@@ -63,7 +63,8 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall coc-tsserver in Neovim
 " And then run :CocInstall coc-css in Neovim
 " And then run :CocInstall coc-json in Neovim
-" Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+" Coc only works in Neovim
+Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
