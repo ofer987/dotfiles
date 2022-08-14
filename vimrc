@@ -43,7 +43,7 @@ if filereadable(expand('~/.vim/vundles.vim'))
 endif
 
 " This loads all the plugs specified in ~/.vim/plugs.vim
-if has('nvim') && filereadable(expand('~/.vim/plugs.vim'))
+if filereadable(expand('~/.vim/plugs.vim'))
   source ~/.vim/plugs.vim
 endif
 

@@ -1,6 +1,13 @@
 let vimsettings = '~/.vim/settings'
 let uname = system('uname -s')
 
+if has('nvim')
+else
+  for fpath in split(globpath('~/.vim/autoload', '*.vim'), '\n')
+    exe 'source' fpath
+  endfor
+endif
+
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
 
   if (fpath == expand(vimsettings) . '/yadr-keymap-mac.vim') && uname[:4] ==? 'linux'
