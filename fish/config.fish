@@ -89,6 +89,10 @@ alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
 alias rc='doctl compute droplet list'
 
+# Vim
+alias omnisharp="vim"
+alias csharp="vim"
+
 # alias cat='ccat'
 # alias less='lless'
 
