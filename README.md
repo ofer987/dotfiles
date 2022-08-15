@@ -5,6 +5,7 @@ Technology | Install Command | Latest Instructions
 iTerm2 | N/A | https://iterm2.com
 Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew
 Neovim | `brew install neovim;` | https://github.com/neovim/neovim
+Vim | `brew install vim;` | https://github.com/vim/vim
 Tmux | `brew install tmux;` | 
 Fish | `brew install fish;` | https://fishshell.com/
 Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
@@ -43,6 +44,10 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `ln -s ~/.yadr/vim/spell ~/.config/nvim/spell;`
 1. `nvim +PlugClean +PlugInstall +PlugUpdate;`
 1. `nvim +OmniSharpInstall;`
+
+### Vim
+
+1. Install vim-plug, https://github.com/junegunn/vim-plug
 
 #### Language Servers
 
