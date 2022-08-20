@@ -10,6 +10,11 @@ else
   augroup ColorschemePreferences
     autocmd!
 
+    " These preferences clear some gruvbox background colours, allowing transparency
+    autocmd ColorScheme * highlight Normal     ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight Todo       ctermbg=NONE guibg=NONE
+
     " Link ALE sign highlights to similar equivalents without background colours
     autocmd ColorScheme * highlight link ALEErrorSign   WarningMsg
     autocmd ColorScheme * highlight link ALEWarningSign ModeMsg
@@ -36,6 +41,8 @@ else
   " All sharpenup mappings will begin with `<Space>os`, e.g. `<Space>osgd` for
   " :OmniSharpGotoDefinition
   let g:sharpenup_map_prefix = '<Space>os'
+  let g:sharpenup_codeactions_set_signcolumn = 0
+  let g:sharpenup_codeactions_glyph = '->'
 
   let g:sharpenup_statusline_opts = { 'Text': '%s (%p/%P)' }
   let g:sharpenup_statusline_opts.Highlight = 0
@@ -48,6 +55,7 @@ else
 
   " Lightline: {{{
   let g:lightline = {
+  \ 'colorscheme': 'gruvbox',
   \ 'active': {
   \   'right': [
   \     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],

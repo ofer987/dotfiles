@@ -42,7 +42,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'justinmk/vim-sneak'
 Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
@@ -98,12 +97,15 @@ Plug 'PProvost/vim-ps1'
 " .NET Framework / Core
 Plug 'ofer987/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
+Plug 'gruvbox-community/gruvbox'
 
 " Vim FZF integration, used as OmniSharp selector
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " C/C++
 " brew install llvm
