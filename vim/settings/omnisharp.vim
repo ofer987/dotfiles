@@ -147,7 +147,6 @@ else
     autocmd FileType cs set hlsearch
     autocmd FileType cs set incsearch
     autocmd FileType cs set laststatus=2
-    autocmd FileType cs set nonumber
     autocmd FileType cs set noruler
     autocmd FileType cs set noshowmode
     autocmd FileType cs set signcolumn=yes
