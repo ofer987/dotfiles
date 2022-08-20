@@ -152,7 +152,7 @@ else
     autocmd FileType cs set signcolumn=yes
 
     autocmd FileType cs set mouse=a
-    autocmd FileType cs set updatetime=1000
+    autocmd FileType cs set updatetime=200
 
     "The following commands are contextual, based on the current cursor position.
     autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
