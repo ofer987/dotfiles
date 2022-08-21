@@ -166,7 +166,7 @@ else
     autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
     autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
     autocmd FileType cs nnoremap <leader>ft :OmniSharpTypeLookup<cr>
-    autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
+    autocmd FileType cs nnoremap <leader>dd :OmniSharpDocumentation<cr>
 
     " navigate up by method/property/field
     autocmd FileType cs nnoremap gk :OmniSharpNavigateUp<cr>
