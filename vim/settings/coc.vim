@@ -34,15 +34,15 @@ if has('nvim')
   " TypeScript
   " npm install -g typescript typescript-language-server
   " And then run :CocInstall coc-tsserver in Neovim
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go nmap <silent> gd <Plug>(coc-definition)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>ft <Plug>(coc-type-definition)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fi <Plug>(coc-implementation)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fu <Plug>(coc-references)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>nm <Plug>(coc-rename)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-n> <Plug>(coc-diagnostic-next)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-p> <Plug>(coc-diagnostic-prev)
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fl :CocList outline<cr>
-  autocmd FileType typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go nmap <silent> gd <Plug>(coc-definition)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>ft <Plug>(coc-type-definition)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fi <Plug>(coc-implementation)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fu <Plug>(coc-references)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>nm <Plug>(coc-rename)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-n> <Plug>(coc-diagnostic-next)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-p> <Plug>(coc-diagnostic-prev)
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fl :CocList outline<cr>
+  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
 else
   :silent! CocDisable
 endif
