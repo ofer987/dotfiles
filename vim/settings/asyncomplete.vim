@@ -70,18 +70,6 @@ au User asyncomplete_setup call asyncomplete#ale#register_source({
       \ 'linter': 'flow',
       \ })
 
-" Bash
-if executable('bash-language-server')
-  augroup LspBash
-    autocmd!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'bash-language-server',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
-          \ 'allowlist': ['sh', 'gitignore'],
-          \ })
-  augroup END
-endif
-
 " HTML
 if executable('html-languageserver')
   au User lsp_setup call lsp#register_server({
