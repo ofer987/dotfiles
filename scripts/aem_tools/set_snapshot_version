@@ -18,13 +18,13 @@ fi
 # Change the revision version
 mvn versions:set-property \
     -Dproperty=revision \
-    -DnewVersion="$RELEASE_VERSION"
+    -DnewVersion="$RELEASE_VERSION-SNAPSHOT"
 
 # AMS requires us to update the <version> tags
 # Otherwise the version number does not show up correctly in PPE and in Production
 # (Go figure!? :p)
-mvn versions:set \
-    -DgroupId=* \
-    -DartifactId=* \
-    -DoldVersion=* \
-    -DnewVersion="$RELEASE_VERSION"
+# mvn versions:set \
+#     -DgroupId=* \
+#     -DartifactId=* \
+#     -DoldVersion=* \
+#     -DnewVersion="$RELEASE_VERSION"

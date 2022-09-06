@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set +e;
+
+MASTER_BRANCH="origin/master"
+PPE_BRANCH="adobe/release"
+
+NONE_RENDERED_FILES=$(git diff "${MASTER_BRANCH}..${PPE_BRANCH}" --name-only | ag --invert-match '^dispatcher\/render')
+git diff -B "${MASTER_BRANCH}..${PPE_BRANCH}" -- ${NONE_RENDERED_FILES}
