@@ -85,7 +85,7 @@ function vi
   nvim $argv
 end
 
-alias view=nvim
+alias view="nvim -R"
 alias vimdiff=nvim
 alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
