@@ -59,6 +59,8 @@ function fish_user_key_bindings
   bind --erase --mode visual --preset \cd
 end
 
+set -x TERM "screen-256color"
+
 set -x NVM_DIR ~/.nvm
 
 set -x GOPATH ~/go
@@ -90,8 +92,9 @@ alias rvii='vi -R +"set ft=ruby"'
 alias rc='doctl compute droplet list'
 
 # Vim
-alias omnisharp="vim"
-alias csharp="vim"
+alias vim="env TERM=xterm-256color /opt/homebrew/bin/vim"
+alias omnisharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
+alias csharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
 
 # alias cat='ccat'
 # alias less='lless'
