@@ -42,9 +42,15 @@ if filereadable(expand('~/.vim/vundles.vim'))
   source ~/.vim/vundles.vim
 endif
 
-" This loads all the plugs specified in ~/.vim/plugs.vim
-if filereadable(expand('~/.vim/plugs.vim'))
-  source ~/.vim/plugs.vim
+" This loads all the plugs
+if has('nvim')
+  if filereadable(expand('~/.vim/plugs.nvim'))
+    source ~/.vim/plugs.nvim
+  endif
+else
+  if filereadable(expand('~/.vim/plugs.vim'))
+    source ~/.vim/plugs.vim
+  endif
 endif
 
 " ================ Turn Off Swap Files ==============
@@ -119,7 +125,7 @@ set smartcase       " ...unless we type a capital
 set clipboard=unnamed
 so ~/.yadr/vim/settings.vim
 
-if filereadable(expand('~/.config/nvim/local.vim'))
+if has('nvim') && filereadable(expand('~/.config/nvim/local.vim'))
   so ~/.config/nvim/local.vim
 endif
 

@@ -9,7 +9,8 @@ vim/after/.vimrc.after
 vim/.vundles.local
 vim/.vundles.local.bak
 vim/bundle
-vim/plugged
+vim/plugged.nvim
+vim/plugged.vim
 vim/sessions
 .netrwhist
 bin/subl
