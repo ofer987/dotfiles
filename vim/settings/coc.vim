@@ -6,10 +6,10 @@ if has('nvim')
   autocmd BufEnter * let g:asyncomplete_auto_completeopt = 1
   autocmd BufEnter * let g:asyncomplete_auto_popup = 1
 
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:coc_start_at_startup = 1
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go call execute('CocEnable')
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:asyncomplete_auto_completeopt = 0
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:asyncomplete_auto_popup = 0
+  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:coc_start_at_startup = 1
+  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go call execute('CocEnable')
+  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:asyncomplete_auto_completeopt = 0
+  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go let g:asyncomplete_auto_popup = 0
 
   autocmd FileType scss setl iskeyword+=@-@
   " Do not change cursor style if <C-c> is pressed
@@ -34,15 +34,15 @@ if has('nvim')
   " TypeScript
   " npm install -g typescript typescript-language-server
   " And then run :CocInstall coc-tsserver in Neovim
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go nmap <silent> gd <Plug>(coc-definition)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>ft <Plug>(coc-type-definition)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fi <Plug>(coc-implementation)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fu <Plug>(coc-references)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>nm <Plug>(coc-rename)
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go nmap <silent> gd <Plug>(coc-definition)
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>ft <Plug>(coc-type-definition)
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fi <Plug>(coc-implementation)
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fu <Plug>(coc-references)
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>nm <Plug>(coc-rename)
   autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-n> <Plug>(coc-diagnostic-next)
   autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-p> <Plug>(coc-diagnostic-prev)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fl :CocList outline<cr>
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fl :CocList outline<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
 else
   :silent! CocDisable
 endif
