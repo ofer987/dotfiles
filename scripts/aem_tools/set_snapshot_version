@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
-# First argument: JAVA_HOME
-# Second argument: RELEASE_VERSION
-
-if [[ -z $JAVA_HOME ]]; then
-  echo 'JAVA_HOME is not set';
-
-  exit 1
-fi
+# Expected environment variables
+# RELEASE_VERSION
 
 if [[ -z $RELEASE_VERSION ]]; then
   echo 'RELEASE_VERSION is not set';
@@ -19,12 +13,3 @@ fi
 mvn versions:set-property \
     -Dproperty=revision \
     -DnewVersion="$RELEASE_VERSION-SNAPSHOT"
-
-# AMS requires us to update the <version> tags
-# Otherwise the version number does not show up correctly in PPE and in Production
-# (Go figure!? :p)
-# mvn versions:set \
-#     -DgroupId=* \
-#     -DartifactId=* \
-#     -DoldVersion=* \
-#     -DnewVersion="$RELEASE_VERSION"
