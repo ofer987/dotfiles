@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'active_support'
+
+VARIABLES_PATH = File.join(Dir.pwd, 'dispatcher', 'src', 'conf.d', 'variables')
+WEBSITE_REGEX = /define\s+\S+\s+(\S+)/i
+
+def websites(path)
+  IO.readlines(path)
+    .map { |line| Array(line.match(WEBSITE_REGEX))[1].to_s }
+    .select { |line| line.match?(/\./) }
+    .reject { |line| line.match?(/ENV_TYPE/i) }
+    .reject(&:blank?)
+end
+
+# require 'pry-byebug'
+# binding.pry
+paths = Dir.entries(VARIABLES_PATH)
+  .reject { |entry| ['.', '..'].include? entry }
+  .map { |entry| File.join(VARIABLES_PATH, entry) }
+  .select { |path| File.exist? path }
+  .flat_map { |path| websites(path) }
+  .sort
+  .uniq
+
+puts paths.join("\n")
