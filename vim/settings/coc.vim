@@ -45,7 +45,8 @@ if has('nvim')
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fi <Plug>(coc-implementation)
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fu <Plug>(coc-references)
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>nm <Plug>(coc-rename)
-  autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-n> <Plug>(coc-diagnostic-next)
+  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go map <silent> <C-n> <Plug>(coc-diagnostic-next)
+  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go map <silent> <C-p> <Plug>(coc-diagnostic-prev)
   autocmd FileType sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <C-p> <Plug>(coc-diagnostic-prev)
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>fl :CocList outline<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
