@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SOURCE_DIRECTORY=$(dirname $0)/open.lbaction
+TARGET_DIRECTORY=/Users/ofer987/Library/Application\ Support/LaunchBar/Actions/open.lbaction
+
+ln -s "${SOURCE_DIRECTORY}" "${TARGET_DIRECTORY}"
