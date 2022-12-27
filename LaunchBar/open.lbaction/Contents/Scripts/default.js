@@ -1,36 +1,36 @@
 // LaunchBar Action Script
 
-let isHttps = (argument) => {
-  if (argument.toLowerCase() === 'https') {
-    return true;
-  }
-
-  return false;
-}
-
 function run(argument) {
   if (!argument) {
     return;
   }
 
-  args = argument.split(" ");
+  args = argument.split(' ');
 
-  let schema = 'http';
-  if (isHttps(args[0])) {
-    schema = 'https';
-    args = args.slice(1);
+  let schema = args[0];
+  switch (schema) {
+    case 'https':
+    case 'http':
+      args = args.slice(1);
+      break;
+    default:
+      schema = 'http';
   }
 
   if (args.length === 2) {
-    path = args[1];
-    if (path.startsWith("/")) {
+    let port = args[0];
+    let path = args[1];
+
+    if (path.startsWith('/')) {
       path = path.substring(1)
     }
     path = encodeURI(path);
 
-    uri = `${schema}://localhost:${args[0]}/${path}`;
+    uri = `${schema}://localhost:${port}/${path}`;
   } else {
-    uri = `${schema}://localhost:${args[0]}`;
+    let port = args[0];
+
+    uri = `${schema}://localhost:${port}`;
   }
 
   LaunchBar.openURL(uri);
