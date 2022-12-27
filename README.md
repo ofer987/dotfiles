@@ -106,6 +106,12 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 
 1. `ln -s ~/.yadr/karabiner ~/.config/karabiner;`
 
+### LaunchBar
+
+1. Install LaunchBar from http://launchbar.com
+1. Licence can be found in ofer987@gmail.com email inbox
+1. Install custom actions by executing, `~/.yadr/LaunchBar/create_action`
+
 ## Future Plans
 
 TODO: Consider moving the entire ~/.config directory into ~/.yadr and then adding a .gitignore file within it to preclude machine-dependent files
