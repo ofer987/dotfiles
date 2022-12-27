@@ -35,7 +35,15 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. Follow the instructions at https://starship.rs/
 1. Install the NerdFont FiraCode font for iTerm2
 
-### Neovim
+### Neovim and Vim
+
+Install both Neovim and Vim via Brew.
+
+#### vim-plug
+
+1. Install vim-plug, https://github.com/junegunn/vim-plug, for both Neovim and Vim
+
+#### Plugins
 
 1. `ln -s ~/.yadr/vim ~/.vim;`
 1. `ln -s ~/.yadr/vimrc ~/.vimrc;`
@@ -43,11 +51,8 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `ln -s ~/.yadr/vimrc ~/.config/nvim/init.vim;`
 1. `ln -s ~/.yadr/vim/spell ~/.config/nvim/spell;`
 1. `nvim +PlugClean +PlugInstall +PlugUpdate;`
-1. `nvim +OmniSharpInstall;`
-
-### Vim
-
-1. Install vim-plug, https://github.com/junegunn/vim-plug
+1. `vim +PlugClean +PlugInstall +PlugUpdate;`
+1. `vim +OmniSharpInstall;`
 
 #### Language Servers
 
