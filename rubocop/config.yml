@@ -2272,7 +2272,7 @@ Metrics/AbcSize:
   # a Float.
   IgnoredMethods: []
   CountRepeatedAttributes: true
-  Max: 20
+  Max: 35
 
 Metrics/BlockLength:
   Description: 'Avoid long blocks with many lines.'
@@ -2316,7 +2316,7 @@ Metrics/CyclomaticComplexity:
   VersionAdded: '0.25'
   VersionChanged: '0.81'
   IgnoredMethods: []
-  Max: 7
+  Max: 9
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 20 lines of code.'
@@ -2325,7 +2325,7 @@ Metrics/MethodLength:
   VersionAdded: '0.25'
   VersionChanged: '1.5'
   CountComments: false  # count full line comments?
-  Max: 20
+  Max: 30
   CountAsOne: []
   IgnoredMethods: []
 
