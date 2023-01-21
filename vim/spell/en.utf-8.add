@@ -118,7 +118,6 @@ skipTests
 JaCoCo
 toolchains
 JDK
-Plugins
 mustache
 UEFalcon's
 TypeScript
@@ -194,3 +193,4 @@ Dockerfile
 CIDR
 Subnetting
 SDLC
+Plugins
