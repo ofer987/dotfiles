@@ -59,7 +59,7 @@ function fish_user_key_bindings
   bind --erase --mode visual --preset \cd
 end
 
-set -x TERM "screen-256color"
+set -x TERM "xterm-256color"
 
 set -x NVM_DIR ~/.nvm
 
