@@ -96,6 +96,8 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 1. Fonts:
   1. Font Book -> Add -> `~/.yadr/fonts/Fira Code Regular Nerd Font Complete.otf`
   1. Preferences -> Profiles -> Text -> FiraCode Nerd Font
+1. Meta Key:
+  1. Preferences -> Profiles -> Keys -> General -> **Left Option Key** set to `Esc+`
 
 ### Pry
 
