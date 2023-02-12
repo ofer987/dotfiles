@@ -144,3 +144,5 @@ if has('nvim')
 else
   colorscheme gruvbox
 endif
+
+set cmdheight=2
