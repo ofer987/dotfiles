@@ -8,7 +8,7 @@ class Ctags
   DEFAULT_LANGUAGES = ['ruby'].freeze
 
   def initialize(selected_languages)
-    self.selected_languages = (Array(selected_languages))
+    self.selected_languages = Array(selected_languages)
       .map(&:to_s)
       .map(&:strip)
       .uniq
