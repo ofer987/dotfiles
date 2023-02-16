@@ -6,7 +6,7 @@ iTerm2 | N/A | https://iterm2.com
 Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew
 Neovim | `brew install neovim;` | https://github.com/neovim/neovim
 Vim | `brew install vim;` | https://github.com/vim/vim
-Tmux | `brew install tmux;` | 
+Tmux | `brew install tmux;` |
 Fish | `brew install fish;` | https://fishshell.com/
 Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
 Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
@@ -30,14 +30,30 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `fisher install oh-my-fish/theme-coffeeandcode;`
 1. `fisher install dracula/fish;`
 
+### Make Fish be the Default Shell
+
+1. Add the result of `which fish` to `/etc/shells`
+1. `chsh -s $(which fish)` in Bash
+
 ### Starship Cross-shell Prompt
 
 1. Follow the instructions at https://starship.rs/
 1. Install the NerdFont FiraCode font for iTerm2
 
+### Node && Yarn
+
+1. `nvm install 14.17`
+1. `nvm install 18.14`
+1. `ln -s ~/.yadr/nvmrc ~/.nvmrc`
+1. `npm install --global yarn`
+
 ### Neovim and Vim
 
-Install both Neovim and Vim via Brew.
+Install both Neovim and Vim via Brew, and then run,
+
+1. `pip3 install pynvim --upgrade`
+1. `yarn global add neovim`
+1. `gem install neovim`
 
 #### vim-plug
 
@@ -79,6 +95,10 @@ Install both Neovim and Vim via Brew.
   1. execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
+
+### Git
+
+1. `ln -s ~/.yadr/git/gitconfig ~/.gitconfig`
 
 ### Tmux
 
