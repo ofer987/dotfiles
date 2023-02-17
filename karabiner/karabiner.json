@@ -1,8 +1,10 @@
 {
     "global": {
-        "check_for_updates_on_startup": false,
+        "ask_for_confirmation_before_quitting": true,
+        "check_for_updates_on_startup": true,
         "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
+        "show_profile_name_in_menu_bar": false,
+        "unsafe_ui": false
     },
     "profiles": [
         {
@@ -16,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
@@ -50,15 +52,43 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
+                        "product_id": 835,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 835,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
                         "product_id": 311,
                         "vendor_id": 9456
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": false,
+                    "manipulate_caps_lock_led": true,
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "left_alt"
+                                "key_code": "left_option"
                             },
                             "to": [
                                 {
@@ -68,7 +98,7 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_gui"
+                                "key_code": "left_command"
                             },
                             "to": [
                                 {
@@ -76,7 +106,36 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 1970,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 1970,
+                        "vendor_id": 1118
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
@@ -106,7 +165,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "mission_control"
+                            "apple_vendor_keyboard_key_code": "mission_control"
                         }
                     ]
                 },
@@ -116,7 +175,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "launchpad"
+                            "apple_vendor_keyboard_key_code": "spotlight"
                         }
                     ]
                 },
@@ -126,7 +185,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_decrement"
+                            "consumer_key_code": "dictation"
                         }
                     ]
                 },
@@ -136,7 +195,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_increment"
+                            "key_code": "f6"
                         }
                     ]
                 },
@@ -166,7 +225,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "fastforward"
+                            "consumer_key_code": "fast_forward"
                         }
                     ]
                 },
