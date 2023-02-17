@@ -141,3 +141,10 @@ TODO: Consider moving the entire ~/.config directory into ~/.yadr and then addin
 ## Key Mappings
 
 [Key Mappings](./keymappings.md)
+
+## Chrome
+
+1. Install [Rearrange Tabs](https://chrome.google.com/webstore/detail/rearrange-tabs/ccnnhhnmpoffieppjjkhdakcoejcpbga)
+1. Install [Pin Tab](https://chrome.google.com/webstore/detail/pin-tab/dgldedkigbbalaioohedddpameekglma)
+1. Install [Autocrate](https://github.com/ofer987/autocrate)
+1. Install [Bavardo](https://github.com/ofer987/bavardo)
