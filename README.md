@@ -35,6 +35,10 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. Add the result of `which fish` to `/etc/shells`
 1. `chsh -s $(which fish)` in Bash
 
+### iTerm2
+
+1. Load settings from `~/.yadr/iTerm2`, Preferences -> General -> Preferences
+
 ### Starship Cross-shell Prompt
 
 1. Follow the instructions at https://starship.rs/
