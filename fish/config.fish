@@ -92,9 +92,9 @@ alias rvii='vi -R +"set ft=ruby"'
 alias rc='doctl compute droplet list'
 
 # Vim
-alias vim="/opt/homebrew/bin/vim"
-alias omnisharp="/opt/homebrew/bin/vim"
-alias csharp="/opt/homebrew/bin/vim"
+alias vim="env TERM=xterm-256color /opt/homebrew/bin/vim"
+alias omnisharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
+alias csharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
 
 # alias cat='ccat'
 # alias less='lless'
