@@ -51,6 +51,10 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 1. `ln -s ~/.yadr/nvmrc ~/.nvmrc`
 1. `npm install --global yarn`
 
+### IntelliJ IDEA
+
+1. `defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false`
+
 ### Neovim and Vim
 
 Install both Neovim and Vim via Brew, and then run,
