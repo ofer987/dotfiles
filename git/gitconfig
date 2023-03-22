@@ -122,6 +122,7 @@
   url = repo
   copy-url = "!fuck() { git repo ${1} | tr -d '\n' | pbcopy; }; fuck"
   open-url = "!fuck() { git repo ${1} | xargs open; }; fuck"
+  open-actions-url = "!fuck() { git actions-url ${1} | xargs open; }; fuck"
 
   open-jira-issue = !git jira-issue | xargs open
   open-jira = !git jira-issue | xargs open
