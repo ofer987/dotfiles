@@ -157,6 +157,7 @@ else
 
     "The following commands are contextual, based on the current cursor position.
     autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
+    autocmd FileType cs nnoremap gt :OmniSharpTypeLookup<cr>
     autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
     autocmd FileType cs nnoremap <leader>ot :OmniSharpFindType<cr>
     autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
@@ -166,7 +167,9 @@ else
     " cursor can be anywhere on the line containing an issue
     autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
     autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-    autocmd FileType cs nnoremap <leader>ft :OmniSharpTypeLookup<cr>
+    autocmd FileType cs nnoremap <leader>ft :OmniSharpGotoTypeDefinition<cr>
+    autocmd FileType cs nmap <silent> <buffer> <Leader>ca <Plug>(omnisharp_code_actions)
+    autocmd FileType cs xmap <silent> <buffer> <Leader>ca <Plug>(omnisharp_code_actions)
     autocmd FileType cs nnoremap <leader>dd :OmniSharpDocumentation<cr>
 
     " navigate up by method/property/field
@@ -182,7 +185,6 @@ else
 
     " rename with dialog
     autocmd FileType cs nnoremap <leader>nm :OmniSharpRename<cr>
-    autocmd FileType cs nnoremap <F2> :OmniSharpRename<cr>
     " rename without dialog - with cursor on the symbol to rename... ':Rename newname'
     autocmd FileType cs command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 

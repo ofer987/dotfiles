@@ -86,7 +86,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'PProvost/vim-ps1'
 
 " .NET Framework / Core
-Plug 'OmniSharp/omnisharp-vim'
+Plug 'ofer987/omnisharp-vim', { 'branch': 'type-definition' }
 Plug 'nickspoons/vim-sharpenup'
 Plug 'gruvbox-community/gruvbox'
 
