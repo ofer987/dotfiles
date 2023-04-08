@@ -145,4 +145,9 @@ else
   colorscheme gruvbox
 endif
 
+if has('nvim')
+else
+  set timeoutlen=300
+endif
+
 set cmdheight=2
