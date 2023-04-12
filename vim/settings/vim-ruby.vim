@@ -15,5 +15,5 @@ function! InsertRubyDebugger(text) abort
   call setpos('.', currentpos)
 endfunction
 
-autocmd FileType ruby map <leader>ds :call InsertRubyDebugger("require 'pry-byebug'")<CR>
-autocmd FileType ruby map <leader>dp :call InsertRubyDebugger("binding.pry")<CR>
+autocmd FileType ruby map <leader>dp :call InsertRubyDebugger("require 'pry-byebug'")<CR>
+autocmd FileType ruby map <leader>ds :call InsertRubyDebugger("binding.pry")<CR>
