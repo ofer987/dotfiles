@@ -100,6 +100,7 @@ Install both Neovim and Vim via Brew, and then run,
   1. execute in Neovim: `:CocInstall coc-css`
   1. execute in Neovim: `:CocInstall coc-json`
   1. execute in Neovim: `:CocInstall coc-solargraph`
+  1. execute in Neovim: `:CocInstall coc-powershell`
   1. execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
