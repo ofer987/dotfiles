@@ -7,7 +7,7 @@ if [[ -z $VERSION ]]; then
   exit 1;
 fi
 
-TAG_NAME="release-${VERSION}"
+TAG_NAME="releases/${VERSION}"
 UAT_BRANCH="adobe/uatdeploy"
 
 NONE_RENDERED_FILES=$(git diff "${TAG_NAME}..${UAT_BRANCH}" --name-only | ag --invert-match '^dispatcher\/render')
