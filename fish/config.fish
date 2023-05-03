@@ -112,6 +112,7 @@ alias dt='dotnet test'
 # less with ignore-case search
 alias il='less -i'
 alias lessi='less -i'
+alias gitag="ag --path-to-ignore=.gitignore"
 
 status --is-interactive; and source (rbenv init -|psub)
 
