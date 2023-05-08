@@ -55,6 +55,12 @@ Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITH
 
 1. `defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false`
 
+### .NET Core
+
+Install from [Microsoft](https://dotnet.microsoft.com/en-us/download).
+
+Install in the home directory (~) on Thomson Reuters computers because of permissions.
+
 ### Neovim and Vim
 
 Install both Neovim and Vim via Brew, and then run,
