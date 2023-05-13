@@ -16,8 +16,8 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> <leader>ft <plug>(lsp-type-definition)
   nmap <buffer> <leader>fu <plug>(lsp-references)
   nmap <buffer> <leader>nm <plug>(lsp-rename)
-  nmap <buffer> K <plug>(lsp-hover)
-  nmap <buffer> <leader>K <plug>(lsp-hover)
+  nmap <buffer> <leader>d <plug>(lsp-hover)
+  nmap <buffer> <leader>k <plug>(lsp-hover)
 
   let g:lsp_format_sync_timeout = 1000
   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
