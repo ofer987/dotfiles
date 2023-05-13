@@ -95,6 +95,8 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
+set wildmenu
+set wildmode=list:longest
 set wildignore=*.o,*.obj,*~   "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
