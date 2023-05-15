@@ -217,3 +217,5 @@ JMockit
 cetera
 MSBuild
 IIS
+BrowserStack
+lifecycle
