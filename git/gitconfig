@@ -126,6 +126,7 @@
 
   open-jira-issue = !git jira-issue | xargs open
   open-jira = !git jira-issue | xargs open
+  open-issue = !git issue | xargs open
 
   open-pull-requests = !open $(git pull-requests)
   open-prs = open-pull-requests
