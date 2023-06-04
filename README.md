@@ -64,6 +64,8 @@ Install in the home directory (~) on Thomson Reuters computers because of permis
 ### Python
 
 1. Install pyenv, `brew install pyenv`
+2. Install pipx, `brew install pipx`, and follow extra instructions at https://pypi.org/project/pipx/
+3. Install pipenv, `pipx install pipenv`
 
 ### Neovim and Vim
 
