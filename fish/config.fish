@@ -63,10 +63,13 @@ set -x TERM "screen-256color"
 
 set -x NVM_DIR ~/.nvm
 
+set -x PYENV_ROOT $HOME/.pyenv
+
 set -x GOPATH ~/go
 set -x PATH /Applications/IntelliJ\ IDEA.app/Contents/MacOS $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH ~/.yadr/scripts/git-scripts/exe ~/.rbenv/shims ~/.yadr/scripts/**/exe ~/.yadr/scripts $PATH $GOPATH/bin
+set -x PATH $PYENV_ROOT/bin $PATH
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 set -x DOTNET_CLI_TELEMETRY_OPTOUT true
 
@@ -115,6 +118,8 @@ alias lessi='less -i'
 alias gitag="ag --path-to-ignore=.gitignore"
 
 status --is-interactive; and source (rbenv init -|psub)
+
+pyenv init - | source
 
 function latest
   set -x head "./"

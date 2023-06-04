@@ -61,6 +61,10 @@ Install from [Microsoft](https://dotnet.microsoft.com/en-us/download).
 
 Install in the home directory (~) on Thomson Reuters computers because of permissions.
 
+### Python
+
+1. Install pyenv, `brew install pyenv`
+
 ### Neovim and Vim
 
 Install both Neovim and Vim via Brew, and then run,
