@@ -24,12 +24,15 @@ function! s:on_lsp_buffer_enabled() abort
 endfunction
 
 " Python
-if executable('pyls')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
+if has('nvim')
+else
+  if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'pyls',
+          \ 'cmd': {server_info->['pyls']},
+          \ 'allowlist': ['python'],
+          \ })
+  endif
 endif
 
 if has('nvim')
