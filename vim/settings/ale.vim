@@ -23,7 +23,8 @@ nnoremap <leader>aff :ALEFix<CR>
 
 let g:ale_linters = {
       \ 'markdown': ['writegood'],
-      \ 'cs': ['OmniSharp', 'dotnet-format', 'csc']
+      \ 'cs': ['OmniSharp', 'dotnet-format', 'csc'],
+      \ 'python': [],
       \ }
 let g:ale_cs_dotnet_format_executable = 'dotnet'
 let g:ale_fixers = {

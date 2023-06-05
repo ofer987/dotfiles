@@ -64,7 +64,6 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall coc-json in Neovim
 " And then run :CocInstall coc-solargraph in Neovim
 " And then run :CocInstall @yaegassy/coc-pylsp in Neovim
-" And then run :CocInstall @yaegassy/coc-ruff in Neovim
 " And then run :CocInstall coc-pyright in Neovim
 " Coc only works in Neovim
 Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }

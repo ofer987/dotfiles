@@ -15,5 +15,7 @@
         "usePlaceholders": true
       }
     }
-  }
+  },
+  "pylsp.plugins.pylint.enabled": true,
+  "pylsp.plugins.pycodestyle.enabled": false
 }
