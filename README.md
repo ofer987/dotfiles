@@ -75,6 +75,11 @@ Install both Neovim and Vim via Brew, and then run,
 1. `yarn global add neovim`
 1. `gem install neovim`
 
+#### Configure GitHub Copilot
+
+1. `:Copilot setup`
+1. `:Copilot enable`
+
 #### vim-plug
 
 1. Install vim-plug, https://github.com/junegunn/vim-plug, for both Neovim and Vim
