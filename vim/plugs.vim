@@ -68,6 +68,9 @@ Plug 'AndrewRadev/tagalong.vim'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+" Python
+Plug 'psf/black', { 'branch': 'stable' }
+
 " Ruby
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'

@@ -83,6 +83,9 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']
   \ }
 
+" Python
+Plug 'psf/black', { 'branch': 'stable' }
+
 " Ruby
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
