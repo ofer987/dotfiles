@@ -60,9 +60,10 @@ if has('nvim')
   autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py map <silent> <C-p> <Plug>(coc-diagnostic-prev)
 
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>fl :CocList outline -kind method<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>fk :CocList outline -kind function<cr>
 
   silent! unmap ,fk
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>fk :CocList outline -kind class<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>fj :CocList outline -kind class<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>qk :CocPrev<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python map <silent> <leader>qj :CocNext<cr>
