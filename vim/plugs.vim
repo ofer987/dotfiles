@@ -113,7 +113,4 @@ Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 " Run commands asynchronously
 Plug 'skywind3000/asyncrun.vim'
 
-" GitHub Copilot
-Plug 'github/copilot.vim'
-
 call plug#end()
