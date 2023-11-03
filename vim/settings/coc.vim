@@ -59,11 +59,11 @@ if has('nvim')
   autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <leader>an <Plug>(coc-diagnostic-next)
   autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <leader>ap <Plug>(coc-diagnostic-prev)
 
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fl :CocList outline -kind method<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fh :CocList outline -kind class<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind method<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fk :CocList outline -kind function<cr>
 
   silent! unmap ,fk
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind class<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
 
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gk :CocPrev<cr>
