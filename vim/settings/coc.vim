@@ -65,6 +65,9 @@ if has('nvim')
   silent! unmap ,fk
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind class<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
+
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gk :CocPrev<cr>
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gj :CocNext<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>gk :CocPrev<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>gj :CocNext<cr>
 else
