@@ -79,6 +79,9 @@ alias "ntmux=tmux new-session -n shell"
 
 alias "prs=git pulls | xargs open"
 
+# Sorting by SemVer, https://en.wikipedia.org/wiki/Software_versioning#Semantic_versioning
+alias "'sort --semver'=sort-semver"
+
 # Vi like
 alias ":q=exit"
 alias ":Q=exit"
