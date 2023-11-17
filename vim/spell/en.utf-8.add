@@ -245,3 +245,5 @@ EKS
 EC2
 AMIs
 Grafana
+DigitalOcean
+NGINX
