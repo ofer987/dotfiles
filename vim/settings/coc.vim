@@ -59,6 +59,7 @@ if has('nvim')
   autocmd BufEnter *.sh,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py map <leader>an <Plug>(coc-diagnostic-next)
   autocmd BufEnter *.sh,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py map <leader>ap <Plug>(coc-diagnostic-prev)
 
+  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fl :CocList<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fh :CocList outline -kind class<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind method<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fk :CocList outline -kind function<cr>
