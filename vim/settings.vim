@@ -30,7 +30,7 @@ set listchars+=trail:·
 set listchars+=extends:»,precedes:«
 
 " case-insensitive
-command W :w|e
+command W :w | e
 command Q q
 
 " Toggle NERDTree
@@ -57,8 +57,6 @@ nnoremap <leader>vg ^vg_
 " Paste content while remembering what was just pasted
 vmap p pgvy
 vmap P Pgvy
-
-map <leader>e :w \| bd<CR>
 
 " Do not use Perl provider
 let g:loaded_perl_provider = 0
