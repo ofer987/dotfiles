@@ -11,13 +11,8 @@ nnoremap <leader>ai :ALEInfo<CR>
 nnoremap <leader>ao :ALEDetail<CR>
 nnoremap <leader>ac :pclose<CR>
 
-" For Vim
-" These commands are defined for Neovim in coc.vim
-if has('nvim')
-else
-  map <C-n> :ALENextWrap<CR>
-  map <C-p> :ALEPreviousWrap<CR>
-endif
+map <C-n> :ALENextWrap<CR>
+map <C-p> :ALEPreviousWrap<CR>
 
 nnoremap <leader>aff :ALEFix<CR>
 

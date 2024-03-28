@@ -56,8 +56,8 @@ if has('nvim')
   autocmd BufEnter * map <C-p> :ALEPreviousWrap<CR>
 
   " But use Coc for these filetypes because it works better!
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <leader>an <Plug>(coc-diagnostic-next)
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <leader>ap <Plug>(coc-diagnostic-prev)
+  autocmd BufEnter *.sh,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py map <leader>an <Plug>(coc-diagnostic-next)
+  autocmd BufEnter *.sh,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py map <leader>ap <Plug>(coc-diagnostic-prev)
 
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fh :CocList outline -kind class<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind method<cr>
