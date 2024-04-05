@@ -5,7 +5,7 @@
   "coc.preferences.useQuickfixForLocations": true,
   "css.lint.emptyRules": "ignore",
   "scss.lint.emptyRules": "ignore",
-  "suggest.noselect": true,
+  "suggest.noselect": false,
   "languageserver": {
     "golang": {
       "command": "gopls",
