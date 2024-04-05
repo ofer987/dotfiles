@@ -108,7 +108,7 @@ if has('python3')
   let g:UltiSnipsExpandTrigger="<tab>"
   call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
         \ 'name': 'ultisnips',
-        \ 'allowlist': ['gitcommit'],
+        \ 'allowlist': ['gitcommit', 'ruby'],
         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
         \ }))
 endif
