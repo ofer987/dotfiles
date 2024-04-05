@@ -3,13 +3,9 @@ let g:coc_disable_startup_warning = 1
 if has('nvim')
   autocmd BufEnter * let g:coc_start_at_startup = 0
 
-  autocmd BufEnter * let g:asyncomplete_auto_completeopt = 1
-  autocmd BufEnter * let g:asyncomplete_auto_popup = 1
 
   autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte let g:coc_start_at_startup = 1
   autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1.*.py,*.svelte call execute('CocEnable')
-  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1.*.py,*.svelte let g:asyncomplete_auto_completeopt = 0
-  autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1.*.py,*.svelte let g:asyncomplete_auto_popup = 0
 
   autocmd FileType scss setl iskeyword+=@-@
   " Do not change cursor style if <C-c> is pressed
@@ -65,7 +61,6 @@ if has('nvim')
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fk :CocList outline -kind function<cr>
 
   silent! unmap ,fk
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>sp :CocRestart<cr> | let g:asyncomplete_auto_popup = 0
 
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gk :CocPrev<cr>
   autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gj :CocNext<cr>
