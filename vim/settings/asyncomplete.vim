@@ -1,31 +1,31 @@
-" Settings
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-let g:asyncomplete_auto_popup = 1
-
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  setlocal signcolumn=yes
-
-  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-
-  nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> <leader>gd <plug>(lsp-definition)
-  nmap <buffer> <leader>fi <plug>(lsp-implementation)
-  nmap <buffer> <leader>ft <plug>(lsp-type-definition)
-  nmap <buffer> <leader>fu <plug>(lsp-references)
-  nmap <buffer> <leader>nm <plug>(lsp-rename)
-  nmap <buffer> <leader>d <plug>(lsp-hover)
-  nmap <buffer> <leader>k <plug>(lsp-hover)
-
-  let g:lsp_format_sync_timeout = 1000
-  autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-endfunction
-
-" Python
 if has('nvim')
 else
+  " Settings
+  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  " inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+  let g:asyncomplete_auto_popup = 1
+
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <leader>gd <plug>(lsp-definition)
+    nmap <buffer> <leader>fi <plug>(lsp-implementation)
+    nmap <buffer> <leader>ft <plug>(lsp-type-definition)
+    nmap <buffer> <leader>fu <plug>(lsp-references)
+    nmap <buffer> <leader>nm <plug>(lsp-rename)
+    nmap <buffer> <leader>d <plug>(lsp-hover)
+    nmap <buffer> <leader>k <plug>(lsp-hover)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+  endfunction
+
+  " Python
   if executable('pyls')
     au User lsp_setup call lsp#register_server({
           \ 'name': 'pyls',
@@ -33,10 +33,7 @@ else
           \ 'allowlist': ['python'],
           \ })
   endif
-endif
 
-if has('nvim')
-else
   " Ruby
   if executable('solargraph')
     " gem install solargraph
@@ -47,65 +44,62 @@ else
           \ 'whitelist': ['ruby'],
           \ })
   endif
-endif
 
-" Vimscript
-if executable('vim-language-server')
-  augroup LspVim
-    autocmd!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'vim-language-server',
-          \ 'cmd': {server_info->['vim-language-server', '--stdio']},
-          \ 'whitelist': ['vim'],
-          \ 'initialization_options': {
-          \   'vimruntime': $VIMRUNTIME,
-          \   'runtimepath': &rtp,
-          \ }})
-  augroup END
-endif
+  " Vimscript
+  if executable('vim-language-server')
+    augroup LspVim
+      autocmd!
+      autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'vim-language-server',
+            \ 'cmd': {server_info->['vim-language-server', '--stdio']},
+            \ 'whitelist': ['vim'],
+            \ 'initialization_options': {
+            \   'vimruntime': $VIMRUNTIME,
+            \   'runtimepath': &rtp,
+            \ }})
+    augroup END
+  endif
 
-" Emmet
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
-      \ 'name': 'emmet',
-      \ 'whitelist': ['html'],
-      \ 'completor': function('asyncomplete#sources#emmet#completor'),
-      \ }))
-
-au User asyncomplete_setup call asyncomplete#ale#register_source({
-      \ 'name': 'reason',
-      \ 'linter': 'flow',
-      \ })
-
-" HTML
-if executable('html-languageserver')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'html-languageserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
+  " Emmet
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
+        \ 'name': 'emmet',
         \ 'whitelist': ['html'],
-        \ })
-endif
+        \ 'completor': function('asyncomplete#sources#emmet#completor'),
+        \ }))
 
-" C/C++
-if executable('clangd')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'clangd',
-        \ 'cmd': {server_info->['clangd', '-background-index']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+  au User asyncomplete_setup call asyncomplete#ale#register_source({
+        \ 'name': 'reason',
+        \ 'linter': 'flow',
         \ })
-endif
 
-" Docker
-if executable('docker-langserver')
-  au User lsp_setup call lsp#register_server({
-        \ 'name': 'docker-langserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
-        \ 'whitelist': ['dockerfile'],
-        \ })
-endif
+  " HTML
+  if executable('html-languageserver')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'html-languageserver',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'html-languageserver --stdio']},
+          \ 'whitelist': ['html'],
+          \ })
+  endif
 
-" Snippets
-if has('nvim')
-else
+  " C/C++
+  if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd', '-background-index']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+  endif
+
+  " Docker
+  if executable('docker-langserver')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'docker-langserver',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+          \ 'whitelist': ['dockerfile'],
+          \ })
+  endif
+
+  " Snippets
   if has('python3')
     let g:UltiSnipsExpandTrigger="<C-e>"
     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
@@ -114,10 +108,10 @@ else
           \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
           \ }))
   endif
-endif
 
-augroup lsp_install
-  au!
-  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+  augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+endif

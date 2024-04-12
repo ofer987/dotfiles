@@ -25,16 +25,10 @@ Plug 'chr4/nginx.vim'
 " npm install -g vscode-css-languageserver-bin
 " npm install -g vscode-html-languageserver-bin
 " npm install -g dockerfile-language-server-nodejs
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/vim-lsp'
 " Use ALE to show Lsp errors/diagnostics/errors
 " In other words, Lsp errors/diagnostics/errors do not show using Lsp
 Plug 'dense-analysis/ale'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'rhysd/vim-lsp-ale'
-Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ofer987/vim-caser'
 Plug 'ofer987/vim-rooter'
@@ -66,6 +60,8 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall @yaegassy/coc-pylsp in Neovim
 " And then run :CocInstall coc-pyright in Neovim
 " And then run :CocInstall coc-svelte in Neovim
+" And then run :CocInstall coc-vimlsp in Neovim
+" And then run :CocInstall coc-snippets in Neovim
 " Coc only works in Neovim
 Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 
@@ -87,9 +83,6 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']
   \ }
-
-" Python
-Plug 'psf/black', { 'branch': 'stable' }
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -119,7 +112,6 @@ Plug 'piec/vim-lsp-clangd'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 
 " Run commands asynchronously
 Plug 'skywind3000/asyncrun.vim'
