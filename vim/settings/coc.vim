@@ -3,7 +3,6 @@ let g:coc_disable_startup_warning = 1
 if has('nvim')
   autocmd BufEnter * let g:coc_start_at_startup = 0
 
-
   autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte let g:coc_start_at_startup = 1
   autocmd BufEnter *.rb,*.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1.*.py,*.svelte call execute('CocEnable')
 
@@ -22,16 +21,15 @@ if has('nvim')
   " diagnostics appear/become resolved.
   set signcolumn=yes
 
-  " Use tab for trigger completion with characters ahead and navigate.
+  " Use <C-e> for trigger completion with characters ahead and navigate.
   " NOTE: There's always complete item selected by default, you may want to enable
   " no select by `"suggest.noselect": true` in your configuration file.
-  " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+  " NOTE: Use command ':verbose imap <C-e>' to make sure <C-e> is not mapped by
   " other plugin before putting this into your config.
-  inoremap <silent><expr> <TAB>
+  inoremap <silent><expr> <C-e>
         \ coc#pum#visible() ? coc#pum#confirm() :
-        \ CheckBackspace() ? "\<Tab>" :
+        \ CheckBackspace() ? "\<C-e>" :
         \ coc#refresh()
-  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
   function! CheckBackspace() abort
     let col = col('.') - 1

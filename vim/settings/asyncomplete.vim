@@ -104,13 +104,16 @@ if executable('docker-langserver')
 endif
 
 " Snippets
-if has('python3')
-  let g:UltiSnipsExpandTrigger="<tab>"
-  call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-        \ 'name': 'ultisnips',
-        \ 'allowlist': ['gitcommit', 'ruby'],
-        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-        \ }))
+if has('nvim')
+else
+  if has('python3')
+    let g:UltiSnipsExpandTrigger="<C-e>"
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+          \ 'name': 'ultisnips',
+          \ 'allowlist': ['gitcommit', 'ruby'],
+          \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+          \ }))
+  endif
 endif
 
 augroup lsp_install

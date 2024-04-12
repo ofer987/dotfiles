@@ -1,1 +1,1 @@
-let g:rooter_patterns = ['*.csproj', '*.sln', '.git', 'package.json']
+let g:rooter_patterns = ['*.csproj', '*.sln', '.git', 'package.json', '*.gemspec']
