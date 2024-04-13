@@ -35,22 +35,9 @@ syntax on
 " the plugins.
 let mapleader=','
 
-" =============== Bundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand('~/.vim/vundles.vim'))
-  source ~/.vim/vundles.vim
-endif
-
 " This loads all the plugs
-if has('nvim')
-  if filereadable(expand('~/.vim/plugs.nvim'))
-    source ~/.vim/plugs.nvim
-  endif
-else
-  if filereadable(expand('~/.vim/plugs.vim'))
-    source ~/.vim/plugs.vim
-  endif
+if filereadable(expand('~/.vim/plugs.nvim'))
+  source ~/.vim/plugs.nvim
 endif
 
 " ================ Turn Off Swap Files ==============

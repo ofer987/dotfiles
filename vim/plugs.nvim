@@ -8,11 +8,20 @@
 " NOTE: Only works on Neovim as of November 2020
 filetype off
 
-call plug#begin('~/.yadr/vim/plugged.nvim')
+if has('nvim')
+  call plug#begin('~/.yadr/vim/plugged.nvim')
+else
+  call plug#begin('~/.yadr/vim/plugged.vim')
+endif
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+if has('nvim')
+  Plug 'dracula/vim', { 'as': 'dracula' }
+else
+  Plug 'gruvbox-community/gruvbox'
+endif
+
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
 " Run these commands as well
@@ -100,6 +109,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " PowerShell
 Plug 'PProvost/vim-ps1'
+
+" .NET Framework / Core
+if has('nvim')
+else
+  Plug 'OmniSharp/omnisharp-vim'
+  Plug 'nickspoons/vim-sharpenup'
+endif
 
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
