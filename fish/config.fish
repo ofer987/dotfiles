@@ -97,6 +97,13 @@ alias vii='vi +"set ft=ruby"'
 alias rvii='vi -R +"set ft=ruby"'
 alias rc='doctl compute droplet list'
 
+# zoxide
+# Install from https://github.com/ajeetdsouza/zoxide
+zoxide init --cmd cd fish | source
+# fzf
+# Install from https://github.com/junegunn/fzf
+fzf --fish | source
+
 # Vim
 alias vim="env TERM=xterm-256color /opt/homebrew/bin/vim"
 alias omnisharp="env TERM=xterm-256color /opt/homebrew/bin/vim"

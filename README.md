@@ -8,6 +8,8 @@ Neovim | `brew install neovim;` | https://github.com/neovim/neovim
 Vim | `brew install vim;` | https://github.com/vim/vim
 Tmux | `brew install tmux;` |
 Fish | `brew install fish;` | https://fishshell.com/
+zoxide | `brew install zoxide` | https://github.com/ajeetdsouza/zoxide
+fzf | `brew install fzf` | https://github.com/junegunn/fzf
 Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
 Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
 Pry | `gem install pry;` | https://github.com/pry/pry
