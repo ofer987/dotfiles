@@ -4,7 +4,6 @@ let g:OmniSharp_server_use_net6 = 1
 
 if has('nvim')
 else
-  let g:OmniSharp_popup_mappings.close = '<Esc>'
   " Don't autoselect first omnicomplete option, show options even if there is only
   " one (so the preview documentation is accessible). Remove 'preview', 'popup'
   " and 'popuphidden' if you don't want to see any documentation whatsoever.
@@ -118,7 +117,8 @@ else
         \ 'sigNext': '<C-n>',
         \ 'sigPrev': '<C-p>',
         \ 'pageDown': ['<C-f>', '<PageDown>'],
-        \ 'pageUp': ['<C-b>', '<PageUp>']
+        \ 'pageUp': ['<C-b>', '<PageUp>'],
+        \ 'close': '<C-e>'
         \}
 
   let g:OmniSharp_highlight_groups = {
