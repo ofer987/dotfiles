@@ -4,8 +4,23 @@ let g:OmniSharp_server_use_net6 = 1
 
 if has('nvim')
 else
-  set completeopt=menuone,noinsert,noselect,popuphidden
-  set completepopup=highlight:Pmenu,border:off
+  let g:OmniSharp_popup_mappings.close = '<Esc>'
+  " Don't autoselect first omnicomplete option, show options even if there is only
+  " one (so the preview documentation is accessible). Remove 'preview', 'popup'
+  " and 'popuphidden' if you don't want to see any documentation whatsoever.
+  " Note that neovim does not support `popuphidden` or `popup` yet:
+  " https://github.com/neovim/neovim/issues/10996
+  if has('patch-8.1.1880')
+    set completeopt=longest,menuone,popuphidden
+    " Highlight the completion documentation popup background/foreground the same as
+    " the completion menu itself, for better readability with highlighted
+    " documentation.
+    set completepopup=highlight:Pmenu,border:off
+  else
+    set completeopt=longest,menuone,preview
+    " Set desired preview window height for viewing documentation.
+    set previewheight=5
+  endif
 
   " Colors: {{{
   augroup ColorschemePreferences
@@ -33,14 +48,10 @@ else
   let g:ale_linters = { 'cs': ['OmniSharp'] }
   " }}}
 
-  " Asyncomplete: {{{
-  let g:asyncomplete_auto_popup = 1
-  let g:asyncomplete_auto_completeopt = 0
-  " }}}
+  let g:OmniSharp_popup = 1
 
   " Sharpenup: {{{
   " All sharpenup mappings will begin with `<Space>os`, e.g. `<Space>osgd` for
-  " :OmniSharpGotoDefinition
   let g:sharpenup_map_prefix = '<Space>os'
   let g:sharpenup_codeactions_set_signcolumn = 0
   let g:sharpenup_codeactions_glyph = '->'
@@ -96,31 +107,23 @@ else
 
   " OmniSharp: {{{
   let g:OmniSharp_popup_position = 'peek'
-  if has('nvim')
-    let g:OmniSharp_popup_options = {
-    \ 'winblend': 30,
-    \ 'winhl': 'Normal:Normal,FloatBorder:ModeMsg',
-    \ 'border': 'rounded'
-    \}
-  else
-    let g:OmniSharp_popup_options = {
-    \ 'highlight': 'Normal',
-    \ 'padding': [0],
-    \ 'border': [1],
-    \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
-    \ 'borderhighlight': ['ModeMsg']
-    \}
-  endif
+  let g:OmniSharp_popup_options = {
+        \ 'highlight': 'Normal',
+        \ 'padding': [0],
+        \ 'border': [1],
+        \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+        \ 'borderhighlight': ['ModeMsg']
+        \}
   let g:OmniSharp_popup_mappings = {
-  \ 'sigNext': '<C-n>',
-  \ 'sigPrev': '<C-p>',
-  \ 'pageDown': ['<C-f>', '<PageDown>'],
-  \ 'pageUp': ['<C-b>', '<PageUp>']
-  \}
+        \ 'sigNext': '<C-n>',
+        \ 'sigPrev': '<C-p>',
+        \ 'pageDown': ['<C-f>', '<PageDown>'],
+        \ 'pageUp': ['<C-b>', '<PageUp>']
+        \}
 
   let g:OmniSharp_highlight_groups = {
-  \ 'ExcludedCode': 'NonText'
-  \}
+        \ 'ExcludedCode': 'NonText'
+        \}
   " }}}
 
   " Fetch semantic type/interface/identifier names on BufEnter and highlight them
@@ -129,7 +132,6 @@ else
   augroup omnisharp_commands
     autocmd!
 
-    autocmd FileType cs set omnifunc=
     autocmd FileType cs set shiftwidth=4
 
     autocmd FileType cs set backspace=indent,eol,start
@@ -157,6 +159,7 @@ else
 
     "The following commands are contextual, based on the current cursor position.
     autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
+    autocmd CursorHold *.cs OmniSharpTypeLookup
     autocmd FileType cs nnoremap gt :OmniSharpTypeLookup<cr>
     autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
     autocmd FileType cs nnoremap <leader>ot :OmniSharpFindType<cr>
