@@ -82,21 +82,8 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
-set wildmenu
-set wildmode=list:longest
-set wildignore=*.o,*.obj,*~   "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=*.dll
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif
+call wilder#setup({'modes': [':', '/', '?']})
 
-"
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
