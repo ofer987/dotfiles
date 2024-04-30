@@ -5,7 +5,7 @@
 # fisher install oh-my-fish/theme-coffeeandcode
 # fisher install dracula/fish
 
-# set -x SHELL "/opt/homebrew/bin/fish"
+set -x SHELL "/opt/homebrew/bin/fish"
 
 # Viscosity VPN
 source "$HOME/.config/fish/my_functions/viscosity.fish"
@@ -72,6 +72,7 @@ set -x PATH ~/.yadr/scripts/git-scripts/exe ~/.rbenv/shims ~/.yadr/scripts/**/ex
 set -x PATH $PYENV_ROOT/bin $HOME/.local/bin $PATH
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 set -x DOTNET_CLI_TELEMETRY_OPTOUT true
+set -x DOTNET_ROOT /usr/local/share/dotnet
 
 alias "ctop=top -o cpu"
 
@@ -115,7 +116,6 @@ alias csharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
 # Python
-alias python=python3
 
 # dotnet core
 alias dr='dotnet run'
