@@ -83,6 +83,13 @@ set nofoldenable        "dont fold by default
 " ================ Completion =======================
 
 call wilder#setup({'modes': [':', '/', '?']})
+call wilder#setup({
+      \ 'modes': [':', '/', '?'],
+      \ 'next_key': '<C-N>',
+      \ 'previous_key': '<C-P>',
+      \ 'accept_key': '<Down>',
+      \ 'reject_key': '<Up>',
+      \ })
 
 " ================ Scrolling ========================
 
