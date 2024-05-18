@@ -39,30 +39,30 @@ if has('nvim')
   " TypeScript
   " npm install -g typescript typescript-language-server
   " And then run :CocInstall coc-tsserver in Neovim
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte nmap <silent> gd <Plug>(coc-definition)
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>ft <Plug>(coc-type-definition)
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fi <Plug>(coc-implementation)
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fu <Plug>(coc-references)
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>nm <Plug>(coc-rename)
+  nmap <silent> gd <Plug>(coc-definition)
+  map <silent> <leader>ft <Plug>(coc-type-definition)
+  map <silent> <leader>fi <Plug>(coc-implementation)
+  map <silent> <leader>fu <Plug>(coc-references)
+  map <silent> <leader>nm <Plug>(coc-rename)
 
   " Cycle errors for all filetypes
-  autocmd BufEnter * map <leader>an :ALENextWrap<CR>
-  autocmd BufEnter * map <leader>ap :ALEPreviousWrap<CR>
+  " autocmd BufEnter * map <leader>an :ALENextWrap<CR>
+  " autocmd BufEnter * map <leader>ap :ALEPreviousWrap<CR>
 
   " But use Coc for these filetypes because it works better!
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <C-n> <Plug>(coc-diagnostic-next)
-  autocmd BufEnter *.sh,*.tsx,*.js,*.ts,*.css,*.scss,*.less,*.json,*.go,*.ps1,*.py,*.svelte map <C-p> <Plug>(coc-diagnostic-prev)
+  map <C-n> <Plug>(coc-diagnostic-next)
+  map <C-p> <Plug>(coc-diagnostic-prev)
 
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fl :CocList<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fh :CocList outline -kind class<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fj :CocList outline -kind method<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>fk :CocList outline -kind function<cr>
+  map <silent> <leader>fl :CocList<cr>
+  map <silent> <leader>fh :CocList outline -kind class<cr>
+  map <silent> <leader>fj :CocList outline -kind method<cr>
+  map <silent> <leader>fk :CocList outline -kind function<cr>
 
   silent! unmap ,fk
 
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gk :CocPrev<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> gj :CocNext<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>gk :CocPrev<cr>
-  autocmd FileType ruby,sh,typescriptreact,javascript,typescript,typescript.tsx,css,scss,less,json,go,ps1,python,svelte map <silent> <leader>gj :CocNext<cr>
+  map <silent> gk :CocPrev<cr>
+  map <silent> gj :CocNext<cr>
+  map <silent> <leader>gk :CocPrev<cr>
+  map <silent> <leader>gj :CocNext<cr>
 else
 endif

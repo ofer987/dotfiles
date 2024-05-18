@@ -28,8 +28,8 @@ nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical<CR>
 nmap <silent> <leader>qc :cclose<CR>
 nmap <silent> <leader>qo :copen<CR>
 
-"Move back and forth through previous and next buffers
-"with <leader>z and <leader>x
+" Move back and forth through previous and next buffers
+" with <leader>z and <leader>x
 nnoremap <silent> <leader>z :bp<CR>
 nnoremap <silent> <leader>x :bn<CR>
 
@@ -49,7 +49,7 @@ nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>
 nnoremap <silent> <leader>lf :echo expand("%:~")<CR>
 nnoremap <silent> <leader>ln :echo expand("%:t")<CR>
 
-"Clear current search highlight by double tapping //
+" Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
 
 " These are very similar keys. Typing 'a will jump to the line in the current
