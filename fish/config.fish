@@ -115,8 +115,6 @@ alias csharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
 
 alias "travis-build=travis logs (git rev-parse --abbrev-ref HEAD)"
 
-# Python
-
 # dotnet core
 alias dr='dotnet run'
 alias db='dotnet build'
@@ -128,8 +126,6 @@ alias lessi='less -i'
 alias gitag="ag --path-to-ignore=.gitignore"
 
 status --is-interactive; and source (rbenv init -|psub)
-
-pyenv init - | source
 
 function latest
   set -x head "./"
