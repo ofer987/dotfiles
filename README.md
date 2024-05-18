@@ -160,7 +160,7 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 
 1. Install LaunchBar from http://launchbar.com
 1. Licence can be found in ofer987@gmail.com email inbox
-1. Install custom actions by executing, `~/.yadr/LaunchBar/create_action`
+1. Install custom actions by executing, `~/.yadr/launch_bar/create_action`
 
 ## Future Plans
 
