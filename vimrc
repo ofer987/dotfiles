@@ -87,8 +87,8 @@ call wilder#setup({
       \ 'modes': [':', '/', '?'],
       \ 'next_key': '<C-N>',
       \ 'previous_key': '<C-P>',
-      \ 'accept_key': '<Down>',
-      \ 'reject_key': '<Up>',
+      \ 'accept_key': '<C-O>',
+      \ 'reject_key': '<C-C>',
       \ })
 
 " ================ Scrolling ========================
