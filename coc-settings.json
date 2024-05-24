@@ -1,22 +1,5 @@
 {
-  "coc.source.file.enable": false,
-  "coc.source.buffer.enable": false,
-  "coc.source.around.enable": false,
-  "coc.preferences.useQuickfixForLocations": true,
-  "css.lint.emptyRules": "ignore",
-  "scss.lint.emptyRules": "ignore",
-  "suggest.noselect": false,
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
-    }
-  },
-  "pylsp.plugins.pylint.enabled": true,
-  "pylsp.plugins.pycodestyle.enabled": false,
-  "svelte.enable-ts-plugin": true
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.useQuickfixForLocations": true
 }
