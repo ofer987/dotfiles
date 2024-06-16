@@ -5,6 +5,9 @@ nnoremap <leader>afu :ALEFindReferences<CR>
 nnoremap <leader>afd :ALEGoToDefinition<CR>
 nnoremap <leader>aft :ALEGoToTypeDefinition<CR>
 
+autocmd FileType ruby map <C-n> :ALENextWrap<CR>
+autocmd FileType ruby map <C-p> :ALEPreviousWrap<CR>
+
 nnoremap <leader>ap :ALEPreviousWrap<CR>
 nnoremap <leader>an :ALENextWrap<CR>
 nnoremap <leader>ai :ALEInfo<CR>
