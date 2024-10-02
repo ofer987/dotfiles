@@ -65,8 +65,8 @@ class OsgiConfiguration
   end
 end
 
-def save_osgi_configuration(configuration)
-  path = "json/org.apache.sling.event.jobs.QueueConfiguration~#{configuration.name}.cfg.json"
+def save_osgi_configuration(root_directory, configuration)
+  path = File.join(root_directory, "org.apache.sling.event.jobs.QueueConfiguration~#{configuration.name}.cfg.json")
   properties = JSON.pretty_generate(configuration.properties)
 
   File.write(path, properties)
@@ -84,19 +84,18 @@ def read_argument(number)
 end
 
 TEXT_PATH = read_argument(0)
+ROOT_DIRECTORY = read_argument(1)
 
-# PID = org.apache.sling.event.jobs.QueueConfiguration~ams_performance-package-garbage-collection
 BEGIN_JOB_QUEUE_REGEX = /^PID = org\.apache\.sling\.event\.jobs\.QueueConfiguration~(.+)$/
 
 current_osgi = nil
 File.readlines(TEXT_PATH).map(&:strip).each do |line|
-  # puts line
   if line.match? BEGIN_JOB_QUEUE_REGEX
     osgi_configuration_name = line.match(BEGIN_JOB_QUEUE_REGEX)[1]
 
     current_osgi = OsgiConfiguration.new(osgi_configuration_name)
   elsif line.blank?
-    save_osgi_configuration(current_osgi) unless current_osgi.nil?
+    save_osgi_configuration(ROOT_DIRECTORY, current_osgi) unless current_osgi.nil?
 
     current_osgi = nil
   elsif !current_osgi.nil? && line.match?(' = ')
