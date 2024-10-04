@@ -7,7 +7,8 @@ require 'active_support/core_ext'
 
 class OsgiConfiguration
   ARRAY = 'Array'
-  NUMBER = 'Number'
+  INTEGER = 'Integer'
+  FLOAT = 'Float'
   BOOLEAN = 'Boolean'
   STRING = 'String'
 
@@ -33,8 +34,10 @@ class OsgiConfiguration
   def type(value)
     if value.start_with?('[')
       ARRAY
+    elsif value.match?(/\d+\.\d+/)
+      FLOAT
     elsif value.start_with?(/\d/)
-      NUMBER
+      INTEGER
     elsif value.start_with?(/true|false/)
       BOOLEAN
     else
@@ -46,8 +49,10 @@ class OsgiConfiguration
     case type(value)
     when ARRAY
       convert_to_array(value)
-    when NUMBER
+    when INTEGER
       value.to_i
+    when FLOAT
+      value.to_f
     when BOOLEAN
       value == 'true'
     else
