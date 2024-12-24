@@ -63,6 +63,20 @@ Install from [Microsoft](https://dotnet.microsoft.com/en-us/download).
 
 Install in the home directory (~) on Thomson Reuters computers because of permissions.
 
+### C
+
+Install [cpplint](https://github.com/cpplint/cpplint)
+
+```bash
+brew install cpplint;
+```
+
+Configure **cpplint** for **C**,
+
+```bash
+ln -s ~/.yadr/cpplint.cfg ./cpplint.cfg;
+```
+
 ### Python
 
 1. Install pyenv, `brew install pyenv`
