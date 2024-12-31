@@ -70,6 +70,7 @@ set -x PATH /Applications/IntelliJ\ IDEA.app/Contents/MacOS $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH ~/.yadr/scripts/git-scripts/exe ~/.rbenv/shims ~/.yadr/scripts/**/exe ~/.yadr/scripts $PATH ~/go/bin
 set -x PATH $PYENV_ROOT/bin $HOME/.local/bin $PATH
+set -x PATH ~/.yadr/ruby $PATH
 set -x PGDATA ~/Library/Application\ Support/Postgres/var-9.6/
 set -x DOTNET_CLI_TELEMETRY_OPTOUT true
 set -x DOTNET_ROOT /usr/local/share/dotnet
