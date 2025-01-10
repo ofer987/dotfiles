@@ -5,7 +5,7 @@
 # fisher install oh-my-fish/theme-coffeeandcode
 # fisher install dracula/fish
 
-set -x SHELL "/opt/homebrew/bin/fish"
+set -x SHELL "/usr/bin/fish"
 
 # Viscosity VPN
 source "$HOME/.config/fish/my_functions/viscosity.fish"
@@ -67,7 +67,6 @@ set -x PYENV_ROOT $HOME/.pyenv
 
 set -x GOPATH ~/go/global
 set -x PATH /Applications/IntelliJ\ IDEA.app/Contents/MacOS $PATH
-set -x PATH /opt/homebrew/bin $PATH
 set -x PATH ~/.yadr/scripts/git-scripts/exe ~/.rbenv/shims ~/.yadr/scripts/**/exe ~/.yadr/scripts $PATH ~/go/bin
 set -x PATH $PYENV_ROOT/bin $HOME/.local/bin $PATH
 set -x PATH ~/.yadr/ruby $PATH
@@ -105,11 +104,6 @@ zoxide init --cmd cd fish | source
 # fzf
 # Install from https://github.com/junegunn/fzf
 fzf --fish | source
-
-# Vim
-alias vim="env TERM=xterm-256color /opt/homebrew/bin/vim"
-alias omnisharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
-alias csharp="env TERM=xterm-256color /opt/homebrew/bin/vim"
 
 # alias cat='ccat'
 # alias less='lless'
@@ -175,7 +169,6 @@ end
 function nvm
   bass source $NVM_DIR/nvm.sh --no-use ';' nvm $argv
 end
-nvm use --silent
 
 # Restart PostgreSQL
 function rdb

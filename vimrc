@@ -122,11 +122,7 @@ for fpath in split(globpath(getcwd() . local_vimsettings, '*.vim'), '\n')
 endfor
 
 set termguicolors
-if has('nvim')
-  colorscheme dracula
-else
-  colorscheme gruvbox
-endif
+colorscheme dracula
 
 if has('nvim')
 else

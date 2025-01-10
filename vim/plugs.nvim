@@ -16,11 +16,7 @@ endif
 
 Plug 'christoomey/vim-tmux-navigator'
 
-if has('nvim')
-  Plug 'dracula/vim', { 'as': 'dracula' }
-else
-  Plug 'gruvbox-community/gruvbox'
-endif
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'ap/vim-css-color'
 Plug 'chr4/nginx.vim'
@@ -73,10 +69,7 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall coc-snippets in Neovim
 " And then run :CocInstall coc-clangd in Neovim
 " Coc only works in Neovim
-if has('nvim')
-  Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
-else
-endif
+Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'npm ci' }
 
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
