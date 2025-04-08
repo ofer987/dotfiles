@@ -78,6 +78,9 @@ if has('nvim')
 else
 endif
 
+" Jack
+Plug 'zirrostig/vim-jack-syntax'
+
 " JavaScript and TypeScript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
