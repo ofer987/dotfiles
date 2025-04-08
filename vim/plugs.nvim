@@ -128,6 +128,7 @@ Plug 'shinchu/lightline-gruvbox.vim'
 " C/C++
 " brew install llvm
 Plug 'piec/vim-lsp-clangd'
+Plug 'rhysd/vim-clang-format'
 
 " Snippets
 Plug 'SirVer/ultisnips'

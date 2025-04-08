@@ -22,12 +22,14 @@ nnoremap <leader>aff :ALEFix<CR>
 let g:ale_linters = {
       \ 'markdown': ['writegood'],
       \ 'cs': ['OmniSharp', 'dotnet-format', 'csc'],
+      \ 'c': ['clangd', 'clangtidy', 'clangcheck'],
       \ 'python': [],
       \ }
 let g:ale_cs_dotnet_format_executable = 'dotnet'
 let g:ale_fixers = {
       \ 'cs': ['dotnet-format', 'remove_trailing_lines', 'trim_whitespace'],
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'c': ['clang-format'],
       \ 'javascript': ['eslint'],
       \ }
 " let g:ale_fixers = { 'dotnet-format' }
