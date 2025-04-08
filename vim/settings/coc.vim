@@ -58,7 +58,6 @@ if has('nvim')
   map <silent> <leader>fj :CocList outline -kind method<cr>
   map <silent> <leader>fk :CocList outline -kind function<cr>
 
-  silent! unmap ,fk
 
   map <silent> gk :CocPrev<cr>
   map <silent> gj :CocNext<cr>
