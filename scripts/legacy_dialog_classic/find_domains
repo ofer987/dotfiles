@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'pry-byebug'
 require 'active_support'
 require 'active_support/core_ext'
 
@@ -15,7 +16,8 @@ end
 
 MATCH_GROUP_REGEX = /\$\d.*$/i
 PT_REGEX = /rewriterule \S+ (\S+) \[.*PT.*\]/i
-VARIABLE_REGEX = /([A-Z_]+_WHITE_DOMAIN)
+VARIABLE_REGEX = /([A-Z_]+_WHITE_DOMAIN)/
+WHITE_DOMAIN_REGEX = /define [A-Z_]+_white_domain (.+)$/i
 emcm_web_root = ARGV[0].to_s
 
 rewrite_dir = File.join(emcm_web_root, 'dispatcher', 'src', 'conf.d', 'rewrites')
@@ -24,56 +26,91 @@ variables_dir = File.join(emcm_web_root, 'dispatcher', 'src', 'conf.d', 'variabl
 # ~/work/digital/emcm-web/develop/dispatcher/src/conf.d/available_vhosts/aem_cxd_sales_publish.vhost
 # ~/work/digital/emcm-web/develop/dispatcher/src/conf.d/variables/sales_legalsolutions_tr_com_universal.vars
 
-def find_domain(variable, variables_dir)
+def find_domains_for_variable(variable, variables_dir)
+  # binding.pry
   paths = Dir.entries(variables_dir)
     .select { |file| file =~ /\.vars$/ }
     .map(&:to_s)
     .reject(&:blank?)
+  # binding.pry
+
+  results = paths.map do |path|
+    full_path = File.join(variables_dir, path)
+    # binding.pry
+
+    lines = File.readlines(full_path)
+      .map(&:chomp)
+
+    # binding.pry if path.match? /mena/
+    results = lines
+      .select { |line| line.match? /define #{variable} (.+)$/i }
+      .map { |line| line.match(/define #{variable} (.+)$/i)[1] }
+
+    # binding.pry
+    results
+  end
+
+  results
+    .flatten
+    .reject(&:blank?)
 end
 
-def find_domains(virtual_host, virtual_hosts_dir, variables_dir)
+def find_domains(rewrites_path, virtual_hosts_dir, variables_dir)
   paths = Dir.entries(virtual_hosts_dir)
     .select { |file| file =~ /\.vhost$/ }
     .map(&:to_s)
     .reject(&:blank?)
 
-  paths.each do |path|
-    file_path = File.join(rewrite_dir, path)
+  results = paths.flat_map do |path|
+    file_path = File.join(virtual_hosts_dir, path)
 
-    lines = File.readlines(path)
+    lines = File.readlines(file_path)
       .map(&:chomp)
 
     has_rewrite_file = lines
-      .select { |line| line =~ /include\s#{virtual_host.path}/i }
+      .select { |line| line =~ /include\s.*#{rewrites_path}/i }
       .any?
 
+    # binding.pry
     next unless has_rewrite_file
 
+    # binding.pry
     variables = lines
       .select { |line| line.match? VARIABLE_REGEX }
       .map { |line| line.match(VARIABLE_REGEX)[1] }
       .flatten
 
-    next unless variables.empty?
+    # binding.pry unless variables.empty?
+    next if variables.empty?
 
-    domains = variables.each do |variable|
-      find_domain(variable)
-    end
+    items = variables
+      .map { |variable| find_domains_for_variable(variable, variables_dir) }
+      .flatten
+      .reject(&:blank?)
 
-    domains
+    # binding.pry
+
+    items
+  end
+
+  results = results
+    .reject(&:blank?)
+
+  # binding.pry unless results.empty?
+  results
 end
 
-def find_jcr_roots(rewrite_dir)
+def find_virtual_hosts(rewrite_dir, virtual_hosts_dir, variables_dir)
   paths = Dir.entries(rewrite_dir)
     .select { |file| file =~ /\.rules$/ }
     .map(&:to_s)
     .reject(&:blank?)
 
-  paths.each do |path|
+  paths.map do |path|
     file_path = File.join(rewrite_dir, path)
-    host = VirtualHost.new(file_path)
+    host = VirtualHost.new(path)
 
-    lines = File.readlines(path)
+    lines = File.readlines(file_path)
       .map(&:chomp)
 
     results = lines
@@ -88,10 +125,16 @@ def find_jcr_roots(rewrite_dir)
       .map { |line| line.gsub(MATCH_GROUP_REGEX, '') }
       .sort
       .uniq
-
     host.jcr_roots = results
-    puts results.join("\n") unless results.empty?
+
+    domains = find_domains(path, virtual_hosts_dir, variables_dir)
+    host.domains = domains
+
+    host
   end
 end
 
-find_jcr_roots(rewrite_dir)
+results = find_virtual_hosts(rewrite_dir, virtual_hosts_dir, variables_dir)
+
+binding.pry
+puts "hello world"
