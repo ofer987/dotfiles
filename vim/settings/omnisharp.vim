@@ -191,8 +191,6 @@ else
     " rename without dialog - with cursor on the symbol to rename... ':Rename newname'
     autocmd FileType cs command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
 
-    " Force OmniSharp to reload the solution. Useful when switching branches etc.
-    autocmd FileType cs nnoremap <leader>c= :OmniSharpCodeFormat<cr>
     " Load the current .cs file to the nearest project
     autocmd FileType cs nnoremap <leader>op :OmniSharpAddToProject<cr>
 
@@ -204,5 +202,15 @@ else
     autocmd FileType cs nnoremap <leader>sh :OmniSharpHighlightTypes<cr>
 
     autocmd FileType cs nnoremap <leader>qf :AsyncRun -post=echo\ "Finished\ Executing\ dotnet-format" dotnet format<cr>
+
+    function! <SID>FormatAndWrite()
+      write
+      !dotnet format
+
+      write
+    endfunction
+
+    command! FormatAndWrite call <SID>FormatAndWrite()
+    nmap <leader>c= :FormatAndWrite<CR>
   augroup END
 endif
