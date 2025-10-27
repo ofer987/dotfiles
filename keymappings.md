@@ -53,6 +53,8 @@ dotnet- format | `<leader>qf`
 
 ### Files that support Language Server Processor
 
+Name | Key Map | Description
+---- | ------- | -----------
 Find usages | `<leader>fu`
 Go to definition | `gd` OR `<leader>gd`
 Go to implementation | `<leader>fi`
@@ -64,6 +66,8 @@ Next item in **ALEDetail** | `<C-N>`
 
 ### Files that support the OmniSharp Server
 
+Name | Key Map | Description
+---- | ------- | -----------
 Find usages | `<leader>fu`
 Go to definition | `gd`
 Go to implementations | `<leader>fi`
