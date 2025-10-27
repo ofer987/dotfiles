@@ -15,21 +15,41 @@ function! InsertRubyDebugger(text) abort
   call setpos('.', currentpos)
 endfunction
 
-" TODO: it assumes that the directory is the name before the file path
-" This causes problems when searching within a nested directory
-function ToggleCodeToSpec() abort
+function FindProjectDirectory()
   let currentFile = expand('%')
   let fullDirectory = expand('%:p:h')
   let directories = split(fullDirectory, '/')
 
+  let directoryCount = len(directories)
+  let i = 0
+  while i < directoryCount
+    let directorySlice = directories[0:i]
+    let directoryPath = join(directorySlice, '/')
+    let libDirectoryPath = '/' . join([directoryPath, 'lib'], '/')
+
+    if isdirectory(libDirectoryPath)
+      let directories = split(libDirectoryPath, '/')
+
+      return directories[-2]
+    endif
+
+    let i += 1
+  endwhile
+
+  return ''
+endfunction
+
+function ToggleCodeToSpec() abort
+  let currentFile = expand('%')
+
   if currentFile =~ '^lib'
-    let projectDirectory = directories[-1]
+    let projectDirectory = FindProjectDirectory()
     let specFile = substitute(currentFile, '^lib/' . projectDirectory . '/', 'spec/', '')
     let specFile = substitute(specFile, '\.rb$', '_spec.rb', '')
 
     execute 'edit' specFile
   elseif currentFile =~ '^spec'
-    let projectDirectory = directories[-2]
+    let projectDirectory = FindProjectDirectory()
     let codeFile = substitute(currentFile, '^spec/', 'lib/' . projectDirectory . '/', '')
     let codeFile = substitute(codeFile, '_spec\.rb', '.rb', '')
 
