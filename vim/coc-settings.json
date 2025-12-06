@@ -1,0 +1,6 @@
+{
+  "snippets.ultisnips.pythonPrompt": false,
+  "svelte.enable-ts-plugin": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.formatOnSave": true
+}
