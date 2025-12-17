@@ -73,6 +73,8 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocInstall coc-snippets in Neovim
 " And then run :CocInstall coc-clangd in Neovim
 " And then run :CocInstall coc-pyright in Neovim
+" And then run :CocCommand black-formatter.installServer in Neovim
+" And then run :CocInstall @yaegassy/coc-black-formatter in Neovim
 " NOTE: Coc only works in Neovim
 if has('nvim')
   Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
