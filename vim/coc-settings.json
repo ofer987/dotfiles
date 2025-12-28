@@ -7,5 +7,12 @@
   "python.linting.pylintEnabled": true,
   "python.linting.pycodestyleEnabled": false,
   "pylsp.plugins.pycodestyle.enabled": false,
-  "pylsp.plugins.mccabe.enabled": false
+  "pylsp.plugins.mccabe.enabled": false,
+  "languageserver": {
+    "sourcekit": {
+      "command": "sourcekit-lsp",
+      "filetypes": ["swift"],
+      "rootPatterns": ["Package.swift", ".git", "compile_commands.json"]
+    }
+  }
 }
