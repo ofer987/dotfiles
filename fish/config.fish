@@ -126,6 +126,9 @@ alias il='less -i'
 alias lessi='less -i'
 alias gitag="ag --path-to-ignore=.gitignore"
 
+alias cp '~/.yadr/advcpmv/advcp -g'
+alias mv '~/.yadr/advcpmv/advmv -g'
+
 status --is-interactive; and source (rbenv init -|psub)
 
 function latest
