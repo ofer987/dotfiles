@@ -63,5 +63,17 @@ if has('nvim')
   map <silent> gj :CocNext<cr>
   map <silent> <leader>gk :CocPrev<cr>
   map <silent> <leader>gj :CocNext<cr>
+
+  function! s:format_all_open_file_buffers() abort
+    for l:buf in range(1, bufnr('$') - 2)
+      exe 'buffer' l:buf
+
+      call CocAction('format')
+      w
+    endfor
+  endfunction
+  command! FormatAllOpenBuffers call s:format_all_open_file_buffers()
+  command! Fall call s:format_all_open_file_buffers()
+  command! Fwall call s:format_all_open_file_buffers()
 else
 endif
