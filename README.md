@@ -1,20 +1,20 @@
 ## Installation Instructions
 
-Technology | Install Command | Latest Instructions
----------- | --------------- | -------------------
-iTerm2 | N/A | https://iterm2.com
-Brew | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew
-Neovim | `brew install neovim;` | https://github.com/neovim/neovim
-Vim | `brew install vim;` | https://github.com/vim/vim
-Tmux | `brew install tmux;` |
-Fish | `brew install fish;` | https://fishshell.com/
-zoxide | `brew install zoxide` | https://github.com/ajeetdsouza/zoxide
-fzf | `brew install fzf` | https://github.com/junegunn/fzf
-Fisher | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;` | https://github.com/jorgebucaran/fisher
-Karabiner | N/A | https://github.com/pqrs-org/Karabiner-Elements
-Pry | `gem install pry;` | https://github.com/pry/pry
-NVM | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash;` | https://github.com/nvm-sh/nvm
-Git Scripts | N/A | Set the GitHub Personal Authentication Token as `env -x GITHUB_TOKEN <personal-pat>` in `~/.yadr/fish/config.personal.fish`
+| Technology  | Install Command                                                                                    | Latest Instructions                                                                                                         |
+| ----------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| iTerm2      | N/A                                                                                                | https://iterm2.com                                                                                                          |
+| Brew        | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";` | https://github.com/Homebrew/brew                                                                                            |
+| Neovim      | `brew install neovim;`                                                                             | https://github.com/neovim/neovim                                                                                            |
+| Vim         | `brew install vim;`                                                                                | https://github.com/vim/vim                                                                                                  |
+| Tmux        | `brew install tmux;`                                                                               |
+| Fish        | `brew install fish;`                                                                               | https://fishshell.com/                                                                                                      |
+| zoxide      | `brew install zoxide`                                                                              | https://github.com/ajeetdsouza/zoxide                                                                                       |
+| fzf         | `brew install fzf`                                                                                 | https://github.com/junegunn/fzf                                                                                             |
+| Fisher      | `curl -sL https://git.io/fisher \| source && fisher install jorgebucaran/fisher;`                  | https://github.com/jorgebucaran/fisher                                                                                      |
+| Karabiner   | N/A                                                                                                | https://github.com/pqrs-org/Karabiner-Elements                                                                              |
+| Pry         | `gem install pry;`                                                                                 | https://github.com/pry/pry                                                                                                  |
+| NVM         | `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh \| bash;`                | https://github.com/nvm-sh/nvm                                                                                               |
+| Git Scripts | N/A                                                                                                | Set the GitHub Personal Authentication Token as `env -x GITHUB_TOKEN <personal-pat>` in `~/.yadr/fish/config.personal.fish` |
 
 ## Configuration Instructions
 
@@ -119,14 +119,15 @@ Install both Neovim and Vim via Brew, and then run,
 1. `brew install llvm;`
 1. `ln -s ~/.yadr/nvmrc ~/.nvmrc`
 1. For TypeScript (via CoC):
-  1. execute in Neovim: `:CocInstall coc-tsserver`
-  1. execute in Neovim: `:CocInstall coc-css`
-  1. execute in Neovim: `:CocInstall coc-json`
-  1. execute in Neovim: `:CocInstall coc-solargraph`
-  1. execute in Neovim: `:CocInstall coc-powershell`
-  1. execute in Neovim: `:CocInstall coc-clangd`
-  1. execute in Neovim: `:CocInstall coc-pyright`
-  1. execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
+   - execute in Neovim: `:CocInstall coc-tsserver`
+   - execute in Neovim: `:CocInstall coc-css`
+   - execute in Neovim: `:CocInstall coc-json`
+   - execute in Neovim: `:CocInstall coc-solargraph`
+   - execute in Neovim: `:CocInstall coc-powershell`
+   - execute in Neovim: `:CocInstall coc-clangd`
+   - execute in Neovim: `:CocInstall coc-pyright`
+   - execute in shell: `ln -s ~/.yadr/coc-settings.json ~/.config/nvim/coc-settings.json;`
+   - There are more commands, just find them under [plugs.nvim](./vim/plugs.nvim)
 
 Configure Solargraph by following its [documentation](https://github.com/castwide/solargraph)
 
@@ -141,17 +142,19 @@ Configure Solargraph by following its [documentation](https://github.com/castwid
 1. `ln -s ~/.yadr/tmux/tmux.conf ~/.tmux.conf;`
 1. `ln -s ~/.yadr/tmux/tmux.user.conf ~/.tmux.user.conf;`
 1. Run `~/.tmux/plugins/tpm/tpm`
-  - If the Plugins do not exist at `~/.tmux/plugins` then install them manually
-    1. `git clone https://github.com/tmux-plugins/tpm`
-    1. `git clone git@github.com:tmux-plugins/tmux-yank.git`
-    1. `git clone git@github.com:ofer987/tmux-airline-dracula.git`
+
+- If the Plugins do not exist at `~/.tmux/plugins` then install them manually
+  1. `git clone https://github.com/tmux-plugins/tpm`
+  1. `git clone git@github.com:tmux-plugins/tmux-yank.git`
+  1. `git clone git@github.com:ofer987/tmux-airline-dracula.git`
+
 1. Silence bell:
-  1. Preferences -> Profiles -> Terminal -> Silence bell
+1. Preferences -> Profiles -> Terminal -> Silence bell
 1. Fonts:
-  1. Font Book -> Add -> `~/.yadr/fonts/Fira Code Regular Nerd Font Complete.otf`
-  1. Preferences -> Profiles -> Text -> FiraCode Nerd Font
+1. Font Book -> Add -> `~/.yadr/fonts/Fira Code Regular Nerd Font Complete.otf`
+1. Preferences -> Profiles -> Text -> FiraCode Nerd Font
 1. Meta Key:
-  1. Preferences -> Profiles -> Keys -> General -> **Left Option Key** set to `Esc+`
+1. Preferences -> Profiles -> Keys -> General -> **Left Option Key** set to `Esc+`
 
 ### Pry
 

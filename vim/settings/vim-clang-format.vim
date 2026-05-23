@@ -5,5 +5,6 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>c= :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
-nmap <leader>cc :e %:r.c<CR>
-nmap <leader>ch :e %:r.h<CR>
+if has('nvim')
+  map <silent> <leader>cc :CocCommand clangd.switchSourceHeader<cr>
+endif

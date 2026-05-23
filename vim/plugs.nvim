@@ -76,6 +76,8 @@ Plug 'junegunn/vim-easy-align'
 " And then run :CocCommand black-formatter.installServer in Neovim
 " And then run :CocInstall @yaegassy/coc-black-formatter in Neovim
 " And then run :CocInstall coc-groovy in Neovim
+" And then run :CocInstall coc-diagnostic
+" And install checkmake using `brew install checkmake`
 " NOTE: Coc only works in Neovim
 if has('nvim')
   Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }

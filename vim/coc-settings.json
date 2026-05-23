@@ -14,5 +14,16 @@
       "filetypes": ["swift"],
       "rootPatterns": ["Package.swift", ".git", "compile_commands.json"]
     }
+  },
+  "diagnostic-languageserver.linters": {
+    "checkmake": {
+      "command": "checkmake",
+      "args": ["%filepath"],
+      "formatLines": 1,
+      "formatPattern": ["^[^:]+:(\\d+):\\s+(.*)$", { "line": 1, "message": 2 }]
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "make": "checkmake"
   }
 }
