@@ -22,6 +22,10 @@
 
 1. `git submodule update --recursive;`
 
+### Artificial Intelligence
+
+1. `ln -s ~/.yadr/claude/skills ~/.claude/skills`
+
 ### Fish and Starship
 
 1. `mkdir -p -- ~/.config;`
