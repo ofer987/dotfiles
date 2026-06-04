@@ -58,6 +58,7 @@ Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'wellle/targets.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'junegunn/vim-easy-align'
+Plug 'AndrewRadev/bufferize.vim'
 
 " Conquer of Completion (CoC)
 " Install TypeScript
