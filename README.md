@@ -25,6 +25,7 @@
 ### Artificial Intelligence
 
 1. `ln -s ~/.yadr/claude/skills ~/.claude/skills`
+1. `ln -s ~/.yadr/claude/agents ~/.claude/agents`
 
 ### Fish and Starship
 
