@@ -4,7 +4,6 @@ codebase
 AEM
 jQuery
 Jira
-AEM
 UE
 EMCM
 AEM's
@@ -29,8 +28,6 @@ maven
 Fratin
 TR
 Mandadi
-jQuery
-jQuery
 rebase
 Initial
 Shlomi
@@ -502,3 +499,6 @@ Vidyard
 Ande
 Trantor
 preprod
+StringBuilder
+realloc
+ADR
