@@ -1,17 +1,77 @@
 ---
 name: release-branch-validator
-description: Validates that a release branch contains the full patch ancestry and has all expected release tags. Use when on a releases/<MAJOR>.<MINOR>.<PATCH> branch and the user asks to validate the release, check release history, verify patch chain, or audit release branch integrity.
+description: Validates that a release branch contains the full patch of all expected release tags. Use when on a releases/<MAJOR>.<MINOR>.<PATCH> branch and the user asks to validate the release, check release history, verify patch chain of release tags, or audit release branch integrity.
 disable-model-invocation: true
 ---
 
 # Release Branch Validator
 
-Performs two validations on the current `releases/<MAJOR>.<MINOR>.<PATCH>` branch:
+Performs the following validation on the current `releases/<MAJOR>.<MINOR>.<PATCH>` branch:
 
-1. **Ancestor merge check** — confirms that every preceding patch branch that exists on the remote has been merged into the current branch.
-2. **Release tag check** — for each patch number that has a branch on the remote (from Step 2), confirms that the corresponding tag `release-<MAJOR>.<MINOR>.<N>` exists. Patch numbers without a remote branch are silently skipped.
+1. **Release tag check** — for each patch number that has a branch on the remote (from Step 2), confirms that the corresponding tag `release-<MAJOR>.<MINOR>.<N>` exists. Patch numbers without a remote branch are silently skipped.
 
 Branches that do not exist on the remote are silently skipped — only branches that exist but were **not merged** cause a failure.
+
+## Example Outputs
+
+### Case 1 — Not the latest patch (FAIL)
+
+Checked out `releases/5.80.104` while `releases/5.80.106` exists on the remote.
+
+```
+Release Branch Validation: FAILED
+
+Branch:  releases/5.80.104
+
+Latest patch check: FAIL
+  Current : releases/5.80.104
+  Latest  : releases/5.80.106
+  This branch is not the latest — releases/5.80.106 exists on the remote.
+
+Release tag check: 96 tags checked (branches with remote) — all present
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.104 ✓
+```
+
+### Case 2 — Latest patch but a release tag is missing (FAIL)
+
+On `releases/5.80.106` but the tag `release-5.80.105` was never created.
+
+```
+Release Branch Validation: FAILED
+
+Branch:  releases/5.80.106
+
+Latest patch check: PASS
+
+Release tag check: 1 of 98 tags missing (branches with remote only)
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.104 ✓
+  release-5.80.105 ✗  (missing)
+  release-5.80.106 ✓
+```
+
+### Case 3 — Latest patch, all tags present (PASS)
+
+On `releases/5.80.106` with all 98 tags in place.
+
+```
+Release Branch Validation: PASSED
+
+Branch:  releases/5.80.106
+
+Latest patch check: PASS
+
+Release tag check: 98 tags checked (branches with remote) — all present
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.106 ✓
+```
 
 ## Permissions
 
@@ -114,67 +174,6 @@ Release tag check:
 ```
 
 If the tag is missing, report it as a failure in the output.
-
-## Example Outputs
-
-### Case 1 — Not the latest patch (FAIL)
-
-Checked out `releases/5.80.104` while `releases/5.80.106` exists on the remote.
-
-```
-Release Branch Validation: FAILED
-
-Branch:  releases/5.80.104
-
-Latest patch check: FAIL
-  Current : releases/5.80.104
-  Latest  : releases/5.80.106
-  This branch is not the latest — releases/5.80.106 exists on the remote.
-
-Release tag check: 96 tags checked (branches with remote) — all present
-
-  release-5.80.0   ✓
-  ...
-  release-5.80.104 ✓
-```
-
-### Case 2 — Latest patch but a release tag is missing (FAIL)
-
-On `releases/5.80.106` but the tag `release-5.80.105` was never created.
-
-```
-Release Branch Validation: FAILED
-
-Branch:  releases/5.80.106
-
-Latest patch check: PASS
-
-Release tag check: 1 of 98 tags missing (branches with remote only)
-
-  release-5.80.0   ✓
-  ...
-  release-5.80.104 ✓
-  release-5.80.105 ✗  (missing)
-  release-5.80.106 ✓
-```
-
-### Case 3 — Latest patch, all tags present (PASS)
-
-On `releases/5.80.106` with all 98 tags in place.
-
-```
-Release Branch Validation: PASSED
-
-Branch:  releases/5.80.106
-
-Latest patch check: PASS
-
-Release tag check: 98 tags checked (branches with remote) — all present
-
-  release-5.80.0   ✓
-  ...
-  release-5.80.106 ✓
-```
 
 ## Script
 
