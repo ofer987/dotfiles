@@ -1,6 +1,6 @@
 ---
 name: release-branch-validator
-description: Validates that a release branch is the latest patch for its series and contains the full patch ancestry. Use when on a releases/<MAJOR>.<MINOR>.<PATCH> branch and the user asks to validate the release, check release history, verify patch chain, or audit release branch integrity.
+description: Validates that a release branch contains the full patch ancestry and has all expected release tags. Use when on a releases/<MAJOR>.<MINOR>.<PATCH> branch and the user asks to validate the release, check release history, verify patch chain, or audit release branch integrity.
 disable-model-invocation: true
 ---
 
@@ -8,10 +8,14 @@ disable-model-invocation: true
 
 Performs two validations on the current `releases/<MAJOR>.<MINOR>.<PATCH>` branch:
 
-1. **Latest patch check** — confirms that no higher patch branch exists on the remote for this `<MAJOR>.<MINOR>` series.
-2. **Ancestor merge check** — confirms that every preceding patch branch that exists on the remote has been merged into the current branch.
+1. **Ancestor merge check** — confirms that every preceding patch branch that exists on the remote has been merged into the current branch.
+2. **Release tag check** — for each patch number that has a branch on the remote (from Step 2), confirms that the corresponding tag `release-<MAJOR>.<MINOR>.<N>` exists. Patch numbers without a remote branch are silently skipped.
 
 Branches that do not exist on the remote are silently skipped — only branches that exist but were **not merged** cause a failure.
+
+## Permissions
+
+This skill is **read-only**. Do NOT create, modify, or delete any files, branches, or tags. Only use read-only git commands (`git rev-parse`, `git branch -r`, `git merge-base`, `git fetch`, `git log`) and report results. If a check fails, report the failure — do not attempt to fix it.
 
 ## Prerequisites
 
@@ -39,83 +43,151 @@ Then stop.
 Fetch the relevant remote refs for the entire `<MAJOR>.<MINOR>` series, then list all patch branches that exist on the remote:
 
 ```bash
-git fetch origin --prune 'refs/heads/releases/<MAJOR>.<MINOR>.*:refs/remotes/origin/releases/<MAJOR>.<MINOR>.*'
+git fetch origin 'refs/heads/releases/<MAJOR>.<MINOR>.*:refs/remotes/origin/releases/<MAJOR>.<MINOR>.*'
 git branch -r --list 'origin/releases/<MAJOR>.<MINOR>.*'
 ```
 
 Parse the patch number from each listed branch.
 
-### Step 3: Validate that the current branch is the latest patch
+### Step 3: Check release tags
 
-From the branches discovered in Step 2, find the highest patch number. If any branch has a patch number **greater than** `PATCH`, the current branch is **not the latest** — report a failure:
-
-```
-Release Branch Validation: FAILED
-
-Branch:         releases/<MAJOR>.<MINOR>.<PATCH>
-Latest remote:  releases/<MAJOR>.<MINOR>.<HIGHEST>
-
-The checked-out branch is not the latest patch release for this series.
-Check out the latest branch:
-
-  git checkout releases/<MAJOR>.<MINOR>.<HIGHEST>
-```
-
-After reporting, exit with a non-zero code using the Shell tool (e.g. `exit 1`) and **stop** — do not proceed to the ancestor merge check.
-
-If the current branch **is** the latest (no higher patch exists on the remote), continue to Step 4.
-
-### Step 4: Check merge status of each existing preceding branch
-
-From the branches discovered in Step 2, keep only those with a patch number from `0` to `PATCH - 1`.
-
-For each existing preceding branch, resolve its commit and verify it is an ancestor of HEAD:
+Fetch remote tags for the series:
 
 ```bash
-sha=$(git rev-parse "origin/releases/<MAJOR>.<MINOR>.<N>")
-git merge-base --is-ancestor "$sha" HEAD
+git fetch origin --tags
 ```
 
-If `merge-base --is-ancestor` returns non-zero, mark it as **not merged**.
+Using the set of patch numbers that have a branch on the remote (discovered in Step 2, including the current branch's own patch number), check whether the corresponding tag exists for each:
 
-### Step 5: Report results
+```bash
+git rev-parse --verify "refs/tags/release-<MAJOR>.<MINOR>.<N>" >/dev/null 2>&1
+```
 
-#### All existing ancestors merged
+### Step 4: Report results
+
+Report the results of the release tag check (Step 3).
+
+#### All checks passed
 
 ```
 Release Branch Validation: PASSED
 
-Branch:    releases/<MAJOR>.<MINOR>.<PATCH>  (latest)
-Checked:   <N> existing preceding patch branches — all merged
+Branch:    releases/<MAJOR>.<MINOR>.<PATCH>
 
-  releases/<MAJOR>.<MINOR>.0  ✓
-  releases/<MAJOR>.<MINOR>.1  ✓
+Release tag check: <N> tags checked (branches with remote) — all present
+
+  release-<MAJOR>.<MINOR>.0  ✓
+  release-<MAJOR>.<MINOR>.1  ✓
   ...
+  release-<MAJOR>.<MINOR>.<PATCH>  ✓
 ```
 
-#### One or more existing ancestors not merged
+#### One or more failures
 
 ```
 Release Branch Validation: FAILED
 
-Branch:       releases/<MAJOR>.<MINOR>.<PATCH>  (latest)
-Not merged:   <count> of <N> existing preceding patch branches
+Branch:       releases/<MAJOR>.<MINOR>.<PATCH>
 
-  releases/<MAJOR>.<MINOR>.0   ✓
-  releases/<MAJOR>.<MINOR>.1   ✗  (not merged)
-  releases/<MAJOR>.<MINOR>.2   ✓
+Release tag check: <missing-count> of <N> tags missing (branches with remote only)
+
+  release-<MAJOR>.<MINOR>.0   ✓
+  release-<MAJOR>.<MINOR>.1   ✗  (missing)
+  release-<MAJOR>.<MINOR>.2   ✓
   ...
 ```
 
-After reporting, exit with a non-zero code if any existing branch was not merged. Use the Shell tool with a failing command like `exit 1` so the result is clearly a failure.
+After reporting, stop.
 
-### Step 6: Edge case — patch version is 0
+### Step 5: Edge case — patch version is 0
 
-If the current branch is `releases/<MAJOR>.<MINOR>.0` and it is the latest (Step 3 passed), there are no preceding patches to validate. Report:
+If the current branch is `releases/<MAJOR>.<MINOR>.0`, there are no preceding patches to validate. The only tag to check is `release-<MAJOR>.<MINOR>.0`. Report:
 
 ```
 Release Branch Validation: PASSED (baseline)
 
 Branch:   releases/<MAJOR>.<MINOR>.0  (latest)
 This is the baseline patch release — no preceding patches to validate.
+
+Release tag check:
+  release-<MAJOR>.<MINOR>.0  ✓  (or ✗ if missing)
 ```
+
+If the tag is missing, report it as a failure in the output.
+
+## Example Outputs
+
+### Case 1 — Not the latest patch (FAIL)
+
+Checked out `releases/5.80.104` while `releases/5.80.106` exists on the remote.
+
+```
+Release Branch Validation: FAILED
+
+Branch:  releases/5.80.104
+
+Latest patch check: FAIL
+  Current : releases/5.80.104
+  Latest  : releases/5.80.106
+  This branch is not the latest — releases/5.80.106 exists on the remote.
+
+Release tag check: 96 tags checked (branches with remote) — all present
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.104 ✓
+```
+
+### Case 2 — Latest patch but a release tag is missing (FAIL)
+
+On `releases/5.80.106` but the tag `release-5.80.105` was never created.
+
+```
+Release Branch Validation: FAILED
+
+Branch:  releases/5.80.106
+
+Latest patch check: PASS
+
+Release tag check: 1 of 98 tags missing (branches with remote only)
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.104 ✓
+  release-5.80.105 ✗  (missing)
+  release-5.80.106 ✓
+```
+
+### Case 3 — Latest patch, all tags present (PASS)
+
+On `releases/5.80.106` with all 98 tags in place.
+
+```
+Release Branch Validation: PASSED
+
+Branch:  releases/5.80.106
+
+Latest patch check: PASS
+
+Release tag check: 98 tags checked (branches with remote) — all present
+
+  release-5.80.0   ✓
+  ...
+  release-5.80.106 ✓
+```
+
+## Script
+
+A ready-to-run implementation of this skill lives alongside this file:
+
+```
+.cursor/skills/release-branch-validator/validate-release-branch.sh
+```
+
+Run it from the root of any repository:
+
+```bash
+bash ~/.cursor/skills/release-branch-validator/validate-release-branch.sh
+```
+
+The script is equivalent to the manual workflow above and exits with code `0` on success, `1` on failure.
