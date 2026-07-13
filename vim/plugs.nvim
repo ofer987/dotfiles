@@ -81,7 +81,7 @@ Plug 'AndrewRadev/bufferize.vim'
 " And install checkmake using `brew install checkmake`
 " NOTE: Coc only works in Neovim
 if has('nvim')
-  Plug 'ofer987/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
 endif
 
