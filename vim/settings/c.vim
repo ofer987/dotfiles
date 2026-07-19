@@ -18,6 +18,8 @@ function! s:switch_from_source_to_test()
 
     if filereadable(l:test_path)
       execute 'e ' . l:test_path
+    else
+      echo "Test file " . l:test_path . " does not exist"
     endif
   endif
 endfunction
