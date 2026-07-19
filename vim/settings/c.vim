@@ -11,16 +11,14 @@ function! s:switch_from_source_to_test()
     let l:source_code = substitute(l:filepath, 'tests\/test_\(\w\+\)\.c$', '\1\.c', '')
 
     execute 'e ' . l:source_code
-  elseif l:filename =~ '\.\(c\|h\)$'
-    let l:file_base_name = substitute(l:filename, '\(\w\+\)\.\(c\|h\)$', '\1', '')
+  else
+    let l:file_base_name = substitute(l:filename, '\(\w\+\)\.\w$', '\1', '')
 
     let l:test_path = l:dirname . '/tests/test_' . l:file_base_name . '.c'
 
     if filereadable(l:test_path)
       execute 'e ' . l:test_path
     endif
-  else
-    echo l:filename . ' does not have a test file'
   endif
 endfunction
 
