@@ -15,15 +15,23 @@ PATHS = %w[
   hello.env.
   hello.env.dev/yo
   hello.env.dev/yo.html
+  .webmail
+  .webmail/
   webmail
   webmail/
   webmail.
   webmail.html
   webmail.html/
+  hello/.webmail
+  hello/.webmail/
   hello/webmail
   hello/webmail/
   hello/webmail.html
   hello/webmail.html/
+  hello/.webmail.html
+  hello/.webmail.html/
+  .wp-json
+  .wp-json/
   wp-json
   wp-json/
   wp-json.
@@ -31,8 +39,14 @@ PATHS = %w[
   wp-json.html/
   hello/wp-json
   hello/wp-json/
+  hello/.wp-json
+  hello/.wp-json/
   hello/wp-json.html
   hello/wp-json.html/
+  hello/.wp-json.html
+  hello/.wp-json.html/
+  .wp-admin
+  .wp-admin/
   wp-admin
   wp-admin/
   wp-admin.
@@ -40,8 +54,12 @@ PATHS = %w[
   wp-admin.html/
   hello/wp-admin
   hello/wp-admin/
+  hello/.wp-admin
+  hello/.wp-admin/
   hello/wp-admin.html
   hello/wp-admin.html/
+  hello/.wp-admin.html
+  hello/.wp-admin.html/
   hello.php
   hello.php/
   hello.php.html
