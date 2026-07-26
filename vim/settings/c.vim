@@ -10,7 +10,11 @@ function! s:switch_from_source_to_test()
   if l:filepath =~ '\/tests\/test_\(\w\+\)\.c$'
     let l:source_code = substitute(l:filepath, 'tests\/test_\(\w\+\)\.c$', '\1\.c', '')
 
-    execute 'e ' . l:source_code
+    if filereadable(l:source_code)
+      execute 'e ' . l:source_code
+    else
+      echo "Source file " . l:source_code . " does not exist"
+    endif
   else
     let l:file_base_name = substitute(l:filename, '\(\w\+\)\.\w$', '\1', '')
 
