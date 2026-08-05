@@ -231,12 +231,12 @@ if [[ -n "$DIRTY" ]]; then
   exit 1
 fi
 
-info "Verifying PR #${PR_NUMBER} is merged..."
+info "Verifying PR #${PR_NUMBER}..."
 PR_JSON=$(gh pr view "$PR_NUMBER" --json state,baseRefName)
 PR_STATE=$(echo "$PR_JSON" | jq -r '.state')
 PR_BASE=$(echo "$PR_JSON" | jq -r '.baseRefName')
-[[ "$PR_STATE" == "MERGED" ]] || die "PR #${PR_NUMBER} is not merged yet (state: ${PR_STATE})."
-[[ "$PR_BASE" == "release" ]] || die "PR #${PR_NUMBER} is not based on 'release' (base branch: ${PR_BASE}). Only PRs merged into 'release' can be ported."
+[[ "$PR_STATE" == "MERGED" || "$PR_STATE" == "CLOSED" ]] || die "PR #${PR_NUMBER} must be merged or closed to be ported (state: ${PR_STATE})."
+[[ "$PR_BASE" == "release" ]] || die "PR #${PR_NUMBER} is not targeting 'release' (base branch: ${PR_BASE}). Only PRs targeting 'release' can be ported."
 
 info "Fetching latest remote state..."
 run git fetch --all --prune
@@ -270,11 +270,15 @@ while IFS= read -r sha; do
 done < <(gh pr view "$PR_NUMBER" --json commits --jq '.commits[].oid')
 
 if [[ ${#COMMITS[@]} -eq 0 ]]; then
-  warn "No individual commits found; falling back to merge commit with -m 1."
-  MERGE_SHA=$(gh pr view "$PR_NUMBER" --json mergeCommit --jq '.mergeCommit.oid')
-  [[ -n "$MERGE_SHA" ]] || die "Could not determine merge commit SHA for PR #${PR_NUMBER}."
-  COMMITS=("${MERGE_SHA}")
-  USE_MERGE_PARENT=true
+  if [[ "$PR_STATE" == "MERGED" ]]; then
+    warn "No individual commits found; falling back to merge commit with -m 1."
+    MERGE_SHA=$(gh pr view "$PR_NUMBER" --json mergeCommit --jq '.mergeCommit.oid')
+    [[ -n "$MERGE_SHA" ]] || die "Could not determine merge commit SHA for PR #${PR_NUMBER}."
+    COMMITS=("${MERGE_SHA}")
+    USE_MERGE_PARENT=true
+  else
+    die "No commits found for closed PR #${PR_NUMBER}. The head branch may have been deleted."
+  fi
 else
   USE_MERGE_PARENT=false
 fi
@@ -367,6 +371,8 @@ for i in "${!ENV_LABELS[@]}"; do
 
   # Cherry-pick
   CHERRY_PICK_FAILED=false
+  FAILED_IDX=0
+  COMMIT_IDX=0
   for sha in "${COMMITS[@]}"; do
     if [[ "$USE_MERGE_PARENT" == "true" ]]; then
       run git cherry-pick -m 1 "$sha" || pick_exit=$?
@@ -383,13 +389,18 @@ for i in "${!ENV_LABELS[@]}"; do
         run git cherry-pick --skip
       else
         CHERRY_PICK_FAILED=true
+        FAILED_IDX=$COMMIT_IDX
         break
       fi
     fi
     pick_exit=0
+    (( COMMIT_IDX++ )) || true
   done
 
   if [[ "$CHERRY_PICK_FAILED" == "true" ]]; then
+    # Commits that still need to be applied after the conflict is resolved.
+    REMAINING_AFTER_CONFLICT=("${COMMITS[@]:$((FAILED_IDX + 1))}")
+
     echo ""
     echo "======================================================================" >&2
     echo "ACTION REQUIRED — Cherry-pick conflict on ${env_label} (${TARGET_BRANCH})" >&2
@@ -403,7 +414,21 @@ for i in "${!ENV_LABELS[@]}"; do
     echo "  3. Edit each conflicted file and fix the <<<<<<<  =======  >>>>>>> markers" >&2
     echo "  4. git add <resolved-files>" >&2
     echo "  5. git cherry-pick --continue" >&2
+    if [[ ${#REMAINING_AFTER_CONFLICT[@]} -gt 0 ]]; then
+    echo "" >&2
+    echo "  The following ${#REMAINING_AFTER_CONFLICT[@]} commit(s) come after the conflict and must" >&2
+    echo "  also be cherry-picked before pushing:" >&2
+    echo "" >&2
+    echo "  6. git cherry-pick ${REMAINING_AFTER_CONFLICT[*]}" >&2
+    echo "     (skip any that are empty: git cherry-pick --skip)" >&2
+    echo "" >&2
+    echo "  7. Verify all commits are on the port branch:" >&2
+    echo "     git log origin/${TARGET_BRANCH}..HEAD --oneline" >&2
+    echo "" >&2
+    echo "  8. git push origin \"HEAD:refs/heads/${PORT_BRANCH}\"" >&2
+    else
     echo "  6. git push origin \"HEAD:refs/heads/${PORT_BRANCH}\"" >&2
+    fi
     echo "" >&2
     echo "After completing those steps, re-run this script with:" >&2
     echo "  --resume ${TARGET_BRANCH}" >&2

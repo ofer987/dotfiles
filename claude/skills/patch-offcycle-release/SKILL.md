@@ -5,7 +5,7 @@ description: Cherry-pick a PR that was merged into `release` into the `releases/
 
 # Patch Off-Cycle Release
 
-Port a merged PR from `release` into the `releases/*` branches currently deployed to
+Port a merged or closed PR from `release` into the `releases/*` branches currently deployed to
 UAT, PPE, and (optionally) Prod.
 
 ## What this skill does NOT do
@@ -15,7 +15,8 @@ UAT, PPE, and (optionally) Prod.
 
 ## Prerequisites
 
-`git`, `gh` (GitHub CLI, authenticated), `curl`, `jq`, `awk`, `head`, `grep`, `sort`, and `cut`.
+- **macOS / Linux:** `git`, `gh` (GitHub CLI, authenticated), `curl`, `jq`, `awk`, `head`, `grep`, `sort`, and `cut`.
+- **Windows:** `git`, `gh` (GitHub CLI, authenticated), and PowerShell 7+ (`pwsh`). No additional tools are required — `port-pr.ps1` uses only native PowerShell cmdlets.
 
 ## Quick Start
 
@@ -93,14 +94,20 @@ The script handles this automatically. For reference, the equivalent manual comm
 # List commits that the PR added (excluding the merge commit itself)
 gh pr view <PR_NUMBER> --json commits --jq '.commits[].oid'
 
-# Get the merge commit SHA (used as fallback when no individual commits are found)
+# Get the merge commit SHA (merged PRs only — used as fallback when no individual commits are found)
 gh pr view <PR_NUMBER> --json mergeCommit --jq '.mergeCommit.oid'
 ```
 
 The script prefers cherry-picking **individual commits** in order rather than the merge
 commit itself, to keep each environment branch's history clean.
 
+> **Closed PRs:** `gh pr view --json commits` still returns commits for closed (unmerged) PRs
+> as long as the head branch has not been deleted. The merge-commit fallback is skipped for
+> closed PRs — if no commits are found the script exits with an actionable error.
+
 ### Step 4 — Run the helper script
+
+**macOS / Linux** (`port-pr.sh`):
 
 ```bash
 # Fully automatic - branches are discovered from the environment version endpoints
@@ -112,6 +119,20 @@ commit itself, to keep each environment branch's history clean.
   --uat  releases/X.Y.Z  \
   --ppe  releases/A.B.C  \
   --prod releases/P.Q.R
+```
+
+**Windows** (`port-pr.ps1`) — uses native PowerShell; no extra tools required:
+
+```powershell
+# Fully automatic - branches are discovered from the environment version endpoints
+./scripts/port-pr.ps1 -PR <PR_NUMBER>
+
+# Manual override if needed
+./scripts/port-pr.ps1 `
+  -PR   <PR_NUMBER>     `
+  -UAT  releases/X.Y.Z `
+  -PPE  releases/A.B.C `
+  -Prod releases/P.Q.R
 ```
 
 The script will:
@@ -153,7 +174,34 @@ further git or gh commands.
 
 #### After the user confirms resolution
 
-Push the port branch and open the Draft PR manually (the script already exited):
+**Before pushing**, verify that all PR commits are present on the port branch. The conflict
+only paused cherry-picking at the first conflicting commit; the remaining commits must be
+applied manually if the script exited early.
+
+```bash
+# How many commits does the port branch have ahead of the target?
+git log origin/<TARGET_BRANCH>..HEAD --oneline
+
+# How many commits does the PR have in total?
+gh pr view <PR_NUMBER> --json commits --jq '.commits | length'
+```
+
+If the count on the port branch is **less than** the PR commit count, cherry-pick the
+missing commits in order before continuing:
+
+```bash
+# Apply each missing commit SHA in order (get the full list from Step 3)
+git cherry-pick <SHA1> <SHA2> ...
+```
+
+If git reports a cherry-pick as empty (already reflected in the target branch), skip it:
+
+```bash
+git cherry-pick --skip
+```
+
+Once the commit counts match (accounting for legitimately empty/skipped commits), push
+the port branch and open the Draft PR manually (the script already exited):
 
 ```bash
 PORT_BRANCH="port/pr-<PR_NUMBER>-to-<TARGET_BRANCH_SLASHES_REPLACED_WITH_DASHES>"
@@ -168,12 +216,20 @@ gh pr create \
   --draft
 ```
 
-Then re-run the script with `--resume` to process any remaining environment branches:
+Then re-run the script with `--resume` / `-Resume` to process any remaining environment branches:
 
 ```bash
+# macOS / Linux
 ./scripts/port-pr.sh \
   --pr <PR_NUMBER> \
   --resume <NEXT_TARGET_BRANCH>
+```
+
+```powershell
+# Windows
+./scripts/port-pr.ps1 `
+  -PR <PR_NUMBER> `
+  -Resume <NEXT_TARGET_BRANCH>
 ```
 
 The `--resume` flag tells the script to skip all branches that were already processed
@@ -257,7 +313,8 @@ otherwise the existing resolved Prod branch).
 
 | Situation                                               | Guidance                                                                                 |
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| PR is not yet merged                                    | Merge it into `release` first, then run this skill                                       |
+| PR is not yet merged                                    | Either merge it into `release` first, or use it as a closed PR if the commits are already in the branch |
+| PR is closed (not merged) and head branch was deleted   | Commits are no longer accessible; the script will exit with an error — the user must provide the SHAs manually |
 | PR contains a merge commit with no individual commits   | Cherry-pick the merge commit with `git cherry-pick -m 1 <sha>`                           |
 | Target branch is ahead of the PR base                   | Rebase the port branch on the target before opening the PR                               |
 | Prod and PPE share the same branch                      | The script detects equality after patch resolution and skips the duplicate automatically |
@@ -269,4 +326,5 @@ otherwise the existing resolved Prod branch).
 ## References
 
 - [REFERENCE.md](./REFERENCE.md) — environment branch discovery, Cloud Manager URLs, git-tag heuristics
-- [scripts/port-pr.sh](./scripts/port-pr.sh) — automation script
+- [scripts/port-pr.sh](./scripts/port-pr.sh) — automation script (macOS / Linux)
+- [scripts/port-pr.ps1](./scripts/port-pr.ps1) — automation script (Windows, PowerShell 7+)
