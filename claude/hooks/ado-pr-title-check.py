@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""PreToolUse hook: enforce "[AB#<number>] <short_title>" on GitHub PR titles.
+"""Hook for GitHub PR titles tied to Azure DevOps tickets.
 
-Covers mcp__github__create_pull_request / update_pull_request and `gh pr create` / `gh pr edit`
-run via Bash. Exit 2 blocks the tool call and feeds stderr back to Claude.
+PreToolUse: enforce "[AB#<number>] <short_title>" on mcp__github__create_pull_request /
+update_pull_request and `gh pr create` / `gh pr edit` run via Bash. Exit 2 blocks the tool call and
+feeds stderr back to Claude.
+
+PostToolUse: after a PR is created, tell Claude to set the ADO ticket's "GitHub Pull Request URL"
+(Custom.GitHubPullRequestURL) to the new PR's URL.
 """
 import json
 import re
@@ -10,6 +14,8 @@ import shlex
 import sys
 
 PATTERN = re.compile(r"^\[AB#\d+\] \S.*$")
+AB_NUMBER = re.compile(r"^\[AB#(\d+)\]")
+PR_URL = re.compile(r"https://[^\s\"'\\]+/pull/\d+")
 OPERATORS = {"&&", "||", ";", "|", "&"}
 
 
@@ -64,10 +70,40 @@ def gh_titles(command):
             i += 1
 
 
+def post_created(data):
+    """PostToolUse: ask Claude to record the new PR's URL on the ADO ticket."""
+    tool = data.get("tool_name", "")
+    inp = data.get("tool_input") or {}
+    if tool == "mcp__github__create_pull_request":
+        title = inp.get("title")
+    elif tool == "Bash":
+        command = inp.get("command") or ""
+        title = next((t for sub, t in gh_titles(command) if sub == "create" and t), None)
+    else:
+        return
+    number = AB_NUMBER.match(title or "")
+    url = PR_URL.search(json.dumps(data.get("tool_response")))
+    if not (number and url):
+        return  # PR not created (or not an ADO-titled PR): nothing to record
+    ado, pr = number.group(1), url.group(0)
+    message = (
+        f"PR created: {pr}. Now set the 'GitHub Pull Request URL' on ADO work item AB#{ado}: "
+        f"call get_work_item({ado}) and get_work_item_type_fields for its type (required before "
+        f"updates), then update_work_item(work_item_id={ado}, azure_devops_project from the work "
+        f"item's System.TeamProject, custom_fields={{\"Custom.GitHubPullRequestURL\": \"{pr}\"}}). "
+        "Overwrite any existing value, and tell the user it was updated."
+    )
+    print(json.dumps({"hookSpecificOutput": {
+        "hookEventName": "PostToolUse", "additionalContext": message}}))
+
+
 def main():
     try:
         data = json.load(sys.stdin)
     except ValueError:
+        return
+    if data.get("hook_event_name") == "PostToolUse":
+        post_created(data)
         return
     tool = data.get("tool_name", "")
     inp = data.get("tool_input") or {}

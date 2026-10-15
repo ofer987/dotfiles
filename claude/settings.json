@@ -23,6 +23,18 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "mcp__github__create_pull_request|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I \"$HOME/.claude/hooks/ado-pr-title-check.py\"",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }
