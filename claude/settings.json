@@ -13,11 +13,11 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__github__create_pull_request|mcp__github__update_pull_request|Bash",
+        "matcher": "mcp__github__create_pull_request|mcp__github__update_pull_request",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -I \"$HOME/.claude/hooks/ado-pr-title-check.py\"",
+            "command": "python3 -I \"$HOME/.claude/hooks/ado_pr_title_check.py\"",
             "timeout": 10,
             "statusMessage": "Checking PR title format..."
           }
@@ -26,11 +26,11 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "mcp__github__create_pull_request|Bash",
+        "matcher": "mcp__github__create_pull_request|mcp__github__pull_request_read|mcp__github__list_pull_requests",
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -I \"$HOME/.claude/hooks/ado-pr-title-check.py\"",
+            "command": "python3 -I \"$HOME/.claude/hooks/ado_pr_title_check.py\"",
             "timeout": 10
           }
         ]
